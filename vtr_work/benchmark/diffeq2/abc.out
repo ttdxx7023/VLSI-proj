@@ -1,0 +1,6 @@
+ABC command line: "read_blif diffeq2.odin.blif; 
+        balance; strash;
+        write_blif diffeq2.abc.blif;
+        ".
+
+Hierarchy reader converted 149 instances of blackboxes.

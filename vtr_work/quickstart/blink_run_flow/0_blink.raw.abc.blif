@@ -1,0 +1,54 @@
+# Benchmark "blink" written by ABC on Mon Jul 10 06:12:57 2023
+.model blink
+.inputs clk i_reset
+.outputs o_led
+
+.latch        n19 $sdff~1^Q~0  0
+.latch        n24 $sdff~1^Q~1  0
+.latch        n29 $sdff~1^Q~2  0
+.latch        n34 $sdff~1^Q~3  0
+.latch        n39 $sdff~1^Q~4  0
+
+
+.subckt adder a=vcc b=gnd cin=gnd sumout=$add~0^ADD~0-0~dummy_output~0~1 cout=$add~0^ADD~0-0[0]
+.subckt adder a=$sdff~1^Q~0 b=vcc cin=$add~0^ADD~0-0[0] sumout=$add~0^ADD~0-1[1] cout=$add~0^ADD~0-1[0]
+.subckt adder a=$sdff~1^Q~1 b=unconn cin=$add~0^ADD~0-1[0] sumout=$add~0^ADD~0-2[1] cout=$add~0^ADD~0-2[0]
+.subckt adder a=$sdff~1^Q~2 b=unconn cin=$add~0^ADD~0-2[0] sumout=$add~0^ADD~0-3[1] cout=$add~0^ADD~0-3[0]
+.subckt adder a=$sdff~1^Q~3 b=unconn cin=$add~0^ADD~0-3[0] sumout=$add~0^ADD~0-4[1] cout=$add~0^ADD~0-4[0]
+.subckt adder a=$sdff~1^Q~4 b=unconn cin=$add~0^ADD~0-4[0] sumout=$add~0^ADD~0-5[1] cout=$add~0^ADD~0-5[0]
+.subckt CLOCK_GATING I=clk
+
+
+.names i_reset $add~0^ADD~0-1[1] n19
+01 1
+.names i_reset $add~0^ADD~0-2[1] n24
+01 1
+.names i_reset $add~0^ADD~0-3[1] n29
+01 1
+.names i_reset $add~0^ADD~0-4[1] n34
+01 1
+.names i_reset $add~0^ADD~0-5[1] n39
+01 1
+.names vcc
+ 1
+.names gnd
+ 0
+.names unconn
+ 0
+.names $sdff~1^Q~4 o_led
+0 1
+.end
+
+
+.model adder
+.inputs a b cin
+.outputs sumout cout
+.blackbox
+.end
+
+
+.model CLOCK_GATING
+.inputs I
+.outputs
+.blackbox
+.end

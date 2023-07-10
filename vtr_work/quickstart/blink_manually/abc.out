@@ -1,0 +1,5 @@
+ABC command line: "read blink.odin.blif; if -K 6; write_hie blink.odin.blif blink.abc_no_clock.blif".
+
+Hierarchy reader converted 6 instances of blackboxes.
+The network was strashed and balanced before FPGA mapping.
+Hierarchy writer reintroduced 6 instances of blackboxes.

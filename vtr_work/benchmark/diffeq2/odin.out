@@ -1,0 +1,120 @@
+=======================================================================
+ Odin II - Verilog synthesis tools targetting VPR FPGAs
+-----------------------------------------------------------------------
+	Version: 8.1.0-dev+e1a876dba
+	Revision: v8.0.0-8134-ge1a876dba
+	Compiled: 2023-07-09T14:59:04
+	Compiler: GNU 11.3.0 on Linux-5.15.90.1-microsoft-standard-WSL2 x86_64
+	Build Info: release IPO VTR_ASSERT_LEVEL=2
+
+University of New Brunswick
+For documentation:
+  https://docs.verilogtorouting.org/en/latest/odin
+For question:
+  vtr-users@googlegroups.com
+
+This is free open source code under MIT license.
+=======================================================================
+
+Architecture: EArch.xml
+Reading FPGA Architecture file
+Using Lut input width of: 4
+Input verilog file: diffeq2.v
+Using the odin_ii parser for elaboration
+--------------------------------------------------------------------
+High-level Synthesis Begin
+Parser starting - we'll create an abstract syntax tree. Note this tree can be viewed using Grap Viz (see documentation)
+Adding file /home/majx/vtr-verilog-to-routing/vtr_flow/benchmarks/verilog/diffeq2.v to parse list
+Optimizing module by AST based optimizations
+Converting AST into a Netlist. Note this netlist can be viewed using GraphViz (see documentation)
+==========================
+Detected Top Level Module: 	diffeq_f_systemC
+==========================
+
+Elaboration Time: 3.2ms
+--------------------------------------------------------------------
+Successful Elaboration of the design by Odin-II
+Performing Optimization on the Netlist
+
+Optimization Time: 0.6ms
+--------------------------------------------------------------------
+Successful Optimization of netlist by Odin-II
+Performing Partial Technology Mapping to the target device
+
+Techmap Time: 0.8ms
+--------------------------------------------------------------------
+Successful Partial Technology Mapping by Odin-II
+Outputting the netlist to the specified output format
+
+Hard Multiplier Distribution
+============================
+32 X 28 => 2
+32 X 32 => 3
+32 X 36 => 2
+
+
+Total # of multipliers = 7
+
+Hard adder Distribution
+============================
+
+
+Total # of chains = 4
+
+Hard adder chain Details
+============================
+
+
+The Number of Hard Block adders in the Longest Chain: 33
+
+
+The Total Number of Hard Block adders: 76
+
+
+Geometric mean adder/subtractor chain length: 17.59
+
+Hard MINUS Distribution
+============================
+
+
+Total # of chains = 2
+
+Hard sub chain Details
+============================
+
+
+The Number of Hard Block subs in the Longest Chain: 33
+
+
+The Total Number of Hard Block subs: 66
+
+	==== Stats ====
+Number of <CLOCK_NODE> node:              1
+Number of unused <INPUT_NODE> node:       31
+Number of <INPUT_NODE> node:              65
+Number of <OUTPUT_NODE> node:             96
+Number of <FF_NODE> node:                 96
+Number of <ADD> node:                     142
+Number of <LOGICAL_NOT> node:             66
+Number of <LOGICAL_OR> node:              32
+Number of <LOGICAL_AND> node:             1
+Number of <LOGICAL_XNOR> node:            1
+Number of <LOGICAL_XOR> node:             31
+Number of <MULTIPLY> node:                7
+Number of <MUX_2> node:                   192
+Number of <GENERIC> node:                 355
+Total estimated number of lut:            365
+Total number of node:                     601
+Longest path:                             119
+Average path:                             4
+
+	BLIF file available at diffeq2.odin.blif
+
+Total Synthesis Time: 4.7ms
+--------------------------------------------------------------------
+odin_ii synthesis has finished with code: 0
+
+--------------------------------------------------------------------
+Total time: 12.7ms
+Odin ran with exit status: 0
+Odin II took 0.01 seconds (max_rss 7.8 MiB)

@@ -1,0 +1,3067 @@
+.model diffeq_f_systemC
+.inputs diffeq_f_systemC^clk diffeq_f_systemC^reset diffeq_f_systemC^aport~0 diffeq_f_systemC^aport~1 diffeq_f_systemC^aport~2 diffeq_f_systemC^aport~3 diffeq_f_systemC^aport~4 diffeq_f_systemC^aport~5 diffeq_f_systemC^aport~6 diffeq_f_systemC^aport~7 diffeq_f_systemC^aport~8 diffeq_f_systemC^aport~9 diffeq_f_systemC^aport~10 diffeq_f_systemC^aport~11 diffeq_f_systemC^aport~12 diffeq_f_systemC^aport~13 diffeq_f_systemC^aport~14 diffeq_f_systemC^aport~15 diffeq_f_systemC^aport~16 diffeq_f_systemC^aport~17 diffeq_f_systemC^aport~18 diffeq_f_systemC^aport~19 diffeq_f_systemC^aport~20 diffeq_f_systemC^aport~21 diffeq_f_systemC^aport~22 diffeq_f_systemC^aport~23 diffeq_f_systemC^aport~24 diffeq_f_systemC^aport~25 diffeq_f_systemC^aport~26 diffeq_f_systemC^aport~27 diffeq_f_systemC^aport~28 diffeq_f_systemC^aport~29 diffeq_f_systemC^aport~30 diffeq_f_systemC^aport~31 diffeq_f_systemC^dxport~0 diffeq_f_systemC^dxport~1 diffeq_f_systemC^dxport~2 diffeq_f_systemC^dxport~3 diffeq_f_systemC^dxport~4 diffeq_f_systemC^dxport~5 diffeq_f_systemC^dxport~6 diffeq_f_systemC^dxport~7 diffeq_f_systemC^dxport~8 diffeq_f_systemC^dxport~9 diffeq_f_systemC^dxport~10 diffeq_f_systemC^dxport~11 diffeq_f_systemC^dxport~12 diffeq_f_systemC^dxport~13 diffeq_f_systemC^dxport~14 diffeq_f_systemC^dxport~15 diffeq_f_systemC^dxport~16 diffeq_f_systemC^dxport~17 diffeq_f_systemC^dxport~18 diffeq_f_systemC^dxport~19 diffeq_f_systemC^dxport~20 diffeq_f_systemC^dxport~21 diffeq_f_systemC^dxport~22 diffeq_f_systemC^dxport~23 diffeq_f_systemC^dxport~24 diffeq_f_systemC^dxport~25 diffeq_f_systemC^dxport~26 diffeq_f_systemC^dxport~27 diffeq_f_systemC^dxport~28 diffeq_f_systemC^dxport~29 diffeq_f_systemC^dxport~30 diffeq_f_systemC^dxport~31
+.outputs diffeq_f_systemC^xport~0 diffeq_f_systemC^xport~1 diffeq_f_systemC^xport~2 diffeq_f_systemC^xport~3 diffeq_f_systemC^xport~4 diffeq_f_systemC^xport~5 diffeq_f_systemC^xport~6 diffeq_f_systemC^xport~7 diffeq_f_systemC^xport~8 diffeq_f_systemC^xport~9 diffeq_f_systemC^xport~10 diffeq_f_systemC^xport~11 diffeq_f_systemC^xport~12 diffeq_f_systemC^xport~13 diffeq_f_systemC^xport~14 diffeq_f_systemC^xport~15 diffeq_f_systemC^xport~16 diffeq_f_systemC^xport~17 diffeq_f_systemC^xport~18 diffeq_f_systemC^xport~19 diffeq_f_systemC^xport~20 diffeq_f_systemC^xport~21 diffeq_f_systemC^xport~22 diffeq_f_systemC^xport~23 diffeq_f_systemC^xport~24 diffeq_f_systemC^xport~25 diffeq_f_systemC^xport~26 diffeq_f_systemC^xport~27 diffeq_f_systemC^xport~28 diffeq_f_systemC^xport~29 diffeq_f_systemC^xport~30 diffeq_f_systemC^xport~31 diffeq_f_systemC^yport~0 diffeq_f_systemC^yport~1 diffeq_f_systemC^yport~2 diffeq_f_systemC^yport~3 diffeq_f_systemC^yport~4 diffeq_f_systemC^yport~5 diffeq_f_systemC^yport~6 diffeq_f_systemC^yport~7 diffeq_f_systemC^yport~8 diffeq_f_systemC^yport~9 diffeq_f_systemC^yport~10 diffeq_f_systemC^yport~11 diffeq_f_systemC^yport~12 diffeq_f_systemC^yport~13 diffeq_f_systemC^yport~14 diffeq_f_systemC^yport~15 diffeq_f_systemC^yport~16 diffeq_f_systemC^yport~17 diffeq_f_systemC^yport~18 diffeq_f_systemC^yport~19 diffeq_f_systemC^yport~20 diffeq_f_systemC^yport~21 diffeq_f_systemC^yport~22 diffeq_f_systemC^yport~23 diffeq_f_systemC^yport~24 diffeq_f_systemC^yport~25 diffeq_f_systemC^yport~26 diffeq_f_systemC^yport~27 diffeq_f_systemC^yport~28 diffeq_f_systemC^yport~29 diffeq_f_systemC^yport~30 diffeq_f_systemC^yport~31 diffeq_f_systemC^uport~0 diffeq_f_systemC^uport~1 diffeq_f_systemC^uport~2 diffeq_f_systemC^uport~3 diffeq_f_systemC^uport~4 diffeq_f_systemC^uport~5 diffeq_f_systemC^uport~6 diffeq_f_systemC^uport~7 diffeq_f_systemC^uport~8 diffeq_f_systemC^uport~9 diffeq_f_systemC^uport~10 diffeq_f_systemC^uport~11 diffeq_f_systemC^uport~12 diffeq_f_systemC^uport~13 diffeq_f_systemC^uport~14 diffeq_f_systemC^uport~15 diffeq_f_systemC^uport~16 diffeq_f_systemC^uport~17 diffeq_f_systemC^uport~18 diffeq_f_systemC^uport~19 diffeq_f_systemC^uport~20 diffeq_f_systemC^uport~21 diffeq_f_systemC^uport~22 diffeq_f_systemC^uport~23 diffeq_f_systemC^uport~24 diffeq_f_systemC^uport~25 diffeq_f_systemC^uport~26 diffeq_f_systemC^uport~27 diffeq_f_systemC^uport~28 diffeq_f_systemC^uport~29 diffeq_f_systemC^uport~30 diffeq_f_systemC^uport~31
+
+.names gnd
+.names unconn
+.names vcc
+1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~463 diffeq_f_systemC^nMUX~33^MUX_2~367
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~367 diffeq_f_systemC^xport~0_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^aport~0 diffeq_f_systemC^xport~0_FF diffeq_f_systemC^LT~37^lOR~242 diffeq_f_systemC^LT~37^GT~241
+100 1
+
+.names diffeq_f_systemC^LT~37^GT~241 diffeq_f_systemC^LT~37^GT~243 diffeq_f_systemC^LT~37^GT~245 diffeq_f_systemC^LT~37^GT~247 diffeq_f_systemC^LT~37^GT~249 diffeq_f_systemC^LT~37^GT~251 diffeq_f_systemC^LT~37^GT~253 diffeq_f_systemC^LT~37^GT~255 diffeq_f_systemC^LT~37^GT~257 diffeq_f_systemC^LT~37^GT~259 diffeq_f_systemC^LT~37^GT~261 diffeq_f_systemC^LT~37^GT~263 diffeq_f_systemC^LT~37^GT~265 diffeq_f_systemC^LT~37^GT~267 diffeq_f_systemC^LT~37^GT~269 diffeq_f_systemC^LT~37^GT~271 diffeq_f_systemC^LT~37^GT~273 diffeq_f_systemC^LT~37^GT~275 diffeq_f_systemC^LT~37^GT~277 diffeq_f_systemC^LT~37^GT~279 diffeq_f_systemC^LT~37^GT~281 diffeq_f_systemC^LT~37^GT~283 diffeq_f_systemC^LT~37^GT~285 diffeq_f_systemC^LT~37^GT~287 diffeq_f_systemC^LT~37^GT~289 diffeq_f_systemC^LT~37^GT~291 diffeq_f_systemC^LT~37^GT~293 diffeq_f_systemC^LT~37^GT~295 diffeq_f_systemC^LT~37^GT~297 diffeq_f_systemC^LT~37^GT~299 diffeq_f_systemC^LT~37^GT~301 diffeq_f_systemC^LT~37^GT~303 diffeq_f_systemC^LT~37^lOR~240
+1------------------------------- 1
+-1------------------------------ 1
+--1----------------------------- 1
+---1---------------------------- 1
+----1--------------------------- 1
+-----1-------------------------- 1
+------1------------------------- 1
+-------1------------------------ 1
+--------1----------------------- 1
+---------1---------------------- 1
+----------1--------------------- 1
+-----------1-------------------- 1
+------------1------------------- 1
+-------------1------------------ 1
+--------------1----------------- 1
+---------------1---------------- 1
+----------------1--------------- 1
+-----------------1-------------- 1
+------------------1------------- 1
+-------------------1------------ 1
+--------------------1----------- 1
+---------------------1---------- 1
+----------------------1--------- 1
+-----------------------1-------- 1
+------------------------1------- 1
+-------------------------1------ 1
+--------------------------1----- 1
+---------------------------1---- 1
+----------------------------1--- 1
+-----------------------------1-- 1
+------------------------------1- 1
+-------------------------------1 1
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^MIN~46-1[1] diffeq_f_systemC^uport~0_FF diffeq_f_systemC^nMUX~36^MUX_2~431
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~431 diffeq_f_systemC^nMUX~33^MUX_2~335
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~335 diffeq_f_systemC^uport~0_FF re diffeq_f_systemC^clk 3
+
+
+.subckt mult_32_32_64 a[0]=diffeq_f_systemC^dxport~0\
+ a[1]=diffeq_f_systemC^dxport~1 a[2]=diffeq_f_systemC^dxport~2\
+ a[3]=diffeq_f_systemC^dxport~3 a[4]=diffeq_f_systemC^dxport~4\
+ a[5]=diffeq_f_systemC^dxport~5 a[6]=diffeq_f_systemC^dxport~6\
+ a[7]=diffeq_f_systemC^dxport~7 a[8]=diffeq_f_systemC^dxport~8\
+ a[9]=diffeq_f_systemC^dxport~9 a[10]=diffeq_f_systemC^dxport~10\
+ a[11]=diffeq_f_systemC^dxport~11 a[12]=diffeq_f_systemC^dxport~12\
+ a[13]=diffeq_f_systemC^dxport~13 a[14]=diffeq_f_systemC^dxport~14\
+ a[15]=diffeq_f_systemC^dxport~15 a[16]=diffeq_f_systemC^dxport~16\
+ a[17]=diffeq_f_systemC^dxport~17 a[18]=diffeq_f_systemC^dxport~18\
+ a[19]=diffeq_f_systemC^dxport~19 a[20]=diffeq_f_systemC^dxport~20\
+ a[21]=diffeq_f_systemC^dxport~21 a[22]=diffeq_f_systemC^dxport~22\
+ a[23]=diffeq_f_systemC^dxport~23 a[24]=diffeq_f_systemC^dxport~24\
+ a[25]=diffeq_f_systemC^dxport~25 a[26]=diffeq_f_systemC^dxport~26\
+ a[27]=diffeq_f_systemC^dxport~27 a[28]=diffeq_f_systemC^dxport~28\
+ a[29]=diffeq_f_systemC^dxport~29 a[30]=diffeq_f_systemC^dxport~30\
+ a[31]=diffeq_f_systemC^dxport~31 b[0]=diffeq_f_systemC^uport~0_FF\
+ b[1]=diffeq_f_systemC^uport~1_FF b[2]=diffeq_f_systemC^uport~2_FF\
+ b[3]=diffeq_f_systemC^uport~3_FF b[4]=diffeq_f_systemC^uport~4_FF\
+ b[5]=diffeq_f_systemC^uport~5_FF b[6]=diffeq_f_systemC^uport~6_FF\
+ b[7]=diffeq_f_systemC^uport~7_FF b[8]=diffeq_f_systemC^uport~8_FF\
+ b[9]=diffeq_f_systemC^uport~9_FF b[10]=diffeq_f_systemC^uport~10_FF\
+ b[11]=diffeq_f_systemC^uport~11_FF b[12]=diffeq_f_systemC^uport~12_FF\
+ b[13]=diffeq_f_systemC^uport~13_FF b[14]=diffeq_f_systemC^uport~14_FF\
+ b[15]=diffeq_f_systemC^uport~15_FF b[16]=diffeq_f_systemC^uport~16_FF\
+ b[17]=diffeq_f_systemC^uport~17_FF b[18]=diffeq_f_systemC^uport~18_FF\
+ b[19]=diffeq_f_systemC^uport~19_FF b[20]=diffeq_f_systemC^uport~20_FF\
+ b[21]=diffeq_f_systemC^uport~21_FF b[22]=diffeq_f_systemC^uport~22_FF\
+ b[23]=diffeq_f_systemC^uport~23_FF b[24]=diffeq_f_systemC^uport~24_FF\
+ b[25]=diffeq_f_systemC^uport~25_FF b[26]=diffeq_f_systemC^uport~26_FF\
+ b[27]=diffeq_f_systemC^uport~27_FF b[28]=diffeq_f_systemC^uport~28_FF\
+ b[29]=diffeq_f_systemC^uport~29_FF b[30]=diffeq_f_systemC^uport~30_FF\
+ b[31]=diffeq_f_systemC^uport~31_FF out[0]=diffeq_f_systemC^MUL~0[0]\
+ out[1]=diffeq_f_systemC^MUL~0[1] out[2]=diffeq_f_systemC^MUL~0[2]\
+ out[3]=diffeq_f_systemC^MUL~0[3] out[4]=diffeq_f_systemC^MUL~0[4]\
+ out[5]=diffeq_f_systemC^MUL~0[5] out[6]=diffeq_f_systemC^MUL~0[6]\
+ out[7]=diffeq_f_systemC^MUL~0[7] out[8]=diffeq_f_systemC^MUL~0[8]\
+ out[9]=diffeq_f_systemC^MUL~0[9] out[10]=diffeq_f_systemC^MUL~0[10]\
+ out[11]=diffeq_f_systemC^MUL~0[11] out[12]=diffeq_f_systemC^MUL~0[12]\
+ out[13]=diffeq_f_systemC^MUL~0[13] out[14]=diffeq_f_systemC^MUL~0[14]\
+ out[15]=diffeq_f_systemC^MUL~0[15] out[16]=diffeq_f_systemC^MUL~0[16]\
+ out[17]=diffeq_f_systemC^MUL~0[17] out[18]=diffeq_f_systemC^MUL~0[18]\
+ out[19]=diffeq_f_systemC^MUL~0[19] out[20]=diffeq_f_systemC^MUL~0[20]\
+ out[21]=diffeq_f_systemC^MUL~0[21] out[22]=diffeq_f_systemC^MUL~0[22]\
+ out[23]=diffeq_f_systemC^MUL~0[23] out[24]=diffeq_f_systemC^MUL~0[24]\
+ out[25]=diffeq_f_systemC^MUL~0[25] out[26]=diffeq_f_systemC^MUL~0[26]\
+ out[27]=diffeq_f_systemC^MUL~0[27] out[28]=diffeq_f_systemC^MUL~0[28]\
+ out[29]=diffeq_f_systemC^MUL~0[29] out[30]=diffeq_f_systemC^MUL~0[30]\
+ out[31]=diffeq_f_systemC^MUL~0[31] out[32]=diffeq_f_systemC^MUL~0[32]\
+ out[33]=diffeq_f_systemC^MUL~0[33] out[34]=diffeq_f_systemC^MUL~0[34]\
+ out[35]=diffeq_f_systemC^MUL~0[35] out[36]=diffeq_f_systemC^MUL~0[36]\
+ out[37]=diffeq_f_systemC^MUL~0[37] out[38]=diffeq_f_systemC^MUL~0[38]\
+ out[39]=diffeq_f_systemC^MUL~0[39] out[40]=diffeq_f_systemC^MUL~0[40]\
+ out[41]=diffeq_f_systemC^MUL~0[41] out[42]=diffeq_f_systemC^MUL~0[42]\
+ out[43]=diffeq_f_systemC^MUL~0[43] out[44]=diffeq_f_systemC^MUL~0[44]\
+ out[45]=diffeq_f_systemC^MUL~0[45] out[46]=diffeq_f_systemC^MUL~0[46]\
+ out[47]=diffeq_f_systemC^MUL~0[47] out[48]=diffeq_f_systemC^MUL~0[48]\
+ out[49]=diffeq_f_systemC^MUL~0[49] out[50]=diffeq_f_systemC^MUL~0[50]\
+ out[51]=diffeq_f_systemC^MUL~0[51] out[52]=diffeq_f_systemC^MUL~0[52]\
+ out[53]=diffeq_f_systemC^MUL~0[53] out[54]=diffeq_f_systemC^MUL~0[54]\
+ out[55]=diffeq_f_systemC^MUL~0[55] out[56]=diffeq_f_systemC^MUL~0[56]\
+ out[57]=diffeq_f_systemC^MUL~0[57] out[58]=diffeq_f_systemC^MUL~0[58]\
+ out[59]=diffeq_f_systemC^MUL~0[59] out[60]=diffeq_f_systemC^MUL~0[60]\
+ out[61]=diffeq_f_systemC^MUL~0[61] out[62]=diffeq_f_systemC^MUL~0[62]\
+ out[63]=diffeq_f_systemC^MUL~0[63]
+
+
+.subckt adder a[0]=diffeq_f_systemC^yport~0_FF b[0]=diffeq_f_systemC^MUL~0[0]\
+ cin[0]=diffeq_f_systemC^ADD~40-0[0] cout[0]=diffeq_f_systemC^ADD~40-1[0]\
+ sumout[0]=diffeq_f_systemC^ADD~40-1[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^yport~1_FF b[0]=diffeq_f_systemC^MUL~0[1]\
+ cin[0]=diffeq_f_systemC^ADD~40-1[0] cout[0]=diffeq_f_systemC^ADD~40-2[0]\
+ sumout[0]=diffeq_f_systemC^ADD~40-2[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^yport~2_FF b[0]=diffeq_f_systemC^MUL~0[2]\
+ cin[0]=diffeq_f_systemC^ADD~40-2[0] cout[0]=diffeq_f_systemC^ADD~40-3[0]\
+ sumout[0]=diffeq_f_systemC^ADD~40-3[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^yport~3_FF b[0]=diffeq_f_systemC^MUL~0[3]\
+ cin[0]=diffeq_f_systemC^ADD~40-3[0] cout[0]=diffeq_f_systemC^ADD~40-4[0]\
+ sumout[0]=diffeq_f_systemC^ADD~40-4[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^yport~4_FF b[0]=diffeq_f_systemC^MUL~0[4]\
+ cin[0]=diffeq_f_systemC^ADD~40-4[0] cout[0]=diffeq_f_systemC^ADD~40-5[0]\
+ sumout[0]=diffeq_f_systemC^ADD~40-5[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^yport~5_FF b[0]=diffeq_f_systemC^MUL~0[5]\
+ cin[0]=diffeq_f_systemC^ADD~40-5[0] cout[0]=diffeq_f_systemC^ADD~40-6[0]\
+ sumout[0]=diffeq_f_systemC^ADD~40-6[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^yport~6_FF b[0]=diffeq_f_systemC^MUL~0[6]\
+ cin[0]=diffeq_f_systemC^ADD~40-6[0] cout[0]=diffeq_f_systemC^ADD~40-7[0]\
+ sumout[0]=diffeq_f_systemC^ADD~40-7[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^yport~7_FF b[0]=diffeq_f_systemC^MUL~0[7]\
+ cin[0]=diffeq_f_systemC^ADD~40-7[0] cout[0]=diffeq_f_systemC^ADD~40-8[0]\
+ sumout[0]=diffeq_f_systemC^ADD~40-8[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^yport~8_FF b[0]=diffeq_f_systemC^MUL~0[8]\
+ cin[0]=diffeq_f_systemC^ADD~40-8[0] cout[0]=diffeq_f_systemC^ADD~40-9[0]\
+ sumout[0]=diffeq_f_systemC^ADD~40-9[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^yport~9_FF b[0]=diffeq_f_systemC^MUL~0[9]\
+ cin[0]=diffeq_f_systemC^ADD~40-9[0] cout[0]=diffeq_f_systemC^ADD~40-10[0]\
+ sumout[0]=diffeq_f_systemC^ADD~40-10[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^yport~10_FF\
+ b[0]=diffeq_f_systemC^MUL~0[10] cin[0]=diffeq_f_systemC^ADD~40-10[0]\
+ cout[0]=diffeq_f_systemC^ADD~40-11[0] sumout[0]=diffeq_f_systemC^ADD~40-11[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^yport~11_FF\
+ b[0]=diffeq_f_systemC^MUL~0[11] cin[0]=diffeq_f_systemC^ADD~40-11[0]\
+ cout[0]=diffeq_f_systemC^ADD~40-12[0] sumout[0]=diffeq_f_systemC^ADD~40-12[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^yport~12_FF\
+ b[0]=diffeq_f_systemC^MUL~0[12] cin[0]=diffeq_f_systemC^ADD~40-12[0]\
+ cout[0]=diffeq_f_systemC^ADD~40-13[0] sumout[0]=diffeq_f_systemC^ADD~40-13[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^yport~13_FF\
+ b[0]=diffeq_f_systemC^MUL~0[13] cin[0]=diffeq_f_systemC^ADD~40-13[0]\
+ cout[0]=diffeq_f_systemC^ADD~40-14[0] sumout[0]=diffeq_f_systemC^ADD~40-14[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^yport~14_FF\
+ b[0]=diffeq_f_systemC^MUL~0[14] cin[0]=diffeq_f_systemC^ADD~40-14[0]\
+ cout[0]=diffeq_f_systemC^ADD~40-15[0] sumout[0]=diffeq_f_systemC^ADD~40-15[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^yport~15_FF\
+ b[0]=diffeq_f_systemC^MUL~0[15] cin[0]=diffeq_f_systemC^ADD~40-15[0]\
+ cout[0]=diffeq_f_systemC^ADD~40-16[0] sumout[0]=diffeq_f_systemC^ADD~40-16[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^yport~16_FF\
+ b[0]=diffeq_f_systemC^MUL~0[16] cin[0]=diffeq_f_systemC^ADD~40-16[0]\
+ cout[0]=diffeq_f_systemC^ADD~40-17[0] sumout[0]=diffeq_f_systemC^ADD~40-17[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^yport~17_FF\
+ b[0]=diffeq_f_systemC^MUL~0[17] cin[0]=diffeq_f_systemC^ADD~40-17[0]\
+ cout[0]=diffeq_f_systemC^ADD~40-18[0] sumout[0]=diffeq_f_systemC^ADD~40-18[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^yport~18_FF\
+ b[0]=diffeq_f_systemC^MUL~0[18] cin[0]=diffeq_f_systemC^ADD~40-18[0]\
+ cout[0]=diffeq_f_systemC^ADD~40-19[0] sumout[0]=diffeq_f_systemC^ADD~40-19[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^yport~19_FF\
+ b[0]=diffeq_f_systemC^MUL~0[19] cin[0]=diffeq_f_systemC^ADD~40-19[0]\
+ cout[0]=diffeq_f_systemC^ADD~40-20[0] sumout[0]=diffeq_f_systemC^ADD~40-20[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^yport~20_FF\
+ b[0]=diffeq_f_systemC^MUL~0[20] cin[0]=diffeq_f_systemC^ADD~40-20[0]\
+ cout[0]=diffeq_f_systemC^ADD~40-21[0] sumout[0]=diffeq_f_systemC^ADD~40-21[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^yport~21_FF\
+ b[0]=diffeq_f_systemC^MUL~0[21] cin[0]=diffeq_f_systemC^ADD~40-21[0]\
+ cout[0]=diffeq_f_systemC^ADD~40-22[0] sumout[0]=diffeq_f_systemC^ADD~40-22[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^yport~22_FF\
+ b[0]=diffeq_f_systemC^MUL~0[22] cin[0]=diffeq_f_systemC^ADD~40-22[0]\
+ cout[0]=diffeq_f_systemC^ADD~40-23[0] sumout[0]=diffeq_f_systemC^ADD~40-23[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^yport~23_FF\
+ b[0]=diffeq_f_systemC^MUL~0[23] cin[0]=diffeq_f_systemC^ADD~40-23[0]\
+ cout[0]=diffeq_f_systemC^ADD~40-24[0] sumout[0]=diffeq_f_systemC^ADD~40-24[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^yport~24_FF\
+ b[0]=diffeq_f_systemC^MUL~0[24] cin[0]=diffeq_f_systemC^ADD~40-24[0]\
+ cout[0]=diffeq_f_systemC^ADD~40-25[0] sumout[0]=diffeq_f_systemC^ADD~40-25[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^yport~25_FF\
+ b[0]=diffeq_f_systemC^MUL~0[25] cin[0]=diffeq_f_systemC^ADD~40-25[0]\
+ cout[0]=diffeq_f_systemC^ADD~40-26[0] sumout[0]=diffeq_f_systemC^ADD~40-26[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^yport~26_FF\
+ b[0]=diffeq_f_systemC^MUL~0[26] cin[0]=diffeq_f_systemC^ADD~40-26[0]\
+ cout[0]=diffeq_f_systemC^ADD~40-27[0] sumout[0]=diffeq_f_systemC^ADD~40-27[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^yport~27_FF\
+ b[0]=diffeq_f_systemC^MUL~0[27] cin[0]=diffeq_f_systemC^ADD~40-27[0]\
+ cout[0]=diffeq_f_systemC^ADD~40-28[0] sumout[0]=diffeq_f_systemC^ADD~40-28[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^yport~28_FF\
+ b[0]=diffeq_f_systemC^MUL~0[28] cin[0]=diffeq_f_systemC^ADD~40-28[0]\
+ cout[0]=diffeq_f_systemC^ADD~40-29[0] sumout[0]=diffeq_f_systemC^ADD~40-29[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^yport~29_FF\
+ b[0]=diffeq_f_systemC^MUL~0[29] cin[0]=diffeq_f_systemC^ADD~40-29[0]\
+ cout[0]=diffeq_f_systemC^ADD~40-30[0] sumout[0]=diffeq_f_systemC^ADD~40-30[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^yport~30_FF\
+ b[0]=diffeq_f_systemC^MUL~0[30] cin[0]=diffeq_f_systemC^ADD~40-30[0]\
+ cout[0]=diffeq_f_systemC^ADD~40-31[0] sumout[0]=diffeq_f_systemC^ADD~40-31[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^yport~31_FF\
+ b[0]=diffeq_f_systemC^MUL~0[31] cin[0]=diffeq_f_systemC^ADD~40-31[0]\
+ cout[0]=diffeq_f_systemC^ADD~40-32[0] sumout[0]=diffeq_f_systemC^ADD~40-32[1]
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~40-32[1] diffeq_f_systemC^yport~31_FF diffeq_f_systemC^nMUX~36^MUX_2~520
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~520 diffeq_f_systemC^nMUX~33^MUX_2~424
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~424 diffeq_f_systemC^yport~31_FF re diffeq_f_systemC^clk 3
+
+
+.subckt mult_32_32_64 a[0]=diffeq_f_systemC^yport~0_FF\
+ a[1]=diffeq_f_systemC^yport~1_FF a[2]=diffeq_f_systemC^yport~2_FF\
+ a[3]=diffeq_f_systemC^yport~3_FF a[4]=diffeq_f_systemC^yport~4_FF\
+ a[5]=diffeq_f_systemC^yport~5_FF a[6]=diffeq_f_systemC^yport~6_FF\
+ a[7]=diffeq_f_systemC^yport~7_FF a[8]=diffeq_f_systemC^yport~8_FF\
+ a[9]=diffeq_f_systemC^yport~9_FF a[10]=diffeq_f_systemC^yport~10_FF\
+ a[11]=diffeq_f_systemC^yport~11_FF a[12]=diffeq_f_systemC^yport~12_FF\
+ a[13]=diffeq_f_systemC^yport~13_FF a[14]=diffeq_f_systemC^yport~14_FF\
+ a[15]=diffeq_f_systemC^yport~15_FF a[16]=diffeq_f_systemC^yport~16_FF\
+ a[17]=diffeq_f_systemC^yport~17_FF a[18]=diffeq_f_systemC^yport~18_FF\
+ a[19]=diffeq_f_systemC^yport~19_FF a[20]=diffeq_f_systemC^yport~20_FF\
+ a[21]=diffeq_f_systemC^yport~21_FF a[22]=diffeq_f_systemC^yport~22_FF\
+ a[23]=diffeq_f_systemC^yport~23_FF a[24]=diffeq_f_systemC^yport~24_FF\
+ a[25]=diffeq_f_systemC^yport~25_FF a[26]=diffeq_f_systemC^yport~26_FF\
+ a[27]=diffeq_f_systemC^yport~27_FF a[28]=diffeq_f_systemC^yport~28_FF\
+ a[29]=diffeq_f_systemC^yport~29_FF a[30]=diffeq_f_systemC^yport~30_FF\
+ a[31]=diffeq_f_systemC^yport~31_FF b[0]=vcc b[1]=vcc b[2]=gnd b[3]=gnd\
+ b[4]=gnd b[5]=gnd b[6]=gnd b[7]=gnd b[8]=gnd b[9]=gnd b[10]=gnd b[11]=gnd\
+ b[12]=gnd b[13]=gnd b[14]=gnd b[15]=gnd b[16]=gnd b[17]=gnd b[18]=gnd\
+ b[19]=gnd b[20]=gnd b[21]=gnd b[22]=gnd b[23]=gnd b[24]=gnd b[25]=gnd\
+ b[26]=gnd b[27]=gnd b[28]=gnd b[29]=gnd b[30]=gnd b[31]=gnd\
+ out[0]=diffeq_f_systemC^MUL~44[0] out[1]=diffeq_f_systemC^MUL~44[1]\
+ out[2]=diffeq_f_systemC^MUL~44[2] out[3]=diffeq_f_systemC^MUL~44[3]\
+ out[4]=diffeq_f_systemC^MUL~44[4] out[5]=diffeq_f_systemC^MUL~44[5]\
+ out[6]=diffeq_f_systemC^MUL~44[6] out[7]=diffeq_f_systemC^MUL~44[7]\
+ out[8]=diffeq_f_systemC^MUL~44[8] out[9]=diffeq_f_systemC^MUL~44[9]\
+ out[10]=diffeq_f_systemC^MUL~44[10] out[11]=diffeq_f_systemC^MUL~44[11]\
+ out[12]=diffeq_f_systemC^MUL~44[12] out[13]=diffeq_f_systemC^MUL~44[13]\
+ out[14]=diffeq_f_systemC^MUL~44[14] out[15]=diffeq_f_systemC^MUL~44[15]\
+ out[16]=diffeq_f_systemC^MUL~44[16] out[17]=diffeq_f_systemC^MUL~44[17]\
+ out[18]=diffeq_f_systemC^MUL~44[18] out[19]=diffeq_f_systemC^MUL~44[19]\
+ out[20]=diffeq_f_systemC^MUL~44[20] out[21]=diffeq_f_systemC^MUL~44[21]\
+ out[22]=diffeq_f_systemC^MUL~44[22] out[23]=diffeq_f_systemC^MUL~44[23]\
+ out[24]=diffeq_f_systemC^MUL~44[24] out[25]=diffeq_f_systemC^MUL~44[25]\
+ out[26]=diffeq_f_systemC^MUL~44[26] out[27]=diffeq_f_systemC^MUL~44[27]\
+ out[28]=diffeq_f_systemC^MUL~44[28] out[29]=diffeq_f_systemC^MUL~44[29]\
+ out[30]=diffeq_f_systemC^MUL~44[30] out[31]=diffeq_f_systemC^MUL~44[31]\
+ out[32]=diffeq_f_systemC^MUL~44[32] out[33]=diffeq_f_systemC^MUL~44[33]\
+ out[34]=diffeq_f_systemC^MUL~44[34] out[35]=diffeq_f_systemC^MUL~44[35]\
+ out[36]=diffeq_f_systemC^MUL~44[36] out[37]=diffeq_f_systemC^MUL~44[37]\
+ out[38]=diffeq_f_systemC^MUL~44[38] out[39]=diffeq_f_systemC^MUL~44[39]\
+ out[40]=diffeq_f_systemC^MUL~44[40] out[41]=diffeq_f_systemC^MUL~44[41]\
+ out[42]=diffeq_f_systemC^MUL~44[42] out[43]=diffeq_f_systemC^MUL~44[43]\
+ out[44]=diffeq_f_systemC^MUL~44[44] out[45]=diffeq_f_systemC^MUL~44[45]\
+ out[46]=diffeq_f_systemC^MUL~44[46] out[47]=diffeq_f_systemC^MUL~44[47]\
+ out[48]=diffeq_f_systemC^MUL~44[48] out[49]=diffeq_f_systemC^MUL~44[49]\
+ out[50]=diffeq_f_systemC^MUL~44[50] out[51]=diffeq_f_systemC^MUL~44[51]\
+ out[52]=diffeq_f_systemC^MUL~44[52] out[53]=diffeq_f_systemC^MUL~44[53]\
+ out[54]=diffeq_f_systemC^MUL~44[54] out[55]=diffeq_f_systemC^MUL~44[55]\
+ out[56]=diffeq_f_systemC^MUL~44[56] out[57]=diffeq_f_systemC^MUL~44[57]\
+ out[58]=diffeq_f_systemC^MUL~44[58] out[59]=diffeq_f_systemC^MUL~44[59]\
+ out[60]=diffeq_f_systemC^MUL~44[60] out[61]=diffeq_f_systemC^MUL~44[61]\
+ out[62]=diffeq_f_systemC^MUL~44[62] out[63]=diffeq_f_systemC^MUL~44[63]
+
+
+.subckt mult_32_28_60 a[0]=diffeq_f_systemC^dxport~0\
+ a[1]=diffeq_f_systemC^dxport~1 a[2]=diffeq_f_systemC^dxport~2\
+ a[3]=diffeq_f_systemC^dxport~3 a[4]=diffeq_f_systemC^dxport~4\
+ a[5]=diffeq_f_systemC^dxport~5 a[6]=diffeq_f_systemC^dxport~6\
+ a[7]=diffeq_f_systemC^dxport~7 a[8]=diffeq_f_systemC^dxport~8\
+ a[9]=diffeq_f_systemC^dxport~9 a[10]=diffeq_f_systemC^dxport~10\
+ a[11]=diffeq_f_systemC^dxport~11 a[12]=diffeq_f_systemC^dxport~12\
+ a[13]=diffeq_f_systemC^dxport~13 a[14]=diffeq_f_systemC^dxport~14\
+ a[15]=diffeq_f_systemC^dxport~15 a[16]=diffeq_f_systemC^dxport~16\
+ a[17]=diffeq_f_systemC^dxport~17 a[18]=diffeq_f_systemC^dxport~18\
+ a[19]=diffeq_f_systemC^dxport~19 a[20]=diffeq_f_systemC^dxport~20\
+ a[21]=diffeq_f_systemC^dxport~21 a[22]=diffeq_f_systemC^dxport~22\
+ a[23]=diffeq_f_systemC^dxport~23 a[24]=diffeq_f_systemC^dxport~24\
+ a[25]=diffeq_f_systemC^dxport~25 a[26]=diffeq_f_systemC^dxport~26\
+ a[27]=diffeq_f_systemC^dxport~27 a[28]=diffeq_f_systemC^dxport~28\
+ a[29]=diffeq_f_systemC^dxport~29 a[30]=diffeq_f_systemC^dxport~30\
+ a[31]=diffeq_f_systemC^dxport~31 b[0]=diffeq_f_systemC^MUL~44[0]\
+ b[1]=diffeq_f_systemC^MUL~44[1] b[2]=diffeq_f_systemC^MUL~44[2]\
+ b[3]=diffeq_f_systemC^MUL~44[3] b[4]=diffeq_f_systemC^MUL~44[4]\
+ b[5]=diffeq_f_systemC^MUL~44[5] b[6]=diffeq_f_systemC^MUL~44[6]\
+ b[7]=diffeq_f_systemC^MUL~44[7] b[8]=diffeq_f_systemC^MUL~44[8]\
+ b[9]=diffeq_f_systemC^MUL~44[9] b[10]=diffeq_f_systemC^MUL~44[10]\
+ b[11]=diffeq_f_systemC^MUL~44[11] b[12]=diffeq_f_systemC^MUL~44[12]\
+ b[13]=diffeq_f_systemC^MUL~44[13] b[14]=diffeq_f_systemC^MUL~44[14]\
+ b[15]=diffeq_f_systemC^MUL~44[15] b[16]=diffeq_f_systemC^MUL~44[16]\
+ b[17]=diffeq_f_systemC^MUL~44[17] b[18]=diffeq_f_systemC^MUL~44[18]\
+ b[19]=diffeq_f_systemC^MUL~44[19] b[20]=diffeq_f_systemC^MUL~44[20]\
+ b[21]=diffeq_f_systemC^MUL~44[21] b[22]=diffeq_f_systemC^MUL~44[22]\
+ b[23]=diffeq_f_systemC^MUL~44[23] b[24]=diffeq_f_systemC^MUL~44[24]\
+ b[25]=diffeq_f_systemC^MUL~44[25] b[26]=diffeq_f_systemC^MUL~44[26]\
+ b[27]=diffeq_f_systemC^MUL~44[27] out[0]=diffeq_f_systemC^MUL~45-0[0]\
+ out[1]=diffeq_f_systemC^MUL~45-0[1] out[2]=diffeq_f_systemC^MUL~45-0[2]\
+ out[3]=diffeq_f_systemC^MUL~45-0[3] out[4]=diffeq_f_systemC^MUL~45-0[4]\
+ out[5]=diffeq_f_systemC^MUL~45-0[5] out[6]=diffeq_f_systemC^MUL~45-0[6]\
+ out[7]=diffeq_f_systemC^MUL~45-0[7] out[8]=diffeq_f_systemC^MUL~45-0[8]\
+ out[9]=diffeq_f_systemC^MUL~45-0[9] out[10]=diffeq_f_systemC^MUL~45-0[10]\
+ out[11]=diffeq_f_systemC^MUL~45-0[11] out[12]=diffeq_f_systemC^MUL~45-0[12]\
+ out[13]=diffeq_f_systemC^MUL~45-0[13] out[14]=diffeq_f_systemC^MUL~45-0[14]\
+ out[15]=diffeq_f_systemC^MUL~45-0[15] out[16]=diffeq_f_systemC^MUL~45-0[16]\
+ out[17]=diffeq_f_systemC^MUL~45-0[17] out[18]=diffeq_f_systemC^MUL~45-0[18]\
+ out[19]=diffeq_f_systemC^MUL~45-0[19] out[20]=diffeq_f_systemC^MUL~45-0[20]\
+ out[21]=diffeq_f_systemC^MUL~45-0[21] out[22]=diffeq_f_systemC^MUL~45-0[22]\
+ out[23]=diffeq_f_systemC^MUL~45-0[23] out[24]=diffeq_f_systemC^MUL~45-0[24]\
+ out[25]=diffeq_f_systemC^MUL~45-0[25] out[26]=diffeq_f_systemC^MUL~45-0[26]\
+ out[27]=diffeq_f_systemC^MUL~45-0[27] out[28]=diffeq_f_systemC^MUL~45-0[28]\
+ out[29]=diffeq_f_systemC^MUL~45-0[29] out[30]=diffeq_f_systemC^MUL~45-0[30]\
+ out[31]=diffeq_f_systemC^MUL~45-0[31] out[32]=diffeq_f_systemC^MUL~45-0[32]\
+ out[33]=diffeq_f_systemC^MUL~45-0[33] out[34]=diffeq_f_systemC^MUL~45-0[34]\
+ out[35]=diffeq_f_systemC^MUL~45-0[35] out[36]=diffeq_f_systemC^MUL~45-0[36]\
+ out[37]=diffeq_f_systemC^MUL~45-0[37] out[38]=diffeq_f_systemC^MUL~45-0[38]\
+ out[39]=diffeq_f_systemC^MUL~45-0[39] out[40]=diffeq_f_systemC^MUL~45-0[40]\
+ out[41]=diffeq_f_systemC^MUL~45-0[41] out[42]=diffeq_f_systemC^MUL~45-0[42]\
+ out[43]=diffeq_f_systemC^MUL~45-0[43] out[44]=diffeq_f_systemC^MUL~45-0[44]\
+ out[45]=diffeq_f_systemC^MUL~45-0[45] out[46]=diffeq_f_systemC^MUL~45-0[46]\
+ out[47]=diffeq_f_systemC^MUL~45-0[47] out[48]=diffeq_f_systemC^MUL~45-0[48]\
+ out[49]=diffeq_f_systemC^MUL~45-0[49] out[50]=diffeq_f_systemC^MUL~45-0[50]\
+ out[51]=diffeq_f_systemC^MUL~45-0[51] out[52]=diffeq_f_systemC^MUL~45-0[52]\
+ out[53]=diffeq_f_systemC^MUL~45-0[53] out[54]=diffeq_f_systemC^MUL~45-0[54]\
+ out[55]=diffeq_f_systemC^MUL~45-0[55] out[56]=diffeq_f_systemC^MUL~45-0[56]\
+ out[57]=diffeq_f_systemC^MUL~45-0[57] out[58]=diffeq_f_systemC^MUL~45-0[58]\
+ out[59]=diffeq_f_systemC^MUL~45-0[59]
+
+.names diffeq_f_systemC^MUL~45-0[0] lNOT~47
+0 1
+
+
+.subckt adder a[0]=diffeq_f_systemC^MIN~43-1[1] b[0]=lNOT~47\
+ cin[0]=diffeq_f_systemC^MIN~46-0[0] cout[0]=diffeq_f_systemC^MIN~46-1[0]\
+ sumout[0]=diffeq_f_systemC^MIN~46-1[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^MIN~43-2[1] b[0]=lNOT~48\
+ cin[0]=diffeq_f_systemC^MIN~46-1[0] cout[0]=diffeq_f_systemC^MIN~46-2[0]\
+ sumout[0]=diffeq_f_systemC^MIN~46-2[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^MIN~43-3[1] b[0]=lNOT~49\
+ cin[0]=diffeq_f_systemC^MIN~46-2[0] cout[0]=diffeq_f_systemC^MIN~46-3[0]\
+ sumout[0]=diffeq_f_systemC^MIN~46-3[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^MIN~43-4[1] b[0]=lNOT~50\
+ cin[0]=diffeq_f_systemC^MIN~46-3[0] cout[0]=diffeq_f_systemC^MIN~46-4[0]\
+ sumout[0]=diffeq_f_systemC^MIN~46-4[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^MIN~43-5[1] b[0]=lNOT~51\
+ cin[0]=diffeq_f_systemC^MIN~46-4[0] cout[0]=diffeq_f_systemC^MIN~46-5[0]\
+ sumout[0]=diffeq_f_systemC^MIN~46-5[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^MIN~43-6[1] b[0]=lNOT~52\
+ cin[0]=diffeq_f_systemC^MIN~46-5[0] cout[0]=diffeq_f_systemC^MIN~46-6[0]\
+ sumout[0]=diffeq_f_systemC^MIN~46-6[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^MIN~43-7[1] b[0]=lNOT~53\
+ cin[0]=diffeq_f_systemC^MIN~46-6[0] cout[0]=diffeq_f_systemC^MIN~46-7[0]\
+ sumout[0]=diffeq_f_systemC^MIN~46-7[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^MIN~43-8[1] b[0]=lNOT~54\
+ cin[0]=diffeq_f_systemC^MIN~46-7[0] cout[0]=diffeq_f_systemC^MIN~46-8[0]\
+ sumout[0]=diffeq_f_systemC^MIN~46-8[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^MIN~43-9[1] b[0]=lNOT~55\
+ cin[0]=diffeq_f_systemC^MIN~46-8[0] cout[0]=diffeq_f_systemC^MIN~46-9[0]\
+ sumout[0]=diffeq_f_systemC^MIN~46-9[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^MIN~43-10[1] b[0]=lNOT~56\
+ cin[0]=diffeq_f_systemC^MIN~46-9[0] cout[0]=diffeq_f_systemC^MIN~46-10[0]\
+ sumout[0]=diffeq_f_systemC^MIN~46-10[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^MIN~43-11[1] b[0]=lNOT~57\
+ cin[0]=diffeq_f_systemC^MIN~46-10[0] cout[0]=diffeq_f_systemC^MIN~46-11[0]\
+ sumout[0]=diffeq_f_systemC^MIN~46-11[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^MIN~43-12[1] b[0]=lNOT~58\
+ cin[0]=diffeq_f_systemC^MIN~46-11[0] cout[0]=diffeq_f_systemC^MIN~46-12[0]\
+ sumout[0]=diffeq_f_systemC^MIN~46-12[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^MIN~43-13[1] b[0]=lNOT~59\
+ cin[0]=diffeq_f_systemC^MIN~46-12[0] cout[0]=diffeq_f_systemC^MIN~46-13[0]\
+ sumout[0]=diffeq_f_systemC^MIN~46-13[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^MIN~43-14[1] b[0]=lNOT~60\
+ cin[0]=diffeq_f_systemC^MIN~46-13[0] cout[0]=diffeq_f_systemC^MIN~46-14[0]\
+ sumout[0]=diffeq_f_systemC^MIN~46-14[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^MIN~43-15[1] b[0]=lNOT~61\
+ cin[0]=diffeq_f_systemC^MIN~46-14[0] cout[0]=diffeq_f_systemC^MIN~46-15[0]\
+ sumout[0]=diffeq_f_systemC^MIN~46-15[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^MIN~43-16[1] b[0]=lNOT~62\
+ cin[0]=diffeq_f_systemC^MIN~46-15[0] cout[0]=diffeq_f_systemC^MIN~46-16[0]\
+ sumout[0]=diffeq_f_systemC^MIN~46-16[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^MIN~43-17[1] b[0]=lNOT~63\
+ cin[0]=diffeq_f_systemC^MIN~46-16[0] cout[0]=diffeq_f_systemC^MIN~46-17[0]\
+ sumout[0]=diffeq_f_systemC^MIN~46-17[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^MIN~43-18[1] b[0]=lNOT~64\
+ cin[0]=diffeq_f_systemC^MIN~46-17[0] cout[0]=diffeq_f_systemC^MIN~46-18[0]\
+ sumout[0]=diffeq_f_systemC^MIN~46-18[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^MIN~43-19[1] b[0]=lNOT~65\
+ cin[0]=diffeq_f_systemC^MIN~46-18[0] cout[0]=diffeq_f_systemC^MIN~46-19[0]\
+ sumout[0]=diffeq_f_systemC^MIN~46-19[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^MIN~43-20[1] b[0]=lNOT~66\
+ cin[0]=diffeq_f_systemC^MIN~46-19[0] cout[0]=diffeq_f_systemC^MIN~46-20[0]\
+ sumout[0]=diffeq_f_systemC^MIN~46-20[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^MIN~43-21[1] b[0]=lNOT~67\
+ cin[0]=diffeq_f_systemC^MIN~46-20[0] cout[0]=diffeq_f_systemC^MIN~46-21[0]\
+ sumout[0]=diffeq_f_systemC^MIN~46-21[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^MIN~43-22[1] b[0]=lNOT~68\
+ cin[0]=diffeq_f_systemC^MIN~46-21[0] cout[0]=diffeq_f_systemC^MIN~46-22[0]\
+ sumout[0]=diffeq_f_systemC^MIN~46-22[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^MIN~43-23[1] b[0]=lNOT~69\
+ cin[0]=diffeq_f_systemC^MIN~46-22[0] cout[0]=diffeq_f_systemC^MIN~46-23[0]\
+ sumout[0]=diffeq_f_systemC^MIN~46-23[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^MIN~43-24[1] b[0]=lNOT~70\
+ cin[0]=diffeq_f_systemC^MIN~46-23[0] cout[0]=diffeq_f_systemC^MIN~46-24[0]\
+ sumout[0]=diffeq_f_systemC^MIN~46-24[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^MIN~43-25[1] b[0]=lNOT~71\
+ cin[0]=diffeq_f_systemC^MIN~46-24[0] cout[0]=diffeq_f_systemC^MIN~46-25[0]\
+ sumout[0]=diffeq_f_systemC^MIN~46-25[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^MIN~43-26[1] b[0]=lNOT~72\
+ cin[0]=diffeq_f_systemC^MIN~46-25[0] cout[0]=diffeq_f_systemC^MIN~46-26[0]\
+ sumout[0]=diffeq_f_systemC^MIN~46-26[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^MIN~43-27[1] b[0]=lNOT~73\
+ cin[0]=diffeq_f_systemC^MIN~46-26[0] cout[0]=diffeq_f_systemC^MIN~46-27[0]\
+ sumout[0]=diffeq_f_systemC^MIN~46-27[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^MIN~43-28[1] b[0]=lNOT~74\
+ cin[0]=diffeq_f_systemC^MIN~46-27[0] cout[0]=diffeq_f_systemC^MIN~46-28[0]\
+ sumout[0]=diffeq_f_systemC^MIN~46-28[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^MIN~43-29[1] b[0]=lNOT~75\
+ cin[0]=diffeq_f_systemC^MIN~46-28[0] cout[0]=diffeq_f_systemC^MIN~46-29[0]\
+ sumout[0]=diffeq_f_systemC^MIN~46-29[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^MIN~43-30[1] b[0]=lNOT~76\
+ cin[0]=diffeq_f_systemC^MIN~46-29[0] cout[0]=diffeq_f_systemC^MIN~46-30[0]\
+ sumout[0]=diffeq_f_systemC^MIN~46-30[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^MIN~43-31[1] b[0]=lNOT~77\
+ cin[0]=diffeq_f_systemC^MIN~46-30[0] cout[0]=diffeq_f_systemC^MIN~46-31[0]\
+ sumout[0]=diffeq_f_systemC^MIN~46-31[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^MIN~43-32[1] b[0]=lNOT~78\
+ cin[0]=diffeq_f_systemC^MIN~46-31[0] cout[0]=diffeq_f_systemC^MIN~46-32[0]\
+ sumout[0]=diffeq_f_systemC^MIN~46-32[1]
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^MIN~46-32[1] diffeq_f_systemC^uport~31_FF diffeq_f_systemC^nMUX~36^MUX_2~456
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~456 diffeq_f_systemC^nMUX~33^MUX_2~360
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~360 diffeq_f_systemC^uport~31_FF re diffeq_f_systemC^clk 3
+
+
+.subckt adder a[0]=diffeq_f_systemC^uport~31_FF b[0]=lNOT~174\
+ cin[0]=diffeq_f_systemC^MIN~43-31[0] cout[0]=diffeq_f_systemC^MIN~43-32[0]\
+ sumout[0]=diffeq_f_systemC^MIN~43-32[1]
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^MIN~46-31[1] diffeq_f_systemC^uport~30_FF diffeq_f_systemC^nMUX~36^MUX_2~455
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~455 diffeq_f_systemC^nMUX~33^MUX_2~359
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~359 diffeq_f_systemC^uport~30_FF re diffeq_f_systemC^clk 3
+
+
+.subckt adder a[0]=diffeq_f_systemC^uport~30_FF b[0]=lNOT~173\
+ cin[0]=diffeq_f_systemC^MIN~43-30[0] cout[0]=diffeq_f_systemC^MIN~43-31[0]\
+ sumout[0]=diffeq_f_systemC^MIN~43-31[1]
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^MIN~46-30[1] diffeq_f_systemC^uport~29_FF diffeq_f_systemC^nMUX~36^MUX_2~453
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~453 diffeq_f_systemC^nMUX~33^MUX_2~357
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~357 diffeq_f_systemC^uport~29_FF re diffeq_f_systemC^clk 3
+
+
+.subckt adder a[0]=diffeq_f_systemC^uport~29_FF b[0]=lNOT~172\
+ cin[0]=diffeq_f_systemC^MIN~43-29[0] cout[0]=diffeq_f_systemC^MIN~43-30[0]\
+ sumout[0]=diffeq_f_systemC^MIN~43-30[1]
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^MIN~46-29[1] diffeq_f_systemC^uport~28_FF diffeq_f_systemC^nMUX~36^MUX_2~452
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~452 diffeq_f_systemC^nMUX~33^MUX_2~356
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~356 diffeq_f_systemC^uport~28_FF re diffeq_f_systemC^clk 3
+
+
+.subckt adder a[0]=diffeq_f_systemC^uport~28_FF b[0]=lNOT~171\
+ cin[0]=diffeq_f_systemC^MIN~43-28[0] cout[0]=diffeq_f_systemC^MIN~43-29[0]\
+ sumout[0]=diffeq_f_systemC^MIN~43-29[1]
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^MIN~46-28[1] diffeq_f_systemC^uport~27_FF diffeq_f_systemC^nMUX~36^MUX_2~451
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~451 diffeq_f_systemC^nMUX~33^MUX_2~355
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~355 diffeq_f_systemC^uport~27_FF re diffeq_f_systemC^clk 3
+
+
+.subckt adder a[0]=diffeq_f_systemC^uport~27_FF b[0]=lNOT~170\
+ cin[0]=diffeq_f_systemC^MIN~43-27[0] cout[0]=diffeq_f_systemC^MIN~43-28[0]\
+ sumout[0]=diffeq_f_systemC^MIN~43-28[1]
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^MIN~46-27[1] diffeq_f_systemC^uport~26_FF diffeq_f_systemC^nMUX~36^MUX_2~450
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~450 diffeq_f_systemC^nMUX~33^MUX_2~354
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~354 diffeq_f_systemC^uport~26_FF re diffeq_f_systemC^clk 3
+
+
+.subckt adder a[0]=diffeq_f_systemC^uport~26_FF b[0]=lNOT~169\
+ cin[0]=diffeq_f_systemC^MIN~43-26[0] cout[0]=diffeq_f_systemC^MIN~43-27[0]\
+ sumout[0]=diffeq_f_systemC^MIN~43-27[1]
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^MIN~46-26[1] diffeq_f_systemC^uport~25_FF diffeq_f_systemC^nMUX~36^MUX_2~449
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~449 diffeq_f_systemC^nMUX~33^MUX_2~353
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~353 diffeq_f_systemC^uport~25_FF re diffeq_f_systemC^clk 3
+
+
+.subckt adder a[0]=diffeq_f_systemC^uport~25_FF b[0]=lNOT~168\
+ cin[0]=diffeq_f_systemC^MIN~43-25[0] cout[0]=diffeq_f_systemC^MIN~43-26[0]\
+ sumout[0]=diffeq_f_systemC^MIN~43-26[1]
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^MIN~46-25[1] diffeq_f_systemC^uport~24_FF diffeq_f_systemC^nMUX~36^MUX_2~448
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~448 diffeq_f_systemC^nMUX~33^MUX_2~352
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~352 diffeq_f_systemC^uport~24_FF re diffeq_f_systemC^clk 3
+
+
+.subckt adder a[0]=diffeq_f_systemC^uport~24_FF b[0]=lNOT~167\
+ cin[0]=diffeq_f_systemC^MIN~43-24[0] cout[0]=diffeq_f_systemC^MIN~43-25[0]\
+ sumout[0]=diffeq_f_systemC^MIN~43-25[1]
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^MIN~46-24[1] diffeq_f_systemC^uport~23_FF diffeq_f_systemC^nMUX~36^MUX_2~447
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~447 diffeq_f_systemC^nMUX~33^MUX_2~351
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~351 diffeq_f_systemC^uport~23_FF re diffeq_f_systemC^clk 3
+
+
+.subckt adder a[0]=diffeq_f_systemC^uport~23_FF b[0]=lNOT~166\
+ cin[0]=diffeq_f_systemC^MIN~43-23[0] cout[0]=diffeq_f_systemC^MIN~43-24[0]\
+ sumout[0]=diffeq_f_systemC^MIN~43-24[1]
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^MIN~46-23[1] diffeq_f_systemC^uport~22_FF diffeq_f_systemC^nMUX~36^MUX_2~446
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~446 diffeq_f_systemC^nMUX~33^MUX_2~350
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~350 diffeq_f_systemC^uport~22_FF re diffeq_f_systemC^clk 3
+
+
+.subckt adder a[0]=diffeq_f_systemC^uport~22_FF b[0]=lNOT~165\
+ cin[0]=diffeq_f_systemC^MIN~43-22[0] cout[0]=diffeq_f_systemC^MIN~43-23[0]\
+ sumout[0]=diffeq_f_systemC^MIN~43-23[1]
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^MIN~46-22[1] diffeq_f_systemC^uport~21_FF diffeq_f_systemC^nMUX~36^MUX_2~445
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~445 diffeq_f_systemC^nMUX~33^MUX_2~349
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~349 diffeq_f_systemC^uport~21_FF re diffeq_f_systemC^clk 3
+
+
+.subckt adder a[0]=diffeq_f_systemC^uport~21_FF b[0]=lNOT~164\
+ cin[0]=diffeq_f_systemC^MIN~43-21[0] cout[0]=diffeq_f_systemC^MIN~43-22[0]\
+ sumout[0]=diffeq_f_systemC^MIN~43-22[1]
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^MIN~46-21[1] diffeq_f_systemC^uport~20_FF diffeq_f_systemC^nMUX~36^MUX_2~444
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~444 diffeq_f_systemC^nMUX~33^MUX_2~348
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~348 diffeq_f_systemC^uport~20_FF re diffeq_f_systemC^clk 3
+
+
+.subckt adder a[0]=diffeq_f_systemC^uport~20_FF b[0]=lNOT~163\
+ cin[0]=diffeq_f_systemC^MIN~43-20[0] cout[0]=diffeq_f_systemC^MIN~43-21[0]\
+ sumout[0]=diffeq_f_systemC^MIN~43-21[1]
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^MIN~46-20[1] diffeq_f_systemC^uport~19_FF diffeq_f_systemC^nMUX~36^MUX_2~442
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~442 diffeq_f_systemC^nMUX~33^MUX_2~346
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~346 diffeq_f_systemC^uport~19_FF re diffeq_f_systemC^clk 3
+
+
+.subckt adder a[0]=diffeq_f_systemC^uport~19_FF b[0]=lNOT~162\
+ cin[0]=diffeq_f_systemC^MIN~43-19[0] cout[0]=diffeq_f_systemC^MIN~43-20[0]\
+ sumout[0]=diffeq_f_systemC^MIN~43-20[1]
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^MIN~46-19[1] diffeq_f_systemC^uport~18_FF diffeq_f_systemC^nMUX~36^MUX_2~441
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~441 diffeq_f_systemC^nMUX~33^MUX_2~345
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~345 diffeq_f_systemC^uport~18_FF re diffeq_f_systemC^clk 3
+
+
+.subckt adder a[0]=diffeq_f_systemC^uport~18_FF b[0]=lNOT~161\
+ cin[0]=diffeq_f_systemC^MIN~43-18[0] cout[0]=diffeq_f_systemC^MIN~43-19[0]\
+ sumout[0]=diffeq_f_systemC^MIN~43-19[1]
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^MIN~46-18[1] diffeq_f_systemC^uport~17_FF diffeq_f_systemC^nMUX~36^MUX_2~440
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~440 diffeq_f_systemC^nMUX~33^MUX_2~344
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~344 diffeq_f_systemC^uport~17_FF re diffeq_f_systemC^clk 3
+
+
+.subckt adder a[0]=diffeq_f_systemC^uport~17_FF b[0]=lNOT~160\
+ cin[0]=diffeq_f_systemC^MIN~43-17[0] cout[0]=diffeq_f_systemC^MIN~43-18[0]\
+ sumout[0]=diffeq_f_systemC^MIN~43-18[1]
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^MIN~46-17[1] diffeq_f_systemC^uport~16_FF diffeq_f_systemC^nMUX~36^MUX_2~439
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~439 diffeq_f_systemC^nMUX~33^MUX_2~343
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~343 diffeq_f_systemC^uport~16_FF re diffeq_f_systemC^clk 3
+
+
+.subckt adder a[0]=diffeq_f_systemC^uport~16_FF b[0]=lNOT~159\
+ cin[0]=diffeq_f_systemC^MIN~43-16[0] cout[0]=diffeq_f_systemC^MIN~43-17[0]\
+ sumout[0]=diffeq_f_systemC^MIN~43-17[1]
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^MIN~46-16[1] diffeq_f_systemC^uport~15_FF diffeq_f_systemC^nMUX~36^MUX_2~438
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~438 diffeq_f_systemC^nMUX~33^MUX_2~342
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~342 diffeq_f_systemC^uport~15_FF re diffeq_f_systemC^clk 3
+
+
+.subckt adder a[0]=diffeq_f_systemC^uport~15_FF b[0]=lNOT~158\
+ cin[0]=diffeq_f_systemC^MIN~43-15[0] cout[0]=diffeq_f_systemC^MIN~43-16[0]\
+ sumout[0]=diffeq_f_systemC^MIN~43-16[1]
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^MIN~46-15[1] diffeq_f_systemC^uport~14_FF diffeq_f_systemC^nMUX~36^MUX_2~437
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~437 diffeq_f_systemC^nMUX~33^MUX_2~341
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~341 diffeq_f_systemC^uport~14_FF re diffeq_f_systemC^clk 3
+
+
+.subckt adder a[0]=diffeq_f_systemC^uport~14_FF b[0]=lNOT~157\
+ cin[0]=diffeq_f_systemC^MIN~43-14[0] cout[0]=diffeq_f_systemC^MIN~43-15[0]\
+ sumout[0]=diffeq_f_systemC^MIN~43-15[1]
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^MIN~46-14[1] diffeq_f_systemC^uport~13_FF diffeq_f_systemC^nMUX~36^MUX_2~436
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~436 diffeq_f_systemC^nMUX~33^MUX_2~340
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~340 diffeq_f_systemC^uport~13_FF re diffeq_f_systemC^clk 3
+
+
+.subckt adder a[0]=diffeq_f_systemC^uport~13_FF b[0]=lNOT~156\
+ cin[0]=diffeq_f_systemC^MIN~43-13[0] cout[0]=diffeq_f_systemC^MIN~43-14[0]\
+ sumout[0]=diffeq_f_systemC^MIN~43-14[1]
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^MIN~46-13[1] diffeq_f_systemC^uport~12_FF diffeq_f_systemC^nMUX~36^MUX_2~435
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~435 diffeq_f_systemC^nMUX~33^MUX_2~339
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~339 diffeq_f_systemC^uport~12_FF re diffeq_f_systemC^clk 3
+
+
+.subckt adder a[0]=diffeq_f_systemC^uport~12_FF b[0]=lNOT~155\
+ cin[0]=diffeq_f_systemC^MIN~43-12[0] cout[0]=diffeq_f_systemC^MIN~43-13[0]\
+ sumout[0]=diffeq_f_systemC^MIN~43-13[1]
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^MIN~46-12[1] diffeq_f_systemC^uport~11_FF diffeq_f_systemC^nMUX~36^MUX_2~434
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~434 diffeq_f_systemC^nMUX~33^MUX_2~338
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~338 diffeq_f_systemC^uport~11_FF re diffeq_f_systemC^clk 3
+
+
+.subckt adder a[0]=diffeq_f_systemC^uport~11_FF b[0]=lNOT~154\
+ cin[0]=diffeq_f_systemC^MIN~43-11[0] cout[0]=diffeq_f_systemC^MIN~43-12[0]\
+ sumout[0]=diffeq_f_systemC^MIN~43-12[1]
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^MIN~46-11[1] diffeq_f_systemC^uport~10_FF diffeq_f_systemC^nMUX~36^MUX_2~433
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~433 diffeq_f_systemC^nMUX~33^MUX_2~337
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~337 diffeq_f_systemC^uport~10_FF re diffeq_f_systemC^clk 3
+
+
+.subckt adder a[0]=diffeq_f_systemC^uport~10_FF b[0]=lNOT~153\
+ cin[0]=diffeq_f_systemC^MIN~43-10[0] cout[0]=diffeq_f_systemC^MIN~43-11[0]\
+ sumout[0]=diffeq_f_systemC^MIN~43-11[1]
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^MIN~46-10[1] diffeq_f_systemC^uport~9_FF diffeq_f_systemC^nMUX~36^MUX_2~462
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~462 diffeq_f_systemC^nMUX~33^MUX_2~366
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~366 diffeq_f_systemC^uport~9_FF re diffeq_f_systemC^clk 3
+
+
+.subckt adder a[0]=diffeq_f_systemC^uport~9_FF b[0]=lNOT~152\
+ cin[0]=diffeq_f_systemC^MIN~43-9[0] cout[0]=diffeq_f_systemC^MIN~43-10[0]\
+ sumout[0]=diffeq_f_systemC^MIN~43-10[1]
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^MIN~46-9[1] diffeq_f_systemC^uport~8_FF diffeq_f_systemC^nMUX~36^MUX_2~461
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~461 diffeq_f_systemC^nMUX~33^MUX_2~365
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~365 diffeq_f_systemC^uport~8_FF re diffeq_f_systemC^clk 3
+
+
+.subckt adder a[0]=diffeq_f_systemC^uport~8_FF b[0]=lNOT~151\
+ cin[0]=diffeq_f_systemC^MIN~43-8[0] cout[0]=diffeq_f_systemC^MIN~43-9[0]\
+ sumout[0]=diffeq_f_systemC^MIN~43-9[1]
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^MIN~46-8[1] diffeq_f_systemC^uport~7_FF diffeq_f_systemC^nMUX~36^MUX_2~460
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~460 diffeq_f_systemC^nMUX~33^MUX_2~364
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~364 diffeq_f_systemC^uport~7_FF re diffeq_f_systemC^clk 3
+
+
+.subckt adder a[0]=diffeq_f_systemC^uport~7_FF b[0]=lNOT~150\
+ cin[0]=diffeq_f_systemC^MIN~43-7[0] cout[0]=diffeq_f_systemC^MIN~43-8[0]\
+ sumout[0]=diffeq_f_systemC^MIN~43-8[1]
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^MIN~46-7[1] diffeq_f_systemC^uport~6_FF diffeq_f_systemC^nMUX~36^MUX_2~459
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~459 diffeq_f_systemC^nMUX~33^MUX_2~363
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~363 diffeq_f_systemC^uport~6_FF re diffeq_f_systemC^clk 3
+
+
+.subckt adder a[0]=diffeq_f_systemC^uport~6_FF b[0]=lNOT~149\
+ cin[0]=diffeq_f_systemC^MIN~43-6[0] cout[0]=diffeq_f_systemC^MIN~43-7[0]\
+ sumout[0]=diffeq_f_systemC^MIN~43-7[1]
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^MIN~46-6[1] diffeq_f_systemC^uport~5_FF diffeq_f_systemC^nMUX~36^MUX_2~458
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~458 diffeq_f_systemC^nMUX~33^MUX_2~362
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~362 diffeq_f_systemC^uport~5_FF re diffeq_f_systemC^clk 3
+
+
+.subckt adder a[0]=diffeq_f_systemC^uport~5_FF b[0]=lNOT~148\
+ cin[0]=diffeq_f_systemC^MIN~43-5[0] cout[0]=diffeq_f_systemC^MIN~43-6[0]\
+ sumout[0]=diffeq_f_systemC^MIN~43-6[1]
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^MIN~46-5[1] diffeq_f_systemC^uport~4_FF diffeq_f_systemC^nMUX~36^MUX_2~457
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~457 diffeq_f_systemC^nMUX~33^MUX_2~361
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~361 diffeq_f_systemC^uport~4_FF re diffeq_f_systemC^clk 3
+
+
+.subckt adder a[0]=diffeq_f_systemC^uport~4_FF b[0]=lNOT~147\
+ cin[0]=diffeq_f_systemC^MIN~43-4[0] cout[0]=diffeq_f_systemC^MIN~43-5[0]\
+ sumout[0]=diffeq_f_systemC^MIN~43-5[1]
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^MIN~46-4[1] diffeq_f_systemC^uport~3_FF diffeq_f_systemC^nMUX~36^MUX_2~454
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~454 diffeq_f_systemC^nMUX~33^MUX_2~358
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~358 diffeq_f_systemC^uport~3_FF re diffeq_f_systemC^clk 3
+
+
+.subckt adder a[0]=diffeq_f_systemC^uport~3_FF b[0]=lNOT~146\
+ cin[0]=diffeq_f_systemC^MIN~43-3[0] cout[0]=diffeq_f_systemC^MIN~43-4[0]\
+ sumout[0]=diffeq_f_systemC^MIN~43-4[1]
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^MIN~46-3[1] diffeq_f_systemC^uport~2_FF diffeq_f_systemC^nMUX~36^MUX_2~443
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~443 diffeq_f_systemC^nMUX~33^MUX_2~347
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~347 diffeq_f_systemC^uport~2_FF re diffeq_f_systemC^clk 3
+
+
+.subckt adder a[0]=diffeq_f_systemC^uport~2_FF b[0]=lNOT~145\
+ cin[0]=diffeq_f_systemC^MIN~43-2[0] cout[0]=diffeq_f_systemC^MIN~43-3[0]\
+ sumout[0]=diffeq_f_systemC^MIN~43-3[1]
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^MIN~46-2[1] diffeq_f_systemC^uport~1_FF diffeq_f_systemC^nMUX~36^MUX_2~432
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~432 diffeq_f_systemC^nMUX~33^MUX_2~336
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~336 diffeq_f_systemC^uport~1_FF re diffeq_f_systemC^clk 3
+
+
+.subckt adder a[0]=diffeq_f_systemC^uport~1_FF b[0]=lNOT~144\
+ cin[0]=diffeq_f_systemC^MIN~43-1[0] cout[0]=diffeq_f_systemC^MIN~43-2[0]\
+ sumout[0]=diffeq_f_systemC^MIN~43-2[1]
+
+.names diffeq_f_systemC^MUL~45-0[1] lNOT~48
+0 1
+
+.names diffeq_f_systemC^MUL~45-0[2] lNOT~49
+0 1
+
+.names diffeq_f_systemC^MUL~45-0[3] lNOT~50
+0 1
+
+.names diffeq_f_systemC^MUL~45-0[4] lNOT~51
+0 1
+
+.names diffeq_f_systemC^MUL~45-0[5] lNOT~52
+0 1
+
+.names diffeq_f_systemC^MUL~45-0[6] lNOT~53
+0 1
+
+.names diffeq_f_systemC^MUL~45-0[7] lNOT~54
+0 1
+
+.names diffeq_f_systemC^MUL~45-0[8] lNOT~55
+0 1
+
+.names diffeq_f_systemC^MUL~45-0[9] lNOT~56
+0 1
+
+.names diffeq_f_systemC^MUL~45-0[10] lNOT~57
+0 1
+
+.names diffeq_f_systemC^MUL~45-0[11] lNOT~58
+0 1
+
+.names diffeq_f_systemC^MUL~45-0[12] lNOT~59
+0 1
+
+.names diffeq_f_systemC^MUL~45-0[13] lNOT~60
+0 1
+
+.names diffeq_f_systemC^MUL~45-0[14] lNOT~61
+0 1
+
+.names diffeq_f_systemC^MUL~45-0[15] lNOT~62
+0 1
+
+.names diffeq_f_systemC^MUL~45-0[16] lNOT~63
+0 1
+
+.names diffeq_f_systemC^MUL~45-0[17] lNOT~64
+0 1
+
+.names diffeq_f_systemC^MUL~45-0[18] lNOT~65
+0 1
+
+.names diffeq_f_systemC^MUL~45-0[19] lNOT~66
+0 1
+
+.names diffeq_f_systemC^MUL~45-0[20] lNOT~67
+0 1
+
+.names diffeq_f_systemC^MUL~45-0[21] lNOT~68
+0 1
+
+.names diffeq_f_systemC^MUL~45-0[22] lNOT~69
+0 1
+
+.names diffeq_f_systemC^MUL~45-0[23] lNOT~70
+0 1
+
+.names diffeq_f_systemC^MUL~45-0[24] lNOT~71
+0 1
+
+.names diffeq_f_systemC^MUL~45-0[25] lNOT~72
+0 1
+
+.names diffeq_f_systemC^MUL~45-0[26] lNOT~73
+0 1
+
+.names diffeq_f_systemC^MUL~45-0[27] lNOT~74
+0 1
+
+
+.subckt adder a[0]=diffeq_f_systemC^MUL~45-0[28]\
+ b[0]=diffeq_f_systemC^MUL~45-1[0] cin[0]=diffeq_f_systemC^MUL~45-add0-0[0]\
+ cout[0]=diffeq_f_systemC^MUL~45-add0-1[0]\
+ sumout[0]=diffeq_f_systemC^MUL~45-add0-1[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^MUL~45-0[29]\
+ b[0]=diffeq_f_systemC^MUL~45-1[1] cin[0]=diffeq_f_systemC^MUL~45-add0-1[0]\
+ cout[0]=diffeq_f_systemC^MUL~45-add0-2[0]\
+ sumout[0]=diffeq_f_systemC^MUL~45-add0-2[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^MUL~45-0[30]\
+ b[0]=diffeq_f_systemC^MUL~45-1[2] cin[0]=diffeq_f_systemC^MUL~45-add0-2[0]\
+ cout[0]=diffeq_f_systemC^MUL~45-add0-3[0]\
+ sumout[0]=diffeq_f_systemC^MUL~45-add0-3[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^MUL~45-0[31]\
+ b[0]=diffeq_f_systemC^MUL~45-1[3] cin[0]=diffeq_f_systemC^MUL~45-add0-3[0]\
+ cout[0]=diffeq_f_systemC^MUL~45-add0-4[0]\
+ sumout[0]=diffeq_f_systemC^MUL~45-add0-4[1]
+
+.names diffeq_f_systemC^MUL~45-add0-4[1] lNOT~78
+0 1
+
+.names diffeq_f_systemC^MUL~45-add0-3[1] lNOT~77
+0 1
+
+.names diffeq_f_systemC^MUL~45-add0-2[1] lNOT~76
+0 1
+
+.names diffeq_f_systemC^MUL~45-add0-1[1] lNOT~75
+0 1
+
+
+.subckt mult_36_32_68 a[0]=diffeq_f_systemC^MUL~44[28]\
+ a[1]=diffeq_f_systemC^MUL~44[29] a[2]=diffeq_f_systemC^MUL~44[30]\
+ a[3]=diffeq_f_systemC^MUL~44[31] a[4]=diffeq_f_systemC^MUL~44[32]\
+ a[5]=diffeq_f_systemC^MUL~44[33] a[6]=diffeq_f_systemC^MUL~44[34]\
+ a[7]=diffeq_f_systemC^MUL~44[35] a[8]=diffeq_f_systemC^MUL~44[36]\
+ a[9]=diffeq_f_systemC^MUL~44[37] a[10]=diffeq_f_systemC^MUL~44[38]\
+ a[11]=diffeq_f_systemC^MUL~44[39] a[12]=diffeq_f_systemC^MUL~44[40]\
+ a[13]=diffeq_f_systemC^MUL~44[41] a[14]=diffeq_f_systemC^MUL~44[42]\
+ a[15]=diffeq_f_systemC^MUL~44[43] a[16]=diffeq_f_systemC^MUL~44[44]\
+ a[17]=diffeq_f_systemC^MUL~44[45] a[18]=diffeq_f_systemC^MUL~44[46]\
+ a[19]=diffeq_f_systemC^MUL~44[47] a[20]=diffeq_f_systemC^MUL~44[48]\
+ a[21]=diffeq_f_systemC^MUL~44[49] a[22]=diffeq_f_systemC^MUL~44[50]\
+ a[23]=diffeq_f_systemC^MUL~44[51] a[24]=diffeq_f_systemC^MUL~44[52]\
+ a[25]=diffeq_f_systemC^MUL~44[53] a[26]=diffeq_f_systemC^MUL~44[54]\
+ a[27]=diffeq_f_systemC^MUL~44[55] a[28]=diffeq_f_systemC^MUL~44[56]\
+ a[29]=diffeq_f_systemC^MUL~44[57] a[30]=diffeq_f_systemC^MUL~44[58]\
+ a[31]=diffeq_f_systemC^MUL~44[59] a[32]=diffeq_f_systemC^MUL~44[60]\
+ a[33]=diffeq_f_systemC^MUL~44[61] a[34]=diffeq_f_systemC^MUL~44[62]\
+ a[35]=diffeq_f_systemC^MUL~44[63] b[0]=diffeq_f_systemC^dxport~0\
+ b[1]=diffeq_f_systemC^dxport~1 b[2]=diffeq_f_systemC^dxport~2\
+ b[3]=diffeq_f_systemC^dxport~3 b[4]=diffeq_f_systemC^dxport~4\
+ b[5]=diffeq_f_systemC^dxport~5 b[6]=diffeq_f_systemC^dxport~6\
+ b[7]=diffeq_f_systemC^dxport~7 b[8]=diffeq_f_systemC^dxport~8\
+ b[9]=diffeq_f_systemC^dxport~9 b[10]=diffeq_f_systemC^dxport~10\
+ b[11]=diffeq_f_systemC^dxport~11 b[12]=diffeq_f_systemC^dxport~12\
+ b[13]=diffeq_f_systemC^dxport~13 b[14]=diffeq_f_systemC^dxport~14\
+ b[15]=diffeq_f_systemC^dxport~15 b[16]=diffeq_f_systemC^dxport~16\
+ b[17]=diffeq_f_systemC^dxport~17 b[18]=diffeq_f_systemC^dxport~18\
+ b[19]=diffeq_f_systemC^dxport~19 b[20]=diffeq_f_systemC^dxport~20\
+ b[21]=diffeq_f_systemC^dxport~21 b[22]=diffeq_f_systemC^dxport~22\
+ b[23]=diffeq_f_systemC^dxport~23 b[24]=diffeq_f_systemC^dxport~24\
+ b[25]=diffeq_f_systemC^dxport~25 b[26]=diffeq_f_systemC^dxport~26\
+ b[27]=diffeq_f_systemC^dxport~27 b[28]=diffeq_f_systemC^dxport~28\
+ b[29]=diffeq_f_systemC^dxport~29 b[30]=diffeq_f_systemC^dxport~30\
+ b[31]=diffeq_f_systemC^dxport~31 out[0]=diffeq_f_systemC^MUL~45-1[0]\
+ out[1]=diffeq_f_systemC^MUL~45-1[1] out[2]=diffeq_f_systemC^MUL~45-1[2]\
+ out[3]=diffeq_f_systemC^MUL~45-1[3] out[4]=diffeq_f_systemC^MUL~45-1[4]\
+ out[5]=diffeq_f_systemC^MUL~45-1[5] out[6]=diffeq_f_systemC^MUL~45-1[6]\
+ out[7]=diffeq_f_systemC^MUL~45-1[7] out[8]=diffeq_f_systemC^MUL~45-1[8]\
+ out[9]=diffeq_f_systemC^MUL~45-1[9] out[10]=diffeq_f_systemC^MUL~45-1[10]\
+ out[11]=diffeq_f_systemC^MUL~45-1[11] out[12]=diffeq_f_systemC^MUL~45-1[12]\
+ out[13]=diffeq_f_systemC^MUL~45-1[13] out[14]=diffeq_f_systemC^MUL~45-1[14]\
+ out[15]=diffeq_f_systemC^MUL~45-1[15] out[16]=diffeq_f_systemC^MUL~45-1[16]\
+ out[17]=diffeq_f_systemC^MUL~45-1[17] out[18]=diffeq_f_systemC^MUL~45-1[18]\
+ out[19]=diffeq_f_systemC^MUL~45-1[19] out[20]=diffeq_f_systemC^MUL~45-1[20]\
+ out[21]=diffeq_f_systemC^MUL~45-1[21] out[22]=diffeq_f_systemC^MUL~45-1[22]\
+ out[23]=diffeq_f_systemC^MUL~45-1[23] out[24]=diffeq_f_systemC^MUL~45-1[24]\
+ out[25]=diffeq_f_systemC^MUL~45-1[25] out[26]=diffeq_f_systemC^MUL~45-1[26]\
+ out[27]=diffeq_f_systemC^MUL~45-1[27] out[28]=diffeq_f_systemC^MUL~45-1[28]\
+ out[29]=diffeq_f_systemC^MUL~45-1[29] out[30]=diffeq_f_systemC^MUL~45-1[30]\
+ out[31]=diffeq_f_systemC^MUL~45-1[31] out[32]=diffeq_f_systemC^MUL~45-1[32]\
+ out[33]=diffeq_f_systemC^MUL~45-1[33] out[34]=diffeq_f_systemC^MUL~45-1[34]\
+ out[35]=diffeq_f_systemC^MUL~45-1[35] out[36]=diffeq_f_systemC^MUL~45-1[36]\
+ out[37]=diffeq_f_systemC^MUL~45-1[37] out[38]=diffeq_f_systemC^MUL~45-1[38]\
+ out[39]=diffeq_f_systemC^MUL~45-1[39] out[40]=diffeq_f_systemC^MUL~45-1[40]\
+ out[41]=diffeq_f_systemC^MUL~45-1[41] out[42]=diffeq_f_systemC^MUL~45-1[42]\
+ out[43]=diffeq_f_systemC^MUL~45-1[43] out[44]=diffeq_f_systemC^MUL~45-1[44]\
+ out[45]=diffeq_f_systemC^MUL~45-1[45] out[46]=diffeq_f_systemC^MUL~45-1[46]\
+ out[47]=diffeq_f_systemC^MUL~45-1[47] out[48]=diffeq_f_systemC^MUL~45-1[48]\
+ out[49]=diffeq_f_systemC^MUL~45-1[49] out[50]=diffeq_f_systemC^MUL~45-1[50]\
+ out[51]=diffeq_f_systemC^MUL~45-1[51] out[52]=diffeq_f_systemC^MUL~45-1[52]\
+ out[53]=diffeq_f_systemC^MUL~45-1[53] out[54]=diffeq_f_systemC^MUL~45-1[54]\
+ out[55]=diffeq_f_systemC^MUL~45-1[55] out[56]=diffeq_f_systemC^MUL~45-1[56]\
+ out[57]=diffeq_f_systemC^MUL~45-1[57] out[58]=diffeq_f_systemC^MUL~45-1[58]\
+ out[59]=diffeq_f_systemC^MUL~45-1[59] out[60]=diffeq_f_systemC^MUL~45-1[60]\
+ out[61]=diffeq_f_systemC^MUL~45-1[61] out[62]=diffeq_f_systemC^MUL~45-1[62]\
+ out[63]=diffeq_f_systemC^MUL~45-1[63] out[64]=diffeq_f_systemC^MUL~45-1[64]\
+ out[65]=diffeq_f_systemC^MUL~45-1[65] out[66]=diffeq_f_systemC^MUL~45-1[66]\
+ out[67]=diffeq_f_systemC^MUL~45-1[67]
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~40-31[1] diffeq_f_systemC^yport~30_FF diffeq_f_systemC^nMUX~36^MUX_2~519
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~519 diffeq_f_systemC^nMUX~33^MUX_2~423
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~423 diffeq_f_systemC^yport~30_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~40-30[1] diffeq_f_systemC^yport~29_FF diffeq_f_systemC^nMUX~36^MUX_2~517
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~517 diffeq_f_systemC^nMUX~33^MUX_2~421
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~421 diffeq_f_systemC^yport~29_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~40-29[1] diffeq_f_systemC^yport~28_FF diffeq_f_systemC^nMUX~36^MUX_2~516
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~516 diffeq_f_systemC^nMUX~33^MUX_2~420
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~420 diffeq_f_systemC^yport~28_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~40-28[1] diffeq_f_systemC^yport~27_FF diffeq_f_systemC^nMUX~36^MUX_2~515
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~515 diffeq_f_systemC^nMUX~33^MUX_2~419
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~419 diffeq_f_systemC^yport~27_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~40-27[1] diffeq_f_systemC^yport~26_FF diffeq_f_systemC^nMUX~36^MUX_2~514
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~514 diffeq_f_systemC^nMUX~33^MUX_2~418
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~418 diffeq_f_systemC^yport~26_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~40-26[1] diffeq_f_systemC^yport~25_FF diffeq_f_systemC^nMUX~36^MUX_2~513
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~513 diffeq_f_systemC^nMUX~33^MUX_2~417
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~417 diffeq_f_systemC^yport~25_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~40-25[1] diffeq_f_systemC^yport~24_FF diffeq_f_systemC^nMUX~36^MUX_2~512
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~512 diffeq_f_systemC^nMUX~33^MUX_2~416
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~416 diffeq_f_systemC^yport~24_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~40-24[1] diffeq_f_systemC^yport~23_FF diffeq_f_systemC^nMUX~36^MUX_2~511
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~511 diffeq_f_systemC^nMUX~33^MUX_2~415
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~415 diffeq_f_systemC^yport~23_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~40-23[1] diffeq_f_systemC^yport~22_FF diffeq_f_systemC^nMUX~36^MUX_2~510
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~510 diffeq_f_systemC^nMUX~33^MUX_2~414
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~414 diffeq_f_systemC^yport~22_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~40-22[1] diffeq_f_systemC^yport~21_FF diffeq_f_systemC^nMUX~36^MUX_2~509
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~509 diffeq_f_systemC^nMUX~33^MUX_2~413
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~413 diffeq_f_systemC^yport~21_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~40-21[1] diffeq_f_systemC^yport~20_FF diffeq_f_systemC^nMUX~36^MUX_2~508
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~508 diffeq_f_systemC^nMUX~33^MUX_2~412
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~412 diffeq_f_systemC^yport~20_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~40-20[1] diffeq_f_systemC^yport~19_FF diffeq_f_systemC^nMUX~36^MUX_2~506
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~506 diffeq_f_systemC^nMUX~33^MUX_2~410
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~410 diffeq_f_systemC^yport~19_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~40-19[1] diffeq_f_systemC^yport~18_FF diffeq_f_systemC^nMUX~36^MUX_2~505
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~505 diffeq_f_systemC^nMUX~33^MUX_2~409
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~409 diffeq_f_systemC^yport~18_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~40-18[1] diffeq_f_systemC^yport~17_FF diffeq_f_systemC^nMUX~36^MUX_2~504
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~504 diffeq_f_systemC^nMUX~33^MUX_2~408
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~408 diffeq_f_systemC^yport~17_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~40-17[1] diffeq_f_systemC^yport~16_FF diffeq_f_systemC^nMUX~36^MUX_2~503
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~503 diffeq_f_systemC^nMUX~33^MUX_2~407
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~407 diffeq_f_systemC^yport~16_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~40-16[1] diffeq_f_systemC^yport~15_FF diffeq_f_systemC^nMUX~36^MUX_2~502
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~502 diffeq_f_systemC^nMUX~33^MUX_2~406
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~406 diffeq_f_systemC^yport~15_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~40-15[1] diffeq_f_systemC^yport~14_FF diffeq_f_systemC^nMUX~36^MUX_2~501
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~501 diffeq_f_systemC^nMUX~33^MUX_2~405
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~405 diffeq_f_systemC^yport~14_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~40-14[1] diffeq_f_systemC^yport~13_FF diffeq_f_systemC^nMUX~36^MUX_2~500
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~500 diffeq_f_systemC^nMUX~33^MUX_2~404
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~404 diffeq_f_systemC^yport~13_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~40-13[1] diffeq_f_systemC^yport~12_FF diffeq_f_systemC^nMUX~36^MUX_2~499
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~499 diffeq_f_systemC^nMUX~33^MUX_2~403
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~403 diffeq_f_systemC^yport~12_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~40-12[1] diffeq_f_systemC^yport~11_FF diffeq_f_systemC^nMUX~36^MUX_2~498
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~498 diffeq_f_systemC^nMUX~33^MUX_2~402
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~402 diffeq_f_systemC^yport~11_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~40-11[1] diffeq_f_systemC^yport~10_FF diffeq_f_systemC^nMUX~36^MUX_2~497
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~497 diffeq_f_systemC^nMUX~33^MUX_2~401
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~401 diffeq_f_systemC^yport~10_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~40-10[1] diffeq_f_systemC^yport~9_FF diffeq_f_systemC^nMUX~36^MUX_2~526
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~526 diffeq_f_systemC^nMUX~33^MUX_2~430
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~430 diffeq_f_systemC^yport~9_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~40-9[1] diffeq_f_systemC^yport~8_FF diffeq_f_systemC^nMUX~36^MUX_2~525
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~525 diffeq_f_systemC^nMUX~33^MUX_2~429
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~429 diffeq_f_systemC^yport~8_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~40-8[1] diffeq_f_systemC^yport~7_FF diffeq_f_systemC^nMUX~36^MUX_2~524
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~524 diffeq_f_systemC^nMUX~33^MUX_2~428
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~428 diffeq_f_systemC^yport~7_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~40-7[1] diffeq_f_systemC^yport~6_FF diffeq_f_systemC^nMUX~36^MUX_2~523
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~523 diffeq_f_systemC^nMUX~33^MUX_2~427
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~427 diffeq_f_systemC^yport~6_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~40-6[1] diffeq_f_systemC^yport~5_FF diffeq_f_systemC^nMUX~36^MUX_2~522
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~522 diffeq_f_systemC^nMUX~33^MUX_2~426
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~426 diffeq_f_systemC^yport~5_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~40-5[1] diffeq_f_systemC^yport~4_FF diffeq_f_systemC^nMUX~36^MUX_2~521
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~521 diffeq_f_systemC^nMUX~33^MUX_2~425
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~425 diffeq_f_systemC^yport~4_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~40-4[1] diffeq_f_systemC^yport~3_FF diffeq_f_systemC^nMUX~36^MUX_2~518
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~518 diffeq_f_systemC^nMUX~33^MUX_2~422
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~422 diffeq_f_systemC^yport~3_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~40-3[1] diffeq_f_systemC^yport~2_FF diffeq_f_systemC^nMUX~36^MUX_2~507
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~507 diffeq_f_systemC^nMUX~33^MUX_2~411
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~411 diffeq_f_systemC^yport~2_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~40-2[1] diffeq_f_systemC^yport~1_FF diffeq_f_systemC^nMUX~36^MUX_2~496
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~496 diffeq_f_systemC^nMUX~33^MUX_2~400
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~400 diffeq_f_systemC^yport~1_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~40-1[1] diffeq_f_systemC^yport~0_FF diffeq_f_systemC^nMUX~36^MUX_2~495
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~495 diffeq_f_systemC^nMUX~33^MUX_2~399
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~399 diffeq_f_systemC^yport~0_FF re diffeq_f_systemC^clk 3
+
+
+.subckt mult_32_28_60 a[0]=diffeq_f_systemC^MUL~0[0]\
+ a[1]=diffeq_f_systemC^MUL~0[1] a[2]=diffeq_f_systemC^MUL~0[2]\
+ a[3]=diffeq_f_systemC^MUL~0[3] a[4]=diffeq_f_systemC^MUL~0[4]\
+ a[5]=diffeq_f_systemC^MUL~0[5] a[6]=diffeq_f_systemC^MUL~0[6]\
+ a[7]=diffeq_f_systemC^MUL~0[7] a[8]=diffeq_f_systemC^MUL~0[8]\
+ a[9]=diffeq_f_systemC^MUL~0[9] a[10]=diffeq_f_systemC^MUL~0[10]\
+ a[11]=diffeq_f_systemC^MUL~0[11] a[12]=diffeq_f_systemC^MUL~0[12]\
+ a[13]=diffeq_f_systemC^MUL~0[13] a[14]=diffeq_f_systemC^MUL~0[14]\
+ a[15]=diffeq_f_systemC^MUL~0[15] a[16]=diffeq_f_systemC^MUL~0[16]\
+ a[17]=diffeq_f_systemC^MUL~0[17] a[18]=diffeq_f_systemC^MUL~0[18]\
+ a[19]=diffeq_f_systemC^MUL~0[19] a[20]=diffeq_f_systemC^MUL~0[20]\
+ a[21]=diffeq_f_systemC^MUL~0[21] a[22]=diffeq_f_systemC^MUL~0[22]\
+ a[23]=diffeq_f_systemC^MUL~0[23] a[24]=diffeq_f_systemC^MUL~0[24]\
+ a[25]=diffeq_f_systemC^MUL~0[25] a[26]=diffeq_f_systemC^MUL~0[26]\
+ a[27]=diffeq_f_systemC^MUL~0[27] a[28]=diffeq_f_systemC^MUL~0[28]\
+ a[29]=diffeq_f_systemC^MUL~0[29] a[30]=diffeq_f_systemC^MUL~0[30]\
+ a[31]=diffeq_f_systemC^MUL~0[31] b[0]=diffeq_f_systemC^MUL~41[0]\
+ b[1]=diffeq_f_systemC^MUL~41[1] b[2]=diffeq_f_systemC^MUL~41[2]\
+ b[3]=diffeq_f_systemC^MUL~41[3] b[4]=diffeq_f_systemC^MUL~41[4]\
+ b[5]=diffeq_f_systemC^MUL~41[5] b[6]=diffeq_f_systemC^MUL~41[6]\
+ b[7]=diffeq_f_systemC^MUL~41[7] b[8]=diffeq_f_systemC^MUL~41[8]\
+ b[9]=diffeq_f_systemC^MUL~41[9] b[10]=diffeq_f_systemC^MUL~41[10]\
+ b[11]=diffeq_f_systemC^MUL~41[11] b[12]=diffeq_f_systemC^MUL~41[12]\
+ b[13]=diffeq_f_systemC^MUL~41[13] b[14]=diffeq_f_systemC^MUL~41[14]\
+ b[15]=diffeq_f_systemC^MUL~41[15] b[16]=diffeq_f_systemC^MUL~41[16]\
+ b[17]=diffeq_f_systemC^MUL~41[17] b[18]=diffeq_f_systemC^MUL~41[18]\
+ b[19]=diffeq_f_systemC^MUL~41[19] b[20]=diffeq_f_systemC^MUL~41[20]\
+ b[21]=diffeq_f_systemC^MUL~41[21] b[22]=diffeq_f_systemC^MUL~41[22]\
+ b[23]=diffeq_f_systemC^MUL~41[23] b[24]=diffeq_f_systemC^MUL~41[24]\
+ b[25]=diffeq_f_systemC^MUL~41[25] b[26]=diffeq_f_systemC^MUL~41[26]\
+ b[27]=diffeq_f_systemC^MUL~41[27] out[0]=diffeq_f_systemC^MUL~42-0[0]\
+ out[1]=diffeq_f_systemC^MUL~42-0[1] out[2]=diffeq_f_systemC^MUL~42-0[2]\
+ out[3]=diffeq_f_systemC^MUL~42-0[3] out[4]=diffeq_f_systemC^MUL~42-0[4]\
+ out[5]=diffeq_f_systemC^MUL~42-0[5] out[6]=diffeq_f_systemC^MUL~42-0[6]\
+ out[7]=diffeq_f_systemC^MUL~42-0[7] out[8]=diffeq_f_systemC^MUL~42-0[8]\
+ out[9]=diffeq_f_systemC^MUL~42-0[9] out[10]=diffeq_f_systemC^MUL~42-0[10]\
+ out[11]=diffeq_f_systemC^MUL~42-0[11] out[12]=diffeq_f_systemC^MUL~42-0[12]\
+ out[13]=diffeq_f_systemC^MUL~42-0[13] out[14]=diffeq_f_systemC^MUL~42-0[14]\
+ out[15]=diffeq_f_systemC^MUL~42-0[15] out[16]=diffeq_f_systemC^MUL~42-0[16]\
+ out[17]=diffeq_f_systemC^MUL~42-0[17] out[18]=diffeq_f_systemC^MUL~42-0[18]\
+ out[19]=diffeq_f_systemC^MUL~42-0[19] out[20]=diffeq_f_systemC^MUL~42-0[20]\
+ out[21]=diffeq_f_systemC^MUL~42-0[21] out[22]=diffeq_f_systemC^MUL~42-0[22]\
+ out[23]=diffeq_f_systemC^MUL~42-0[23] out[24]=diffeq_f_systemC^MUL~42-0[24]\
+ out[25]=diffeq_f_systemC^MUL~42-0[25] out[26]=diffeq_f_systemC^MUL~42-0[26]\
+ out[27]=diffeq_f_systemC^MUL~42-0[27] out[28]=diffeq_f_systemC^MUL~42-0[28]\
+ out[29]=diffeq_f_systemC^MUL~42-0[29] out[30]=diffeq_f_systemC^MUL~42-0[30]\
+ out[31]=diffeq_f_systemC^MUL~42-0[31] out[32]=diffeq_f_systemC^MUL~42-0[32]\
+ out[33]=diffeq_f_systemC^MUL~42-0[33] out[34]=diffeq_f_systemC^MUL~42-0[34]\
+ out[35]=diffeq_f_systemC^MUL~42-0[35] out[36]=diffeq_f_systemC^MUL~42-0[36]\
+ out[37]=diffeq_f_systemC^MUL~42-0[37] out[38]=diffeq_f_systemC^MUL~42-0[38]\
+ out[39]=diffeq_f_systemC^MUL~42-0[39] out[40]=diffeq_f_systemC^MUL~42-0[40]\
+ out[41]=diffeq_f_systemC^MUL~42-0[41] out[42]=diffeq_f_systemC^MUL~42-0[42]\
+ out[43]=diffeq_f_systemC^MUL~42-0[43] out[44]=diffeq_f_systemC^MUL~42-0[44]\
+ out[45]=diffeq_f_systemC^MUL~42-0[45] out[46]=diffeq_f_systemC^MUL~42-0[46]\
+ out[47]=diffeq_f_systemC^MUL~42-0[47] out[48]=diffeq_f_systemC^MUL~42-0[48]\
+ out[49]=diffeq_f_systemC^MUL~42-0[49] out[50]=diffeq_f_systemC^MUL~42-0[50]\
+ out[51]=diffeq_f_systemC^MUL~42-0[51] out[52]=diffeq_f_systemC^MUL~42-0[52]\
+ out[53]=diffeq_f_systemC^MUL~42-0[53] out[54]=diffeq_f_systemC^MUL~42-0[54]\
+ out[55]=diffeq_f_systemC^MUL~42-0[55] out[56]=diffeq_f_systemC^MUL~42-0[56]\
+ out[57]=diffeq_f_systemC^MUL~42-0[57] out[58]=diffeq_f_systemC^MUL~42-0[58]\
+ out[59]=diffeq_f_systemC^MUL~42-0[59]
+
+.names diffeq_f_systemC^MUL~42-0[0] lNOT~143
+0 1
+
+
+.subckt adder a[0]=diffeq_f_systemC^uport~0_FF b[0]=lNOT~143\
+ cin[0]=diffeq_f_systemC^MIN~43-0[0] cout[0]=diffeq_f_systemC^MIN~43-1[0]\
+ sumout[0]=diffeq_f_systemC^MIN~43-1[1]
+
+.names diffeq_f_systemC^MUL~42-0[1] lNOT~144
+0 1
+
+.names diffeq_f_systemC^MUL~42-0[2] lNOT~145
+0 1
+
+.names diffeq_f_systemC^MUL~42-0[3] lNOT~146
+0 1
+
+.names diffeq_f_systemC^MUL~42-0[4] lNOT~147
+0 1
+
+.names diffeq_f_systemC^MUL~42-0[5] lNOT~148
+0 1
+
+.names diffeq_f_systemC^MUL~42-0[6] lNOT~149
+0 1
+
+.names diffeq_f_systemC^MUL~42-0[7] lNOT~150
+0 1
+
+.names diffeq_f_systemC^MUL~42-0[8] lNOT~151
+0 1
+
+.names diffeq_f_systemC^MUL~42-0[9] lNOT~152
+0 1
+
+.names diffeq_f_systemC^MUL~42-0[10] lNOT~153
+0 1
+
+.names diffeq_f_systemC^MUL~42-0[11] lNOT~154
+0 1
+
+.names diffeq_f_systemC^MUL~42-0[12] lNOT~155
+0 1
+
+.names diffeq_f_systemC^MUL~42-0[13] lNOT~156
+0 1
+
+.names diffeq_f_systemC^MUL~42-0[14] lNOT~157
+0 1
+
+.names diffeq_f_systemC^MUL~42-0[15] lNOT~158
+0 1
+
+.names diffeq_f_systemC^MUL~42-0[16] lNOT~159
+0 1
+
+.names diffeq_f_systemC^MUL~42-0[17] lNOT~160
+0 1
+
+.names diffeq_f_systemC^MUL~42-0[18] lNOT~161
+0 1
+
+.names diffeq_f_systemC^MUL~42-0[19] lNOT~162
+0 1
+
+.names diffeq_f_systemC^MUL~42-0[20] lNOT~163
+0 1
+
+.names diffeq_f_systemC^MUL~42-0[21] lNOT~164
+0 1
+
+.names diffeq_f_systemC^MUL~42-0[22] lNOT~165
+0 1
+
+.names diffeq_f_systemC^MUL~42-0[23] lNOT~166
+0 1
+
+.names diffeq_f_systemC^MUL~42-0[24] lNOT~167
+0 1
+
+.names diffeq_f_systemC^MUL~42-0[25] lNOT~168
+0 1
+
+.names diffeq_f_systemC^MUL~42-0[26] lNOT~169
+0 1
+
+.names diffeq_f_systemC^MUL~42-0[27] lNOT~170
+0 1
+
+
+.subckt adder a[0]=diffeq_f_systemC^MUL~42-0[28]\
+ b[0]=diffeq_f_systemC^MUL~42-1[0] cin[0]=diffeq_f_systemC^MUL~42-add0-0[0]\
+ cout[0]=diffeq_f_systemC^MUL~42-add0-1[0]\
+ sumout[0]=diffeq_f_systemC^MUL~42-add0-1[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^MUL~42-0[29]\
+ b[0]=diffeq_f_systemC^MUL~42-1[1] cin[0]=diffeq_f_systemC^MUL~42-add0-1[0]\
+ cout[0]=diffeq_f_systemC^MUL~42-add0-2[0]\
+ sumout[0]=diffeq_f_systemC^MUL~42-add0-2[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^MUL~42-0[30]\
+ b[0]=diffeq_f_systemC^MUL~42-1[2] cin[0]=diffeq_f_systemC^MUL~42-add0-2[0]\
+ cout[0]=diffeq_f_systemC^MUL~42-add0-3[0]\
+ sumout[0]=diffeq_f_systemC^MUL~42-add0-3[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^MUL~42-0[31]\
+ b[0]=diffeq_f_systemC^MUL~42-1[3] cin[0]=diffeq_f_systemC^MUL~42-add0-3[0]\
+ cout[0]=diffeq_f_systemC^MUL~42-add0-4[0]\
+ sumout[0]=diffeq_f_systemC^MUL~42-add0-4[1]
+
+.names diffeq_f_systemC^MUL~42-add0-4[1] lNOT~174
+0 1
+
+.names diffeq_f_systemC^MUL~42-add0-3[1] lNOT~173
+0 1
+
+.names diffeq_f_systemC^MUL~42-add0-2[1] lNOT~172
+0 1
+
+.names diffeq_f_systemC^MUL~42-add0-1[1] lNOT~171
+0 1
+
+
+.subckt mult_36_32_68 a[0]=diffeq_f_systemC^MUL~41[28]\
+ a[1]=diffeq_f_systemC^MUL~41[29] a[2]=diffeq_f_systemC^MUL~41[30]\
+ a[3]=diffeq_f_systemC^MUL~41[31] a[4]=diffeq_f_systemC^MUL~41[32]\
+ a[5]=diffeq_f_systemC^MUL~41[33] a[6]=diffeq_f_systemC^MUL~41[34]\
+ a[7]=diffeq_f_systemC^MUL~41[35] a[8]=diffeq_f_systemC^MUL~41[36]\
+ a[9]=diffeq_f_systemC^MUL~41[37] a[10]=diffeq_f_systemC^MUL~41[38]\
+ a[11]=diffeq_f_systemC^MUL~41[39] a[12]=diffeq_f_systemC^MUL~41[40]\
+ a[13]=diffeq_f_systemC^MUL~41[41] a[14]=diffeq_f_systemC^MUL~41[42]\
+ a[15]=diffeq_f_systemC^MUL~41[43] a[16]=diffeq_f_systemC^MUL~41[44]\
+ a[17]=diffeq_f_systemC^MUL~41[45] a[18]=diffeq_f_systemC^MUL~41[46]\
+ a[19]=diffeq_f_systemC^MUL~41[47] a[20]=diffeq_f_systemC^MUL~41[48]\
+ a[21]=diffeq_f_systemC^MUL~41[49] a[22]=diffeq_f_systemC^MUL~41[50]\
+ a[23]=diffeq_f_systemC^MUL~41[51] a[24]=diffeq_f_systemC^MUL~41[52]\
+ a[25]=diffeq_f_systemC^MUL~41[53] a[26]=diffeq_f_systemC^MUL~41[54]\
+ a[27]=diffeq_f_systemC^MUL~41[55] a[28]=diffeq_f_systemC^MUL~41[56]\
+ a[29]=diffeq_f_systemC^MUL~41[57] a[30]=diffeq_f_systemC^MUL~41[58]\
+ a[31]=diffeq_f_systemC^MUL~41[59] a[32]=diffeq_f_systemC^MUL~41[60]\
+ a[33]=diffeq_f_systemC^MUL~41[61] a[34]=diffeq_f_systemC^MUL~41[62]\
+ a[35]=diffeq_f_systemC^MUL~41[63] b[0]=diffeq_f_systemC^MUL~0[0]\
+ b[1]=diffeq_f_systemC^MUL~0[1] b[2]=diffeq_f_systemC^MUL~0[2]\
+ b[3]=diffeq_f_systemC^MUL~0[3] b[4]=diffeq_f_systemC^MUL~0[4]\
+ b[5]=diffeq_f_systemC^MUL~0[5] b[6]=diffeq_f_systemC^MUL~0[6]\
+ b[7]=diffeq_f_systemC^MUL~0[7] b[8]=diffeq_f_systemC^MUL~0[8]\
+ b[9]=diffeq_f_systemC^MUL~0[9] b[10]=diffeq_f_systemC^MUL~0[10]\
+ b[11]=diffeq_f_systemC^MUL~0[11] b[12]=diffeq_f_systemC^MUL~0[12]\
+ b[13]=diffeq_f_systemC^MUL~0[13] b[14]=diffeq_f_systemC^MUL~0[14]\
+ b[15]=diffeq_f_systemC^MUL~0[15] b[16]=diffeq_f_systemC^MUL~0[16]\
+ b[17]=diffeq_f_systemC^MUL~0[17] b[18]=diffeq_f_systemC^MUL~0[18]\
+ b[19]=diffeq_f_systemC^MUL~0[19] b[20]=diffeq_f_systemC^MUL~0[20]\
+ b[21]=diffeq_f_systemC^MUL~0[21] b[22]=diffeq_f_systemC^MUL~0[22]\
+ b[23]=diffeq_f_systemC^MUL~0[23] b[24]=diffeq_f_systemC^MUL~0[24]\
+ b[25]=diffeq_f_systemC^MUL~0[25] b[26]=diffeq_f_systemC^MUL~0[26]\
+ b[27]=diffeq_f_systemC^MUL~0[27] b[28]=diffeq_f_systemC^MUL~0[28]\
+ b[29]=diffeq_f_systemC^MUL~0[29] b[30]=diffeq_f_systemC^MUL~0[30]\
+ b[31]=diffeq_f_systemC^MUL~0[31] out[0]=diffeq_f_systemC^MUL~42-1[0]\
+ out[1]=diffeq_f_systemC^MUL~42-1[1] out[2]=diffeq_f_systemC^MUL~42-1[2]\
+ out[3]=diffeq_f_systemC^MUL~42-1[3] out[4]=diffeq_f_systemC^MUL~42-1[4]\
+ out[5]=diffeq_f_systemC^MUL~42-1[5] out[6]=diffeq_f_systemC^MUL~42-1[6]\
+ out[7]=diffeq_f_systemC^MUL~42-1[7] out[8]=diffeq_f_systemC^MUL~42-1[8]\
+ out[9]=diffeq_f_systemC^MUL~42-1[9] out[10]=diffeq_f_systemC^MUL~42-1[10]\
+ out[11]=diffeq_f_systemC^MUL~42-1[11] out[12]=diffeq_f_systemC^MUL~42-1[12]\
+ out[13]=diffeq_f_systemC^MUL~42-1[13] out[14]=diffeq_f_systemC^MUL~42-1[14]\
+ out[15]=diffeq_f_systemC^MUL~42-1[15] out[16]=diffeq_f_systemC^MUL~42-1[16]\
+ out[17]=diffeq_f_systemC^MUL~42-1[17] out[18]=diffeq_f_systemC^MUL~42-1[18]\
+ out[19]=diffeq_f_systemC^MUL~42-1[19] out[20]=diffeq_f_systemC^MUL~42-1[20]\
+ out[21]=diffeq_f_systemC^MUL~42-1[21] out[22]=diffeq_f_systemC^MUL~42-1[22]\
+ out[23]=diffeq_f_systemC^MUL~42-1[23] out[24]=diffeq_f_systemC^MUL~42-1[24]\
+ out[25]=diffeq_f_systemC^MUL~42-1[25] out[26]=diffeq_f_systemC^MUL~42-1[26]\
+ out[27]=diffeq_f_systemC^MUL~42-1[27] out[28]=diffeq_f_systemC^MUL~42-1[28]\
+ out[29]=diffeq_f_systemC^MUL~42-1[29] out[30]=diffeq_f_systemC^MUL~42-1[30]\
+ out[31]=diffeq_f_systemC^MUL~42-1[31] out[32]=diffeq_f_systemC^MUL~42-1[32]\
+ out[33]=diffeq_f_systemC^MUL~42-1[33] out[34]=diffeq_f_systemC^MUL~42-1[34]\
+ out[35]=diffeq_f_systemC^MUL~42-1[35] out[36]=diffeq_f_systemC^MUL~42-1[36]\
+ out[37]=diffeq_f_systemC^MUL~42-1[37] out[38]=diffeq_f_systemC^MUL~42-1[38]\
+ out[39]=diffeq_f_systemC^MUL~42-1[39] out[40]=diffeq_f_systemC^MUL~42-1[40]\
+ out[41]=diffeq_f_systemC^MUL~42-1[41] out[42]=diffeq_f_systemC^MUL~42-1[42]\
+ out[43]=diffeq_f_systemC^MUL~42-1[43] out[44]=diffeq_f_systemC^MUL~42-1[44]\
+ out[45]=diffeq_f_systemC^MUL~42-1[45] out[46]=diffeq_f_systemC^MUL~42-1[46]\
+ out[47]=diffeq_f_systemC^MUL~42-1[47] out[48]=diffeq_f_systemC^MUL~42-1[48]\
+ out[49]=diffeq_f_systemC^MUL~42-1[49] out[50]=diffeq_f_systemC^MUL~42-1[50]\
+ out[51]=diffeq_f_systemC^MUL~42-1[51] out[52]=diffeq_f_systemC^MUL~42-1[52]\
+ out[53]=diffeq_f_systemC^MUL~42-1[53] out[54]=diffeq_f_systemC^MUL~42-1[54]\
+ out[55]=diffeq_f_systemC^MUL~42-1[55] out[56]=diffeq_f_systemC^MUL~42-1[56]\
+ out[57]=diffeq_f_systemC^MUL~42-1[57] out[58]=diffeq_f_systemC^MUL~42-1[58]\
+ out[59]=diffeq_f_systemC^MUL~42-1[59] out[60]=diffeq_f_systemC^MUL~42-1[60]\
+ out[61]=diffeq_f_systemC^MUL~42-1[61] out[62]=diffeq_f_systemC^MUL~42-1[62]\
+ out[63]=diffeq_f_systemC^MUL~42-1[63] out[64]=diffeq_f_systemC^MUL~42-1[64]\
+ out[65]=diffeq_f_systemC^MUL~42-1[65] out[66]=diffeq_f_systemC^MUL~42-1[66]\
+ out[67]=diffeq_f_systemC^MUL~42-1[67]
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38
+0 1
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~39-1[1] diffeq_f_systemC^xport~0_FF diffeq_f_systemC^nMUX~36^MUX_2~463
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~39-2[1] diffeq_f_systemC^xport~1_FF diffeq_f_systemC^nMUX~36^MUX_2~464
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~464 diffeq_f_systemC^nMUX~33^MUX_2~368
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~368 diffeq_f_systemC^xport~1_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^aport~1 diffeq_f_systemC^xport~1_FF diffeq_f_systemC^LT~37^lOR~244 diffeq_f_systemC^LT~37^GT~243
+100 1
+
+
+.subckt adder a[0]=diffeq_f_systemC^xport~1_FF b[0]=diffeq_f_systemC^dxport~1\
+ cin[0]=diffeq_f_systemC^ADD~39-1[0] cout[0]=diffeq_f_systemC^ADD~39-2[0]\
+ sumout[0]=diffeq_f_systemC^ADD~39-2[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^xport~2_FF b[0]=diffeq_f_systemC^dxport~2\
+ cin[0]=diffeq_f_systemC^ADD~39-2[0] cout[0]=diffeq_f_systemC^ADD~39-3[0]\
+ sumout[0]=diffeq_f_systemC^ADD~39-3[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^xport~3_FF b[0]=diffeq_f_systemC^dxport~3\
+ cin[0]=diffeq_f_systemC^ADD~39-3[0] cout[0]=diffeq_f_systemC^ADD~39-4[0]\
+ sumout[0]=diffeq_f_systemC^ADD~39-4[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^xport~4_FF b[0]=diffeq_f_systemC^dxport~4\
+ cin[0]=diffeq_f_systemC^ADD~39-4[0] cout[0]=diffeq_f_systemC^ADD~39-5[0]\
+ sumout[0]=diffeq_f_systemC^ADD~39-5[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^xport~5_FF b[0]=diffeq_f_systemC^dxport~5\
+ cin[0]=diffeq_f_systemC^ADD~39-5[0] cout[0]=diffeq_f_systemC^ADD~39-6[0]\
+ sumout[0]=diffeq_f_systemC^ADD~39-6[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^xport~6_FF b[0]=diffeq_f_systemC^dxport~6\
+ cin[0]=diffeq_f_systemC^ADD~39-6[0] cout[0]=diffeq_f_systemC^ADD~39-7[0]\
+ sumout[0]=diffeq_f_systemC^ADD~39-7[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^xport~7_FF b[0]=diffeq_f_systemC^dxport~7\
+ cin[0]=diffeq_f_systemC^ADD~39-7[0] cout[0]=diffeq_f_systemC^ADD~39-8[0]\
+ sumout[0]=diffeq_f_systemC^ADD~39-8[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^xport~8_FF b[0]=diffeq_f_systemC^dxport~8\
+ cin[0]=diffeq_f_systemC^ADD~39-8[0] cout[0]=diffeq_f_systemC^ADD~39-9[0]\
+ sumout[0]=diffeq_f_systemC^ADD~39-9[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^xport~9_FF b[0]=diffeq_f_systemC^dxport~9\
+ cin[0]=diffeq_f_systemC^ADD~39-9[0] cout[0]=diffeq_f_systemC^ADD~39-10[0]\
+ sumout[0]=diffeq_f_systemC^ADD~39-10[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^xport~10_FF\
+ b[0]=diffeq_f_systemC^dxport~10 cin[0]=diffeq_f_systemC^ADD~39-10[0]\
+ cout[0]=diffeq_f_systemC^ADD~39-11[0] sumout[0]=diffeq_f_systemC^ADD~39-11[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^xport~11_FF\
+ b[0]=diffeq_f_systemC^dxport~11 cin[0]=diffeq_f_systemC^ADD~39-11[0]\
+ cout[0]=diffeq_f_systemC^ADD~39-12[0] sumout[0]=diffeq_f_systemC^ADD~39-12[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^xport~12_FF\
+ b[0]=diffeq_f_systemC^dxport~12 cin[0]=diffeq_f_systemC^ADD~39-12[0]\
+ cout[0]=diffeq_f_systemC^ADD~39-13[0] sumout[0]=diffeq_f_systemC^ADD~39-13[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^xport~13_FF\
+ b[0]=diffeq_f_systemC^dxport~13 cin[0]=diffeq_f_systemC^ADD~39-13[0]\
+ cout[0]=diffeq_f_systemC^ADD~39-14[0] sumout[0]=diffeq_f_systemC^ADD~39-14[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^xport~14_FF\
+ b[0]=diffeq_f_systemC^dxport~14 cin[0]=diffeq_f_systemC^ADD~39-14[0]\
+ cout[0]=diffeq_f_systemC^ADD~39-15[0] sumout[0]=diffeq_f_systemC^ADD~39-15[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^xport~15_FF\
+ b[0]=diffeq_f_systemC^dxport~15 cin[0]=diffeq_f_systemC^ADD~39-15[0]\
+ cout[0]=diffeq_f_systemC^ADD~39-16[0] sumout[0]=diffeq_f_systemC^ADD~39-16[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^xport~16_FF\
+ b[0]=diffeq_f_systemC^dxport~16 cin[0]=diffeq_f_systemC^ADD~39-16[0]\
+ cout[0]=diffeq_f_systemC^ADD~39-17[0] sumout[0]=diffeq_f_systemC^ADD~39-17[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^xport~17_FF\
+ b[0]=diffeq_f_systemC^dxport~17 cin[0]=diffeq_f_systemC^ADD~39-17[0]\
+ cout[0]=diffeq_f_systemC^ADD~39-18[0] sumout[0]=diffeq_f_systemC^ADD~39-18[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^xport~18_FF\
+ b[0]=diffeq_f_systemC^dxport~18 cin[0]=diffeq_f_systemC^ADD~39-18[0]\
+ cout[0]=diffeq_f_systemC^ADD~39-19[0] sumout[0]=diffeq_f_systemC^ADD~39-19[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^xport~19_FF\
+ b[0]=diffeq_f_systemC^dxport~19 cin[0]=diffeq_f_systemC^ADD~39-19[0]\
+ cout[0]=diffeq_f_systemC^ADD~39-20[0] sumout[0]=diffeq_f_systemC^ADD~39-20[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^xport~20_FF\
+ b[0]=diffeq_f_systemC^dxport~20 cin[0]=diffeq_f_systemC^ADD~39-20[0]\
+ cout[0]=diffeq_f_systemC^ADD~39-21[0] sumout[0]=diffeq_f_systemC^ADD~39-21[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^xport~21_FF\
+ b[0]=diffeq_f_systemC^dxport~21 cin[0]=diffeq_f_systemC^ADD~39-21[0]\
+ cout[0]=diffeq_f_systemC^ADD~39-22[0] sumout[0]=diffeq_f_systemC^ADD~39-22[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^xport~22_FF\
+ b[0]=diffeq_f_systemC^dxport~22 cin[0]=diffeq_f_systemC^ADD~39-22[0]\
+ cout[0]=diffeq_f_systemC^ADD~39-23[0] sumout[0]=diffeq_f_systemC^ADD~39-23[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^xport~23_FF\
+ b[0]=diffeq_f_systemC^dxport~23 cin[0]=diffeq_f_systemC^ADD~39-23[0]\
+ cout[0]=diffeq_f_systemC^ADD~39-24[0] sumout[0]=diffeq_f_systemC^ADD~39-24[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^xport~24_FF\
+ b[0]=diffeq_f_systemC^dxport~24 cin[0]=diffeq_f_systemC^ADD~39-24[0]\
+ cout[0]=diffeq_f_systemC^ADD~39-25[0] sumout[0]=diffeq_f_systemC^ADD~39-25[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^xport~25_FF\
+ b[0]=diffeq_f_systemC^dxport~25 cin[0]=diffeq_f_systemC^ADD~39-25[0]\
+ cout[0]=diffeq_f_systemC^ADD~39-26[0] sumout[0]=diffeq_f_systemC^ADD~39-26[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^xport~26_FF\
+ b[0]=diffeq_f_systemC^dxport~26 cin[0]=diffeq_f_systemC^ADD~39-26[0]\
+ cout[0]=diffeq_f_systemC^ADD~39-27[0] sumout[0]=diffeq_f_systemC^ADD~39-27[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^xport~27_FF\
+ b[0]=diffeq_f_systemC^dxport~27 cin[0]=diffeq_f_systemC^ADD~39-27[0]\
+ cout[0]=diffeq_f_systemC^ADD~39-28[0] sumout[0]=diffeq_f_systemC^ADD~39-28[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^xport~28_FF\
+ b[0]=diffeq_f_systemC^dxport~28 cin[0]=diffeq_f_systemC^ADD~39-28[0]\
+ cout[0]=diffeq_f_systemC^ADD~39-29[0] sumout[0]=diffeq_f_systemC^ADD~39-29[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^xport~29_FF\
+ b[0]=diffeq_f_systemC^dxport~29 cin[0]=diffeq_f_systemC^ADD~39-29[0]\
+ cout[0]=diffeq_f_systemC^ADD~39-30[0] sumout[0]=diffeq_f_systemC^ADD~39-30[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^xport~30_FF\
+ b[0]=diffeq_f_systemC^dxport~30 cin[0]=diffeq_f_systemC^ADD~39-30[0]\
+ cout[0]=diffeq_f_systemC^ADD~39-31[0] sumout[0]=diffeq_f_systemC^ADD~39-31[1]
+
+
+.subckt adder a[0]=diffeq_f_systemC^xport~31_FF\
+ b[0]=diffeq_f_systemC^dxport~31 cin[0]=diffeq_f_systemC^ADD~39-31[0]\
+ cout[0]=diffeq_f_systemC^ADD~39-32[0] sumout[0]=diffeq_f_systemC^ADD~39-32[1]
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~39-32[1] diffeq_f_systemC^xport~31_FF diffeq_f_systemC^nMUX~36^MUX_2~488
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~488 diffeq_f_systemC^nMUX~33^MUX_2~392
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~392 diffeq_f_systemC^xport~31_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^aport~31 diffeq_f_systemC^xport~31_FF gnd diffeq_f_systemC^LT~37^GT~303
+100 1
+
+
+.subckt mult_32_32_64 a[0]=diffeq_f_systemC^xport~0_FF\
+ a[1]=diffeq_f_systemC^xport~1_FF a[2]=diffeq_f_systemC^xport~2_FF\
+ a[3]=diffeq_f_systemC^xport~3_FF a[4]=diffeq_f_systemC^xport~4_FF\
+ a[5]=diffeq_f_systemC^xport~5_FF a[6]=diffeq_f_systemC^xport~6_FF\
+ a[7]=diffeq_f_systemC^xport~7_FF a[8]=diffeq_f_systemC^xport~8_FF\
+ a[9]=diffeq_f_systemC^xport~9_FF a[10]=diffeq_f_systemC^xport~10_FF\
+ a[11]=diffeq_f_systemC^xport~11_FF a[12]=diffeq_f_systemC^xport~12_FF\
+ a[13]=diffeq_f_systemC^xport~13_FF a[14]=diffeq_f_systemC^xport~14_FF\
+ a[15]=diffeq_f_systemC^xport~15_FF a[16]=diffeq_f_systemC^xport~16_FF\
+ a[17]=diffeq_f_systemC^xport~17_FF a[18]=diffeq_f_systemC^xport~18_FF\
+ a[19]=diffeq_f_systemC^xport~19_FF a[20]=diffeq_f_systemC^xport~20_FF\
+ a[21]=diffeq_f_systemC^xport~21_FF a[22]=diffeq_f_systemC^xport~22_FF\
+ a[23]=diffeq_f_systemC^xport~23_FF a[24]=diffeq_f_systemC^xport~24_FF\
+ a[25]=diffeq_f_systemC^xport~25_FF a[26]=diffeq_f_systemC^xport~26_FF\
+ a[27]=diffeq_f_systemC^xport~27_FF a[28]=diffeq_f_systemC^xport~28_FF\
+ a[29]=diffeq_f_systemC^xport~29_FF a[30]=diffeq_f_systemC^xport~30_FF\
+ a[31]=diffeq_f_systemC^xport~31_FF b[0]=vcc b[1]=gnd b[2]=vcc b[3]=gnd\
+ b[4]=gnd b[5]=gnd b[6]=gnd b[7]=gnd b[8]=gnd b[9]=gnd b[10]=gnd b[11]=gnd\
+ b[12]=gnd b[13]=gnd b[14]=gnd b[15]=gnd b[16]=gnd b[17]=gnd b[18]=gnd\
+ b[19]=gnd b[20]=gnd b[21]=gnd b[22]=gnd b[23]=gnd b[24]=gnd b[25]=gnd\
+ b[26]=gnd b[27]=gnd b[28]=gnd b[29]=gnd b[30]=gnd b[31]=gnd\
+ out[0]=diffeq_f_systemC^MUL~41[0] out[1]=diffeq_f_systemC^MUL~41[1]\
+ out[2]=diffeq_f_systemC^MUL~41[2] out[3]=diffeq_f_systemC^MUL~41[3]\
+ out[4]=diffeq_f_systemC^MUL~41[4] out[5]=diffeq_f_systemC^MUL~41[5]\
+ out[6]=diffeq_f_systemC^MUL~41[6] out[7]=diffeq_f_systemC^MUL~41[7]\
+ out[8]=diffeq_f_systemC^MUL~41[8] out[9]=diffeq_f_systemC^MUL~41[9]\
+ out[10]=diffeq_f_systemC^MUL~41[10] out[11]=diffeq_f_systemC^MUL~41[11]\
+ out[12]=diffeq_f_systemC^MUL~41[12] out[13]=diffeq_f_systemC^MUL~41[13]\
+ out[14]=diffeq_f_systemC^MUL~41[14] out[15]=diffeq_f_systemC^MUL~41[15]\
+ out[16]=diffeq_f_systemC^MUL~41[16] out[17]=diffeq_f_systemC^MUL~41[17]\
+ out[18]=diffeq_f_systemC^MUL~41[18] out[19]=diffeq_f_systemC^MUL~41[19]\
+ out[20]=diffeq_f_systemC^MUL~41[20] out[21]=diffeq_f_systemC^MUL~41[21]\
+ out[22]=diffeq_f_systemC^MUL~41[22] out[23]=diffeq_f_systemC^MUL~41[23]\
+ out[24]=diffeq_f_systemC^MUL~41[24] out[25]=diffeq_f_systemC^MUL~41[25]\
+ out[26]=diffeq_f_systemC^MUL~41[26] out[27]=diffeq_f_systemC^MUL~41[27]\
+ out[28]=diffeq_f_systemC^MUL~41[28] out[29]=diffeq_f_systemC^MUL~41[29]\
+ out[30]=diffeq_f_systemC^MUL~41[30] out[31]=diffeq_f_systemC^MUL~41[31]\
+ out[32]=diffeq_f_systemC^MUL~41[32] out[33]=diffeq_f_systemC^MUL~41[33]\
+ out[34]=diffeq_f_systemC^MUL~41[34] out[35]=diffeq_f_systemC^MUL~41[35]\
+ out[36]=diffeq_f_systemC^MUL~41[36] out[37]=diffeq_f_systemC^MUL~41[37]\
+ out[38]=diffeq_f_systemC^MUL~41[38] out[39]=diffeq_f_systemC^MUL~41[39]\
+ out[40]=diffeq_f_systemC^MUL~41[40] out[41]=diffeq_f_systemC^MUL~41[41]\
+ out[42]=diffeq_f_systemC^MUL~41[42] out[43]=diffeq_f_systemC^MUL~41[43]\
+ out[44]=diffeq_f_systemC^MUL~41[44] out[45]=diffeq_f_systemC^MUL~41[45]\
+ out[46]=diffeq_f_systemC^MUL~41[46] out[47]=diffeq_f_systemC^MUL~41[47]\
+ out[48]=diffeq_f_systemC^MUL~41[48] out[49]=diffeq_f_systemC^MUL~41[49]\
+ out[50]=diffeq_f_systemC^MUL~41[50] out[51]=diffeq_f_systemC^MUL~41[51]\
+ out[52]=diffeq_f_systemC^MUL~41[52] out[53]=diffeq_f_systemC^MUL~41[53]\
+ out[54]=diffeq_f_systemC^MUL~41[54] out[55]=diffeq_f_systemC^MUL~41[55]\
+ out[56]=diffeq_f_systemC^MUL~41[56] out[57]=diffeq_f_systemC^MUL~41[57]\
+ out[58]=diffeq_f_systemC^MUL~41[58] out[59]=diffeq_f_systemC^MUL~41[59]\
+ out[60]=diffeq_f_systemC^MUL~41[60] out[61]=diffeq_f_systemC^MUL~41[61]\
+ out[62]=diffeq_f_systemC^MUL~41[62] out[63]=diffeq_f_systemC^MUL~41[63]
+
+.names diffeq_f_systemC^xport~31_FF diffeq_f_systemC^aport~31 diffeq_f_systemC^LT~37^lXOR~239^lXOR~334
+01 1
+10 1
+
+.names diffeq_f_systemC^LT~37^lXOR~239^lXOR~334 gnd diffeq_f_systemC^LT~37^lOR~302
+1- 1
+-1 1
+
+.names diffeq_f_systemC^LT~37^lXOR~239^lXOR~333 diffeq_f_systemC^LT~37^lOR~302 diffeq_f_systemC^LT~37^lOR~300
+1- 1
+-1 1
+
+.names diffeq_f_systemC^LT~37^lXOR~239^lXOR~332 diffeq_f_systemC^LT~37^lOR~300 diffeq_f_systemC^LT~37^lOR~298
+1- 1
+-1 1
+
+.names diffeq_f_systemC^LT~37^lXOR~239^lXOR~331 diffeq_f_systemC^LT~37^lOR~298 diffeq_f_systemC^LT~37^lOR~296
+1- 1
+-1 1
+
+.names diffeq_f_systemC^LT~37^lXOR~239^lXOR~330 diffeq_f_systemC^LT~37^lOR~296 diffeq_f_systemC^LT~37^lOR~294
+1- 1
+-1 1
+
+.names diffeq_f_systemC^LT~37^lXOR~239^lXOR~329 diffeq_f_systemC^LT~37^lOR~294 diffeq_f_systemC^LT~37^lOR~292
+1- 1
+-1 1
+
+.names diffeq_f_systemC^LT~37^lXOR~239^lXOR~328 diffeq_f_systemC^LT~37^lOR~292 diffeq_f_systemC^LT~37^lOR~290
+1- 1
+-1 1
+
+.names diffeq_f_systemC^LT~37^lXOR~239^lXOR~327 diffeq_f_systemC^LT~37^lOR~290 diffeq_f_systemC^LT~37^lOR~288
+1- 1
+-1 1
+
+.names diffeq_f_systemC^LT~37^lXOR~239^lXOR~326 diffeq_f_systemC^LT~37^lOR~288 diffeq_f_systemC^LT~37^lOR~286
+1- 1
+-1 1
+
+.names diffeq_f_systemC^LT~37^lXOR~239^lXOR~325 diffeq_f_systemC^LT~37^lOR~286 diffeq_f_systemC^LT~37^lOR~284
+1- 1
+-1 1
+
+.names diffeq_f_systemC^LT~37^lXOR~239^lXOR~324 diffeq_f_systemC^LT~37^lOR~284 diffeq_f_systemC^LT~37^lOR~282
+1- 1
+-1 1
+
+.names diffeq_f_systemC^LT~37^lXOR~239^lXOR~323 diffeq_f_systemC^LT~37^lOR~282 diffeq_f_systemC^LT~37^lOR~280
+1- 1
+-1 1
+
+.names diffeq_f_systemC^LT~37^lXOR~239^lXOR~322 diffeq_f_systemC^LT~37^lOR~280 diffeq_f_systemC^LT~37^lOR~278
+1- 1
+-1 1
+
+.names diffeq_f_systemC^LT~37^lXOR~239^lXOR~321 diffeq_f_systemC^LT~37^lOR~278 diffeq_f_systemC^LT~37^lOR~276
+1- 1
+-1 1
+
+.names diffeq_f_systemC^LT~37^lXOR~239^lXOR~320 diffeq_f_systemC^LT~37^lOR~276 diffeq_f_systemC^LT~37^lOR~274
+1- 1
+-1 1
+
+.names diffeq_f_systemC^LT~37^lXOR~239^lXOR~319 diffeq_f_systemC^LT~37^lOR~274 diffeq_f_systemC^LT~37^lOR~272
+1- 1
+-1 1
+
+.names diffeq_f_systemC^LT~37^lXOR~239^lXOR~318 diffeq_f_systemC^LT~37^lOR~272 diffeq_f_systemC^LT~37^lOR~270
+1- 1
+-1 1
+
+.names diffeq_f_systemC^LT~37^lXOR~239^lXOR~317 diffeq_f_systemC^LT~37^lOR~270 diffeq_f_systemC^LT~37^lOR~268
+1- 1
+-1 1
+
+.names diffeq_f_systemC^LT~37^lXOR~239^lXOR~316 diffeq_f_systemC^LT~37^lOR~268 diffeq_f_systemC^LT~37^lOR~266
+1- 1
+-1 1
+
+.names diffeq_f_systemC^LT~37^lXOR~239^lXOR~315 diffeq_f_systemC^LT~37^lOR~266 diffeq_f_systemC^LT~37^lOR~264
+1- 1
+-1 1
+
+.names diffeq_f_systemC^LT~37^lXOR~239^lXOR~314 diffeq_f_systemC^LT~37^lOR~264 diffeq_f_systemC^LT~37^lOR~262
+1- 1
+-1 1
+
+.names diffeq_f_systemC^LT~37^lXOR~239^lXOR~313 diffeq_f_systemC^LT~37^lOR~262 diffeq_f_systemC^LT~37^lOR~260
+1- 1
+-1 1
+
+.names diffeq_f_systemC^LT~37^lXOR~239^lXOR~312 diffeq_f_systemC^LT~37^lOR~260 diffeq_f_systemC^LT~37^lOR~258
+1- 1
+-1 1
+
+.names diffeq_f_systemC^LT~37^lXOR~239^lXOR~311 diffeq_f_systemC^LT~37^lOR~258 diffeq_f_systemC^LT~37^lOR~256
+1- 1
+-1 1
+
+.names diffeq_f_systemC^LT~37^lXOR~239^lXOR~310 diffeq_f_systemC^LT~37^lOR~256 diffeq_f_systemC^LT~37^lOR~254
+1- 1
+-1 1
+
+.names diffeq_f_systemC^LT~37^lXOR~239^lXOR~309 diffeq_f_systemC^LT~37^lOR~254 diffeq_f_systemC^LT~37^lOR~252
+1- 1
+-1 1
+
+.names diffeq_f_systemC^LT~37^lXOR~239^lXOR~308 diffeq_f_systemC^LT~37^lOR~252 diffeq_f_systemC^LT~37^lOR~250
+1- 1
+-1 1
+
+.names diffeq_f_systemC^LT~37^lXOR~239^lXOR~307 diffeq_f_systemC^LT~37^lOR~250 diffeq_f_systemC^LT~37^lOR~248
+1- 1
+-1 1
+
+.names diffeq_f_systemC^LT~37^lXOR~239^lXOR~306 diffeq_f_systemC^LT~37^lOR~248 diffeq_f_systemC^LT~37^lOR~246
+1- 1
+-1 1
+
+.names diffeq_f_systemC^LT~37^lXOR~239^lXOR~305 diffeq_f_systemC^LT~37^lOR~246 diffeq_f_systemC^LT~37^lOR~244
+1- 1
+-1 1
+
+.names diffeq_f_systemC^LT~37^lXOR~239^lXOR~304 diffeq_f_systemC^LT~37^lOR~244 diffeq_f_systemC^LT~37^lOR~242
+1- 1
+-1 1
+
+.names diffeq_f_systemC^aport~2 diffeq_f_systemC^xport~2_FF diffeq_f_systemC^LT~37^lOR~246 diffeq_f_systemC^LT~37^GT~245
+100 1
+
+.names diffeq_f_systemC^aport~3 diffeq_f_systemC^xport~3_FF diffeq_f_systemC^LT~37^lOR~248 diffeq_f_systemC^LT~37^GT~247
+100 1
+
+.names diffeq_f_systemC^aport~4 diffeq_f_systemC^xport~4_FF diffeq_f_systemC^LT~37^lOR~250 diffeq_f_systemC^LT~37^GT~249
+100 1
+
+.names diffeq_f_systemC^aport~5 diffeq_f_systemC^xport~5_FF diffeq_f_systemC^LT~37^lOR~252 diffeq_f_systemC^LT~37^GT~251
+100 1
+
+.names diffeq_f_systemC^aport~6 diffeq_f_systemC^xport~6_FF diffeq_f_systemC^LT~37^lOR~254 diffeq_f_systemC^LT~37^GT~253
+100 1
+
+.names diffeq_f_systemC^aport~7 diffeq_f_systemC^xport~7_FF diffeq_f_systemC^LT~37^lOR~256 diffeq_f_systemC^LT~37^GT~255
+100 1
+
+.names diffeq_f_systemC^aport~8 diffeq_f_systemC^xport~8_FF diffeq_f_systemC^LT~37^lOR~258 diffeq_f_systemC^LT~37^GT~257
+100 1
+
+.names diffeq_f_systemC^aport~9 diffeq_f_systemC^xport~9_FF diffeq_f_systemC^LT~37^lOR~260 diffeq_f_systemC^LT~37^GT~259
+100 1
+
+.names diffeq_f_systemC^aport~10 diffeq_f_systemC^xport~10_FF diffeq_f_systemC^LT~37^lOR~262 diffeq_f_systemC^LT~37^GT~261
+100 1
+
+.names diffeq_f_systemC^aport~11 diffeq_f_systemC^xport~11_FF diffeq_f_systemC^LT~37^lOR~264 diffeq_f_systemC^LT~37^GT~263
+100 1
+
+.names diffeq_f_systemC^aport~12 diffeq_f_systemC^xport~12_FF diffeq_f_systemC^LT~37^lOR~266 diffeq_f_systemC^LT~37^GT~265
+100 1
+
+.names diffeq_f_systemC^aport~13 diffeq_f_systemC^xport~13_FF diffeq_f_systemC^LT~37^lOR~268 diffeq_f_systemC^LT~37^GT~267
+100 1
+
+.names diffeq_f_systemC^aport~14 diffeq_f_systemC^xport~14_FF diffeq_f_systemC^LT~37^lOR~270 diffeq_f_systemC^LT~37^GT~269
+100 1
+
+.names diffeq_f_systemC^aport~15 diffeq_f_systemC^xport~15_FF diffeq_f_systemC^LT~37^lOR~272 diffeq_f_systemC^LT~37^GT~271
+100 1
+
+.names diffeq_f_systemC^aport~16 diffeq_f_systemC^xport~16_FF diffeq_f_systemC^LT~37^lOR~274 diffeq_f_systemC^LT~37^GT~273
+100 1
+
+.names diffeq_f_systemC^aport~17 diffeq_f_systemC^xport~17_FF diffeq_f_systemC^LT~37^lOR~276 diffeq_f_systemC^LT~37^GT~275
+100 1
+
+.names diffeq_f_systemC^aport~18 diffeq_f_systemC^xport~18_FF diffeq_f_systemC^LT~37^lOR~278 diffeq_f_systemC^LT~37^GT~277
+100 1
+
+.names diffeq_f_systemC^aport~19 diffeq_f_systemC^xport~19_FF diffeq_f_systemC^LT~37^lOR~280 diffeq_f_systemC^LT~37^GT~279
+100 1
+
+.names diffeq_f_systemC^aport~20 diffeq_f_systemC^xport~20_FF diffeq_f_systemC^LT~37^lOR~282 diffeq_f_systemC^LT~37^GT~281
+100 1
+
+.names diffeq_f_systemC^aport~21 diffeq_f_systemC^xport~21_FF diffeq_f_systemC^LT~37^lOR~284 diffeq_f_systemC^LT~37^GT~283
+100 1
+
+.names diffeq_f_systemC^aport~22 diffeq_f_systemC^xport~22_FF diffeq_f_systemC^LT~37^lOR~286 diffeq_f_systemC^LT~37^GT~285
+100 1
+
+.names diffeq_f_systemC^aport~23 diffeq_f_systemC^xport~23_FF diffeq_f_systemC^LT~37^lOR~288 diffeq_f_systemC^LT~37^GT~287
+100 1
+
+.names diffeq_f_systemC^aport~24 diffeq_f_systemC^xport~24_FF diffeq_f_systemC^LT~37^lOR~290 diffeq_f_systemC^LT~37^GT~289
+100 1
+
+.names diffeq_f_systemC^aport~25 diffeq_f_systemC^xport~25_FF diffeq_f_systemC^LT~37^lOR~292 diffeq_f_systemC^LT~37^GT~291
+100 1
+
+.names diffeq_f_systemC^aport~26 diffeq_f_systemC^xport~26_FF diffeq_f_systemC^LT~37^lOR~294 diffeq_f_systemC^LT~37^GT~293
+100 1
+
+.names diffeq_f_systemC^aport~27 diffeq_f_systemC^xport~27_FF diffeq_f_systemC^LT~37^lOR~296 diffeq_f_systemC^LT~37^GT~295
+100 1
+
+.names diffeq_f_systemC^aport~28 diffeq_f_systemC^xport~28_FF diffeq_f_systemC^LT~37^lOR~298 diffeq_f_systemC^LT~37^GT~297
+100 1
+
+.names diffeq_f_systemC^aport~29 diffeq_f_systemC^xport~29_FF diffeq_f_systemC^LT~37^lOR~300 diffeq_f_systemC^LT~37^GT~299
+100 1
+
+.names diffeq_f_systemC^aport~30 diffeq_f_systemC^xport~30_FF diffeq_f_systemC^LT~37^lOR~302 diffeq_f_systemC^LT~37^GT~301
+100 1
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~39-31[1] diffeq_f_systemC^xport~30_FF diffeq_f_systemC^nMUX~36^MUX_2~487
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~487 diffeq_f_systemC^nMUX~33^MUX_2~391
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~391 diffeq_f_systemC^xport~30_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^xport~30_FF diffeq_f_systemC^aport~30 diffeq_f_systemC^LT~37^lXOR~239^lXOR~333
+01 1
+10 1
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~39-30[1] diffeq_f_systemC^xport~29_FF diffeq_f_systemC^nMUX~36^MUX_2~485
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~485 diffeq_f_systemC^nMUX~33^MUX_2~389
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~389 diffeq_f_systemC^xport~29_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^xport~29_FF diffeq_f_systemC^aport~29 diffeq_f_systemC^LT~37^lXOR~239^lXOR~332
+01 1
+10 1
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~39-29[1] diffeq_f_systemC^xport~28_FF diffeq_f_systemC^nMUX~36^MUX_2~484
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~484 diffeq_f_systemC^nMUX~33^MUX_2~388
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~388 diffeq_f_systemC^xport~28_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^xport~28_FF diffeq_f_systemC^aport~28 diffeq_f_systemC^LT~37^lXOR~239^lXOR~331
+01 1
+10 1
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~39-28[1] diffeq_f_systemC^xport~27_FF diffeq_f_systemC^nMUX~36^MUX_2~483
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~483 diffeq_f_systemC^nMUX~33^MUX_2~387
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~387 diffeq_f_systemC^xport~27_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^xport~27_FF diffeq_f_systemC^aport~27 diffeq_f_systemC^LT~37^lXOR~239^lXOR~330
+01 1
+10 1
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~39-27[1] diffeq_f_systemC^xport~26_FF diffeq_f_systemC^nMUX~36^MUX_2~482
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~482 diffeq_f_systemC^nMUX~33^MUX_2~386
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~386 diffeq_f_systemC^xport~26_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^xport~26_FF diffeq_f_systemC^aport~26 diffeq_f_systemC^LT~37^lXOR~239^lXOR~329
+01 1
+10 1
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~39-26[1] diffeq_f_systemC^xport~25_FF diffeq_f_systemC^nMUX~36^MUX_2~481
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~481 diffeq_f_systemC^nMUX~33^MUX_2~385
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~385 diffeq_f_systemC^xport~25_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^xport~25_FF diffeq_f_systemC^aport~25 diffeq_f_systemC^LT~37^lXOR~239^lXOR~328
+01 1
+10 1
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~39-25[1] diffeq_f_systemC^xport~24_FF diffeq_f_systemC^nMUX~36^MUX_2~480
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~480 diffeq_f_systemC^nMUX~33^MUX_2~384
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~384 diffeq_f_systemC^xport~24_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^xport~24_FF diffeq_f_systemC^aport~24 diffeq_f_systemC^LT~37^lXOR~239^lXOR~327
+01 1
+10 1
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~39-24[1] diffeq_f_systemC^xport~23_FF diffeq_f_systemC^nMUX~36^MUX_2~479
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~479 diffeq_f_systemC^nMUX~33^MUX_2~383
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~383 diffeq_f_systemC^xport~23_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^xport~23_FF diffeq_f_systemC^aport~23 diffeq_f_systemC^LT~37^lXOR~239^lXOR~326
+01 1
+10 1
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~39-23[1] diffeq_f_systemC^xport~22_FF diffeq_f_systemC^nMUX~36^MUX_2~478
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~478 diffeq_f_systemC^nMUX~33^MUX_2~382
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~382 diffeq_f_systemC^xport~22_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^xport~22_FF diffeq_f_systemC^aport~22 diffeq_f_systemC^LT~37^lXOR~239^lXOR~325
+01 1
+10 1
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~39-22[1] diffeq_f_systemC^xport~21_FF diffeq_f_systemC^nMUX~36^MUX_2~477
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~477 diffeq_f_systemC^nMUX~33^MUX_2~381
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~381 diffeq_f_systemC^xport~21_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^xport~21_FF diffeq_f_systemC^aport~21 diffeq_f_systemC^LT~37^lXOR~239^lXOR~324
+01 1
+10 1
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~39-21[1] diffeq_f_systemC^xport~20_FF diffeq_f_systemC^nMUX~36^MUX_2~476
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~476 diffeq_f_systemC^nMUX~33^MUX_2~380
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~380 diffeq_f_systemC^xport~20_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^xport~20_FF diffeq_f_systemC^aport~20 diffeq_f_systemC^LT~37^lXOR~239^lXOR~323
+01 1
+10 1
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~39-20[1] diffeq_f_systemC^xport~19_FF diffeq_f_systemC^nMUX~36^MUX_2~474
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~474 diffeq_f_systemC^nMUX~33^MUX_2~378
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~378 diffeq_f_systemC^xport~19_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^xport~19_FF diffeq_f_systemC^aport~19 diffeq_f_systemC^LT~37^lXOR~239^lXOR~322
+01 1
+10 1
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~39-19[1] diffeq_f_systemC^xport~18_FF diffeq_f_systemC^nMUX~36^MUX_2~473
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~473 diffeq_f_systemC^nMUX~33^MUX_2~377
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~377 diffeq_f_systemC^xport~18_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^xport~18_FF diffeq_f_systemC^aport~18 diffeq_f_systemC^LT~37^lXOR~239^lXOR~321
+01 1
+10 1
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~39-18[1] diffeq_f_systemC^xport~17_FF diffeq_f_systemC^nMUX~36^MUX_2~472
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~472 diffeq_f_systemC^nMUX~33^MUX_2~376
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~376 diffeq_f_systemC^xport~17_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^xport~17_FF diffeq_f_systemC^aport~17 diffeq_f_systemC^LT~37^lXOR~239^lXOR~320
+01 1
+10 1
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~39-17[1] diffeq_f_systemC^xport~16_FF diffeq_f_systemC^nMUX~36^MUX_2~471
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~471 diffeq_f_systemC^nMUX~33^MUX_2~375
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~375 diffeq_f_systemC^xport~16_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^xport~16_FF diffeq_f_systemC^aport~16 diffeq_f_systemC^LT~37^lXOR~239^lXOR~319
+01 1
+10 1
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~39-16[1] diffeq_f_systemC^xport~15_FF diffeq_f_systemC^nMUX~36^MUX_2~470
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~470 diffeq_f_systemC^nMUX~33^MUX_2~374
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~374 diffeq_f_systemC^xport~15_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^xport~15_FF diffeq_f_systemC^aport~15 diffeq_f_systemC^LT~37^lXOR~239^lXOR~318
+01 1
+10 1
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~39-15[1] diffeq_f_systemC^xport~14_FF diffeq_f_systemC^nMUX~36^MUX_2~469
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~469 diffeq_f_systemC^nMUX~33^MUX_2~373
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~373 diffeq_f_systemC^xport~14_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^xport~14_FF diffeq_f_systemC^aport~14 diffeq_f_systemC^LT~37^lXOR~239^lXOR~317
+01 1
+10 1
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~39-14[1] diffeq_f_systemC^xport~13_FF diffeq_f_systemC^nMUX~36^MUX_2~468
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~468 diffeq_f_systemC^nMUX~33^MUX_2~372
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~372 diffeq_f_systemC^xport~13_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^xport~13_FF diffeq_f_systemC^aport~13 diffeq_f_systemC^LT~37^lXOR~239^lXOR~316
+01 1
+10 1
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~39-13[1] diffeq_f_systemC^xport~12_FF diffeq_f_systemC^nMUX~36^MUX_2~467
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~467 diffeq_f_systemC^nMUX~33^MUX_2~371
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~371 diffeq_f_systemC^xport~12_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^xport~12_FF diffeq_f_systemC^aport~12 diffeq_f_systemC^LT~37^lXOR~239^lXOR~315
+01 1
+10 1
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~39-12[1] diffeq_f_systemC^xport~11_FF diffeq_f_systemC^nMUX~36^MUX_2~466
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~466 diffeq_f_systemC^nMUX~33^MUX_2~370
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~370 diffeq_f_systemC^xport~11_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^xport~11_FF diffeq_f_systemC^aport~11 diffeq_f_systemC^LT~37^lXOR~239^lXOR~314
+01 1
+10 1
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~39-11[1] diffeq_f_systemC^xport~10_FF diffeq_f_systemC^nMUX~36^MUX_2~465
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~465 diffeq_f_systemC^nMUX~33^MUX_2~369
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~369 diffeq_f_systemC^xport~10_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^xport~10_FF diffeq_f_systemC^aport~10 diffeq_f_systemC^LT~37^lXOR~239^lXOR~313
+01 1
+10 1
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~39-10[1] diffeq_f_systemC^xport~9_FF diffeq_f_systemC^nMUX~36^MUX_2~494
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~494 diffeq_f_systemC^nMUX~33^MUX_2~398
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~398 diffeq_f_systemC^xport~9_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^xport~9_FF diffeq_f_systemC^aport~9 diffeq_f_systemC^LT~37^lXOR~239^lXOR~312
+01 1
+10 1
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~39-9[1] diffeq_f_systemC^xport~8_FF diffeq_f_systemC^nMUX~36^MUX_2~493
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~493 diffeq_f_systemC^nMUX~33^MUX_2~397
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~397 diffeq_f_systemC^xport~8_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^xport~8_FF diffeq_f_systemC^aport~8 diffeq_f_systemC^LT~37^lXOR~239^lXOR~311
+01 1
+10 1
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~39-8[1] diffeq_f_systemC^xport~7_FF diffeq_f_systemC^nMUX~36^MUX_2~492
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~492 diffeq_f_systemC^nMUX~33^MUX_2~396
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~396 diffeq_f_systemC^xport~7_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^xport~7_FF diffeq_f_systemC^aport~7 diffeq_f_systemC^LT~37^lXOR~239^lXOR~310
+01 1
+10 1
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~39-7[1] diffeq_f_systemC^xport~6_FF diffeq_f_systemC^nMUX~36^MUX_2~491
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~491 diffeq_f_systemC^nMUX~33^MUX_2~395
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~395 diffeq_f_systemC^xport~6_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^xport~6_FF diffeq_f_systemC^aport~6 diffeq_f_systemC^LT~37^lXOR~239^lXOR~309
+01 1
+10 1
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~39-6[1] diffeq_f_systemC^xport~5_FF diffeq_f_systemC^nMUX~36^MUX_2~490
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~490 diffeq_f_systemC^nMUX~33^MUX_2~394
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~394 diffeq_f_systemC^xport~5_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^xport~5_FF diffeq_f_systemC^aport~5 diffeq_f_systemC^LT~37^lXOR~239^lXOR~308
+01 1
+10 1
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~39-5[1] diffeq_f_systemC^xport~4_FF diffeq_f_systemC^nMUX~36^MUX_2~489
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~489 diffeq_f_systemC^nMUX~33^MUX_2~393
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~393 diffeq_f_systemC^xport~4_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^xport~4_FF diffeq_f_systemC^aport~4 diffeq_f_systemC^LT~37^lXOR~239^lXOR~307
+01 1
+10 1
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~39-4[1] diffeq_f_systemC^xport~3_FF diffeq_f_systemC^nMUX~36^MUX_2~486
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~486 diffeq_f_systemC^nMUX~33^MUX_2~390
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~390 diffeq_f_systemC^xport~3_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^xport~3_FF diffeq_f_systemC^aport~3 diffeq_f_systemC^LT~37^lXOR~239^lXOR~306
+01 1
+10 1
+
+.names diffeq_f_systemC^LT~37^lOR~240 diffeq_f_systemC^nMUX~36^lNOT~38 diffeq_f_systemC^ADD~39-3[1] diffeq_f_systemC^xport~2_FF diffeq_f_systemC^nMUX~36^MUX_2~475
+1-1- 1
+-1-1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35 gnd diffeq_f_systemC^nMUX~36^MUX_2~475 diffeq_f_systemC^nMUX~33^MUX_2~379
+1-1- 1
+-1-1 1
+
+.latch diffeq_f_systemC^nMUX~33^MUX_2~379 diffeq_f_systemC^xport~2_FF re diffeq_f_systemC^clk 3
+
+.names diffeq_f_systemC^xport~2_FF diffeq_f_systemC^aport~2 diffeq_f_systemC^LT~37^lXOR~239^lXOR~305
+01 1
+10 1
+
+.names diffeq_f_systemC^xport~1_FF diffeq_f_systemC^aport~1 diffeq_f_systemC^LT~37^lXOR~239^lXOR~304
+01 1
+10 1
+
+
+.subckt adder a[0]=diffeq_f_systemC^xport~0_FF b[0]=diffeq_f_systemC^dxport~0\
+ cin[0]=diffeq_f_systemC^ADD~39-0[0] cout[0]=diffeq_f_systemC^ADD~39-1[0]\
+ sumout[0]=diffeq_f_systemC^ADD~39-1[1]
+
+
+.subckt adder a[0]=vcc b[0]=gnd cin[0]=unconn\
+ cout[0]=diffeq_f_systemC^MUL~42-add0-0[0]\
+ sumout[0]=diffeq_f_systemC^MUL~42-add0-0~dummy_output~0~1
+
+
+.subckt adder a[0]=vcc b[0]=gnd cin[0]=unconn\
+ cout[0]=diffeq_f_systemC^MUL~45-add0-0[0]\
+ sumout[0]=diffeq_f_systemC^MUL~45-add0-0~dummy_output~0~1
+
+
+.subckt adder a[0]=vcc b[0]=gnd cin[0]=unconn\
+ cout[0]=diffeq_f_systemC^ADD~40-0[0]\
+ sumout[0]=diffeq_f_systemC^ADD~40-0~dummy_output~0~1
+
+
+.subckt adder a[0]=vcc b[0]=gnd cin[0]=unconn\
+ cout[0]=diffeq_f_systemC^ADD~39-0[0]\
+ sumout[0]=diffeq_f_systemC^ADD~39-0~dummy_output~0~1
+
+
+.subckt adder a[0]=gnd b[0]=vcc cin[0]=unconn\
+ cout[0]=diffeq_f_systemC^MIN~46-0[0]\
+ sumout[0]=diffeq_f_systemC^MIN~46-0~dummy_output~0~1
+
+
+.subckt adder a[0]=gnd b[0]=vcc cin[0]=unconn\
+ cout[0]=diffeq_f_systemC^MIN~43-0[0]\
+ sumout[0]=diffeq_f_systemC^MIN~43-0~dummy_output~0~1
+
+.names diffeq_f_systemC^reset vcc diffeq_f_systemC^lEQ~34^lXNOR~527^lXNOR~529
+00 1
+11 1
+
+.names diffeq_f_systemC^lEQ~34^lXNOR~527^lXNOR~529 diffeq_f_systemC^lEQ~34^lAND~528
+1 1
+
+.names diffeq_f_systemC^lEQ~34^lAND~528 diffeq_f_systemC^nMUX~33^lNOT~35
+0 1
+
+.names diffeq_f_systemC^xport~0_FF diffeq_f_systemC^xport~0
+1 1
+
+.names diffeq_f_systemC^xport~1_FF diffeq_f_systemC^xport~1
+1 1
+
+.names diffeq_f_systemC^xport~2_FF diffeq_f_systemC^xport~2
+1 1
+
+.names diffeq_f_systemC^xport~3_FF diffeq_f_systemC^xport~3
+1 1
+
+.names diffeq_f_systemC^xport~4_FF diffeq_f_systemC^xport~4
+1 1
+
+.names diffeq_f_systemC^xport~5_FF diffeq_f_systemC^xport~5
+1 1
+
+.names diffeq_f_systemC^xport~6_FF diffeq_f_systemC^xport~6
+1 1
+
+.names diffeq_f_systemC^xport~7_FF diffeq_f_systemC^xport~7
+1 1
+
+.names diffeq_f_systemC^xport~8_FF diffeq_f_systemC^xport~8
+1 1
+
+.names diffeq_f_systemC^xport~9_FF diffeq_f_systemC^xport~9
+1 1
+
+.names diffeq_f_systemC^xport~10_FF diffeq_f_systemC^xport~10
+1 1
+
+.names diffeq_f_systemC^xport~11_FF diffeq_f_systemC^xport~11
+1 1
+
+.names diffeq_f_systemC^xport~12_FF diffeq_f_systemC^xport~12
+1 1
+
+.names diffeq_f_systemC^xport~13_FF diffeq_f_systemC^xport~13
+1 1
+
+.names diffeq_f_systemC^xport~14_FF diffeq_f_systemC^xport~14
+1 1
+
+.names diffeq_f_systemC^xport~15_FF diffeq_f_systemC^xport~15
+1 1
+
+.names diffeq_f_systemC^xport~16_FF diffeq_f_systemC^xport~16
+1 1
+
+.names diffeq_f_systemC^xport~17_FF diffeq_f_systemC^xport~17
+1 1
+
+.names diffeq_f_systemC^xport~18_FF diffeq_f_systemC^xport~18
+1 1
+
+.names diffeq_f_systemC^xport~19_FF diffeq_f_systemC^xport~19
+1 1
+
+.names diffeq_f_systemC^xport~20_FF diffeq_f_systemC^xport~20
+1 1
+
+.names diffeq_f_systemC^xport~21_FF diffeq_f_systemC^xport~21
+1 1
+
+.names diffeq_f_systemC^xport~22_FF diffeq_f_systemC^xport~22
+1 1
+
+.names diffeq_f_systemC^xport~23_FF diffeq_f_systemC^xport~23
+1 1
+
+.names diffeq_f_systemC^xport~24_FF diffeq_f_systemC^xport~24
+1 1
+
+.names diffeq_f_systemC^xport~25_FF diffeq_f_systemC^xport~25
+1 1
+
+.names diffeq_f_systemC^xport~26_FF diffeq_f_systemC^xport~26
+1 1
+
+.names diffeq_f_systemC^xport~27_FF diffeq_f_systemC^xport~27
+1 1
+
+.names diffeq_f_systemC^xport~28_FF diffeq_f_systemC^xport~28
+1 1
+
+.names diffeq_f_systemC^xport~29_FF diffeq_f_systemC^xport~29
+1 1
+
+.names diffeq_f_systemC^xport~30_FF diffeq_f_systemC^xport~30
+1 1
+
+.names diffeq_f_systemC^xport~31_FF diffeq_f_systemC^xport~31
+1 1
+
+.names diffeq_f_systemC^yport~0_FF diffeq_f_systemC^yport~0
+1 1
+
+.names diffeq_f_systemC^yport~1_FF diffeq_f_systemC^yport~1
+1 1
+
+.names diffeq_f_systemC^yport~2_FF diffeq_f_systemC^yport~2
+1 1
+
+.names diffeq_f_systemC^yport~3_FF diffeq_f_systemC^yport~3
+1 1
+
+.names diffeq_f_systemC^yport~4_FF diffeq_f_systemC^yport~4
+1 1
+
+.names diffeq_f_systemC^yport~5_FF diffeq_f_systemC^yport~5
+1 1
+
+.names diffeq_f_systemC^yport~6_FF diffeq_f_systemC^yport~6
+1 1
+
+.names diffeq_f_systemC^yport~7_FF diffeq_f_systemC^yport~7
+1 1
+
+.names diffeq_f_systemC^yport~8_FF diffeq_f_systemC^yport~8
+1 1
+
+.names diffeq_f_systemC^yport~9_FF diffeq_f_systemC^yport~9
+1 1
+
+.names diffeq_f_systemC^yport~10_FF diffeq_f_systemC^yport~10
+1 1
+
+.names diffeq_f_systemC^yport~11_FF diffeq_f_systemC^yport~11
+1 1
+
+.names diffeq_f_systemC^yport~12_FF diffeq_f_systemC^yport~12
+1 1
+
+.names diffeq_f_systemC^yport~13_FF diffeq_f_systemC^yport~13
+1 1
+
+.names diffeq_f_systemC^yport~14_FF diffeq_f_systemC^yport~14
+1 1
+
+.names diffeq_f_systemC^yport~15_FF diffeq_f_systemC^yport~15
+1 1
+
+.names diffeq_f_systemC^yport~16_FF diffeq_f_systemC^yport~16
+1 1
+
+.names diffeq_f_systemC^yport~17_FF diffeq_f_systemC^yport~17
+1 1
+
+.names diffeq_f_systemC^yport~18_FF diffeq_f_systemC^yport~18
+1 1
+
+.names diffeq_f_systemC^yport~19_FF diffeq_f_systemC^yport~19
+1 1
+
+.names diffeq_f_systemC^yport~20_FF diffeq_f_systemC^yport~20
+1 1
+
+.names diffeq_f_systemC^yport~21_FF diffeq_f_systemC^yport~21
+1 1
+
+.names diffeq_f_systemC^yport~22_FF diffeq_f_systemC^yport~22
+1 1
+
+.names diffeq_f_systemC^yport~23_FF diffeq_f_systemC^yport~23
+1 1
+
+.names diffeq_f_systemC^yport~24_FF diffeq_f_systemC^yport~24
+1 1
+
+.names diffeq_f_systemC^yport~25_FF diffeq_f_systemC^yport~25
+1 1
+
+.names diffeq_f_systemC^yport~26_FF diffeq_f_systemC^yport~26
+1 1
+
+.names diffeq_f_systemC^yport~27_FF diffeq_f_systemC^yport~27
+1 1
+
+.names diffeq_f_systemC^yport~28_FF diffeq_f_systemC^yport~28
+1 1
+
+.names diffeq_f_systemC^yport~29_FF diffeq_f_systemC^yport~29
+1 1
+
+.names diffeq_f_systemC^yport~30_FF diffeq_f_systemC^yport~30
+1 1
+
+.names diffeq_f_systemC^yport~31_FF diffeq_f_systemC^yport~31
+1 1
+
+.names diffeq_f_systemC^uport~0_FF diffeq_f_systemC^uport~0
+1 1
+
+.names diffeq_f_systemC^uport~1_FF diffeq_f_systemC^uport~1
+1 1
+
+.names diffeq_f_systemC^uport~2_FF diffeq_f_systemC^uport~2
+1 1
+
+.names diffeq_f_systemC^uport~3_FF diffeq_f_systemC^uport~3
+1 1
+
+.names diffeq_f_systemC^uport~4_FF diffeq_f_systemC^uport~4
+1 1
+
+.names diffeq_f_systemC^uport~5_FF diffeq_f_systemC^uport~5
+1 1
+
+.names diffeq_f_systemC^uport~6_FF diffeq_f_systemC^uport~6
+1 1
+
+.names diffeq_f_systemC^uport~7_FF diffeq_f_systemC^uport~7
+1 1
+
+.names diffeq_f_systemC^uport~8_FF diffeq_f_systemC^uport~8
+1 1
+
+.names diffeq_f_systemC^uport~9_FF diffeq_f_systemC^uport~9
+1 1
+
+.names diffeq_f_systemC^uport~10_FF diffeq_f_systemC^uport~10
+1 1
+
+.names diffeq_f_systemC^uport~11_FF diffeq_f_systemC^uport~11
+1 1
+
+.names diffeq_f_systemC^uport~12_FF diffeq_f_systemC^uport~12
+1 1
+
+.names diffeq_f_systemC^uport~13_FF diffeq_f_systemC^uport~13
+1 1
+
+.names diffeq_f_systemC^uport~14_FF diffeq_f_systemC^uport~14
+1 1
+
+.names diffeq_f_systemC^uport~15_FF diffeq_f_systemC^uport~15
+1 1
+
+.names diffeq_f_systemC^uport~16_FF diffeq_f_systemC^uport~16
+1 1
+
+.names diffeq_f_systemC^uport~17_FF diffeq_f_systemC^uport~17
+1 1
+
+.names diffeq_f_systemC^uport~18_FF diffeq_f_systemC^uport~18
+1 1
+
+.names diffeq_f_systemC^uport~19_FF diffeq_f_systemC^uport~19
+1 1
+
+.names diffeq_f_systemC^uport~20_FF diffeq_f_systemC^uport~20
+1 1
+
+.names diffeq_f_systemC^uport~21_FF diffeq_f_systemC^uport~21
+1 1
+
+.names diffeq_f_systemC^uport~22_FF diffeq_f_systemC^uport~22
+1 1
+
+.names diffeq_f_systemC^uport~23_FF diffeq_f_systemC^uport~23
+1 1
+
+.names diffeq_f_systemC^uport~24_FF diffeq_f_systemC^uport~24
+1 1
+
+.names diffeq_f_systemC^uport~25_FF diffeq_f_systemC^uport~25
+1 1
+
+.names diffeq_f_systemC^uport~26_FF diffeq_f_systemC^uport~26
+1 1
+
+.names diffeq_f_systemC^uport~27_FF diffeq_f_systemC^uport~27
+1 1
+
+.names diffeq_f_systemC^uport~28_FF diffeq_f_systemC^uport~28
+1 1
+
+.names diffeq_f_systemC^uport~29_FF diffeq_f_systemC^uport~29
+1 1
+
+.names diffeq_f_systemC^uport~30_FF diffeq_f_systemC^uport~30
+1 1
+
+.names diffeq_f_systemC^uport~31_FF diffeq_f_systemC^uport~31
+1 1
+
+.end
+
+.model mult_32_32_64
+.inputs  a[0]  a[1]  a[2]  a[3]  a[4]  a[5]  a[6]  a[7] \
+  a[8]  a[9]  a[10]  a[11]  a[12]  a[13]  a[14]  a[15]  a[16]  a[17]  a[18] \
+  a[19]  a[20]  a[21]  a[22]  a[23]  a[24]  a[25]  a[26]  a[27]  a[28]  a[29] \
+  a[30]  a[31]  b[0]  b[1]  b[2]  b[3]  b[4]  b[5]  b[6]  b[7]  b[8]  b[9] \
+  b[10]  b[11]  b[12]  b[13]  b[14]  b[15]  b[16]  b[17]  b[18]  b[19]  b[20] \
+  b[21]  b[22]  b[23]  b[24]  b[25]  b[26]  b[27]  b[28]  b[29]  b[30]  b[31]
+.outputs out[0] out[1] out[2] out[3] out[4] out[5] out[6] out[7] \
+ out[8] out[9] out[10] out[11] out[12] out[13] out[14] out[15] out[16] \
+ out[17] out[18] out[19] out[20] out[21] out[22] out[23] out[24] \
+ out[25] out[26] out[27] out[28] out[29] out[30] out[31] out[32] \
+ out[33] out[34] out[35] out[36] out[37] out[38] out[39] out[40] \
+ out[41] out[42] out[43] out[44] out[45] out[46] out[47] out[48] \
+ out[49] out[50] out[51] out[52] out[53] out[54] out[55] out[56] \
+ out[57] out[58] out[59] out[60] out[61] out[62] out[63]
+.blackbox
+.end
+
+.model mult_36_32_68
+.inputs  a[0]  a[1]  a[2]  a[3]  a[4]  a[5]  a[6]  a[7] \
+  a[8]  a[9]  a[10]  a[11]  a[12]  a[13]  a[14]  a[15]  a[16]  a[17]  a[18] \
+  a[19]  a[20]  a[21]  a[22]  a[23]  a[24]  a[25]  a[26]  a[27]  a[28]  a[29] \
+  a[30]  a[31]  a[32]  a[33]  a[34]  a[35]  b[0]  b[1]  b[2]  b[3]  b[4]  b[5] \
+  b[6]  b[7]  b[8]  b[9]  b[10]  b[11]  b[12]  b[13]  b[14]  b[15]  b[16] \
+  b[17]  b[18]  b[19]  b[20]  b[21]  b[22]  b[23]  b[24]  b[25]  b[26]  b[27] \
+  b[28]  b[29]  b[30]  b[31]
+.outputs out[0] out[1] out[2] out[3] out[4] out[5] out[6] out[7] \
+ out[8] out[9] out[10] out[11] out[12] out[13] out[14] out[15] out[16] \
+ out[17] out[18] out[19] out[20] out[21] out[22] out[23] out[24] \
+ out[25] out[26] out[27] out[28] out[29] out[30] out[31] out[32] \
+ out[33] out[34] out[35] out[36] out[37] out[38] out[39] out[40] \
+ out[41] out[42] out[43] out[44] out[45] out[46] out[47] out[48] \
+ out[49] out[50] out[51] out[52] out[53] out[54] out[55] out[56] \
+ out[57] out[58] out[59] out[60] out[61] out[62] out[63] out[64] \
+ out[65] out[66] out[67]
+.blackbox
+.end
+
+.model mult_32_28_60
+.inputs  a[0]  a[1]  a[2]  a[3]  a[4]  a[5]  a[6]  a[7] \
+  a[8]  a[9]  a[10]  a[11]  a[12]  a[13]  a[14]  a[15]  a[16]  a[17]  a[18] \
+  a[19]  a[20]  a[21]  a[22]  a[23]  a[24]  a[25]  a[26]  a[27]  a[28]  a[29] \
+  a[30]  a[31]  b[0]  b[1]  b[2]  b[3]  b[4]  b[5]  b[6]  b[7]  b[8]  b[9] \
+  b[10]  b[11]  b[12]  b[13]  b[14]  b[15]  b[16]  b[17]  b[18]  b[19]  b[20] \
+  b[21]  b[22]  b[23]  b[24]  b[25]  b[26]  b[27]
+.outputs out[0] out[1] out[2] out[3] out[4] out[5] out[6] out[7] \
+ out[8] out[9] out[10] out[11] out[12] out[13] out[14] out[15] out[16] \
+ out[17] out[18] out[19] out[20] out[21] out[22] out[23] out[24] \
+ out[25] out[26] out[27] out[28] out[29] out[30] out[31] out[32] \
+ out[33] out[34] out[35] out[36] out[37] out[38] out[39] out[40] \
+ out[41] out[42] out[43] out[44] out[45] out[46] out[47] out[48] \
+ out[49] out[50] out[51] out[52] out[53] out[54] out[55] out[56] \
+ out[57] out[58] out[59]
+.blackbox
+.end
+
+.model adder
+.inputs  a[0]  b[0]  cin[0]
+.outputs cout[0] sumout[0]
+.blackbox
+.end
+

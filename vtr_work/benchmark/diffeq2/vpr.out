@@ -1,0 +1,1141 @@
+VPR FPGA Placement and Routing.
+Version: 8.1.0-dev+e1a876dba
+Revision: v8.0.0-8134-ge1a876dba
+Compiled: 2023-07-09T14:59:04
+Compiler: GNU 11.3.0 on Linux-5.15.90.1-microsoft-standard-WSL2 x86_64
+Build Info: release IPO VTR_ASSERT_LEVEL=2
+
+University of Toronto
+verilogtorouting.org
+vtr-users@googlegroups.com
+This is free open source code under MIT license.
+
+VPR was run with the following command-line:
+/home/majx/vtr-verilog-to-routing/vpr/vpr /home/majx/vtr-verilog-to-routing/vtr_flow/arch/timing/EArch.xml diffeq2 --circuit_file diffeq2.pre-vpr.blif --route_chan_width 100 --power --activity_file diffeq2.ace2.act --tech_properties /home/majx/vtr-verilog-to-routing/vtr_flow/tech/PTM_45nm/45nm.xml
+
+
+Architecture file: /home/majx/vtr-verilog-to-routing/vtr_flow/arch/timing/EArch.xml
+Circuit name: diffeq2
+
+# Loading Architecture Description
+# Loading Architecture Description took 0.01 seconds (max_rss 17.1 MiB, delta_rss +2.3 MiB)
+
+Timing analysis: ON
+Circuit netlist file: diffeq2.net
+Circuit placement file: diffeq2.place
+Circuit routing file: diffeq2.route
+Circuit SDC file: diffeq2.sdc
+Vpr floorplanning constraints file: not specified
+
+Packer: ENABLED
+Placer: ENABLED
+Router: ENABLED
+Analysis: ENABLED
+
+VPR was run with the following options:
+
+NetlistOpts.abosrb_buffer_luts            : true
+NetlistOpts.sweep_dangling_primary_ios    : true
+NetlistOpts.sweep_dangling_nets           : true
+NetlistOpts.sweep_dangling_blocks         : true
+NetlistOpts.sweep_constant_primary_outputs: false
+NetlistOpts.netlist_verbosity             : 1
+NetlistOpts.const_gen_inference           : COMB_SEQ
+
+PackerOpts.allow_unrelated_clustering: auto
+PackerOpts.alpha_clustering: 0.750000
+PackerOpts.beta_clustering: 0.900000
+PackerOpts.cluster_seed_type: BLEND2
+PackerOpts.connection_driven: true
+PackerOpts.global_clocks: true
+PackerOpts.hill_climbing_flag: false
+PackerOpts.inter_cluster_net_delay: 1.000000
+PackerOpts.timing_driven: true
+PackerOpts.target_external_pin_util: auto
+
+PlacerOpts.place_freq: PLACE_ONCE
+PlacerOpts.place_algorithm: CRITICALITY_TIMING_PLACE
+PlacerOpts.pad_loc_type: FREE
+PlacerOpts.constraints_file: No constraints file given
+PlacerOpts.place_cost_exp: 1.000000
+PlacerOpts.place_chan_width: 100
+PlacerOpts.inner_loop_recompute_divider: 0
+PlacerOpts.recompute_crit_iter: 1
+PlacerOpts.timing_tradeoff: 0.500000
+PlacerOpts.td_place_exp_first: 1.000000
+PlacerOpts.td_place_exp_last: 8.000000
+PlacerOpts.delay_offset: 0.000000
+PlacerOpts.delay_ramp_delta_threshold: -1
+PlacerOpts.delay_ramp_slope: 0.000000
+PlacerOpts.tsu_rel_margin: 1.000000
+PlacerOpts.tsu_abs_margin: 0.000000
+PlacerOpts.post_place_timing_report_file: 
+PlacerOpts.allowed_tiles_for_delay_model: 
+PlacerOpts.delay_model_reducer: MIN
+PlacerOpts.delay_model_type: DELTA
+PlacerOpts.rlim_escape_fraction: 0.000000
+PlacerOpts.move_stats_file: 
+PlacerOpts.placement_saves_per_temperature: 0
+PlacerOpts.effort_scaling: CIRCUIT
+PlacerOpts.place_delta_delay_matrix_calculation_method: ASTAR_ROUTE
+PlaceOpts.seed: 1
+AnnealSched.type: AUTO_SCHED
+AnnealSched.inner_num: 0.500000
+
+RouterOpts.route_type: DETAILED
+RouterOpts.flat_routing: false
+RouterOpts.has_choking_spot: false
+RouterOpts.router_algorithm: TIMING_DRIVEN
+RouterOpts.base_cost_type: DELAY_NORMALIZED_LENGTH
+RouterOpts.fixed_channel_width: 100
+RouterOpts.check_route: FULL
+RouterOpts.acc_fac: 1.000000
+RouterOpts.bb_factor: 3
+RouterOpts.bend_cost: 0.000000
+RouterOpts.first_iter_pres_fac: 0.000000
+RouterOpts.initial_pres_fac: 0.500000
+RouterOpts.pres_fac_mult: 1.300000
+RouterOpts.max_router_iterations: 50
+RouterOpts.min_incremental_reroute_fanout: 16
+RouterOpts.do_check_rr_graph: true
+RouterOpts.verify_binary_search: false
+RouterOpts.min_channel_width_hint: 0
+RouterOpts.read_rr_edge_metadata: false
+RouterOpts.exit_after_first_routing_iteration: false
+RouterOpts.astar_fac: 1.200000
+RouterOpts.router_profiler_astar_fac: 1.200000
+RouterOpts.criticality_exp: 1.000000
+RouterOpts.max_criticality: 0.990000
+RouterOpts.init_wirelength_abort_threshold: 0.850000
+RouterOpts.save_routing_per_iteration: false
+RouterOpts.congested_routing_iteration_threshold_frac: 1.000000
+RouterOpts.high_fanout_threshold: 64
+RouterOpts.router_debug_net: -2
+RouterOpts.router_debug_sink_rr: -2
+RouterOpts.router_debug_iteration: -2
+RouterOpts.max_convergence_count: 1
+RouterOpts.reconvergence_cpd_threshold: 0.990000
+RouterOpts.update_lower_bound_delays: true
+RouterOpts.first_iteration_timing_report_file: 
+RouterOpts.incr_reroute_delay_ripup: AUTO
+RouterOpts.route_bb_update: DYNAMIC
+RouterOpts.lookahead_type: MAP
+RouterOpts.initial_timing: LOOKAHEAD
+RouterOpts.router_heap: BINARY_HEAP
+RouterOpts.routing_failure_predictor = SAFE
+RouterOpts.routing_budgets_algorithm = DISABLE
+
+AnalysisOpts.gen_post_synthesis_netlist: false
+AnalysisOpts.timing_report_npaths: 100
+AnalysisOpts.timing_report_skew: false
+AnalysisOpts.echo_dot_timing_graph_node: -1
+AnalysisOpts.timing_report_detail: NETLIST
+AnalysisOpts.post_synth_netlist_unconn_input_handling: UNCONNECTED
+AnalysisOpts.post_synth_netlist_unconn_output_handling: UNCONNECTED
+
+# Building complex block graph
+Warning 1: io[0].clock[0] unconnected pin in architecture.
+# Building complex block graph took 0.02 seconds (max_rss 25.3 MiB, delta_rss +8.2 MiB)
+Circuit file: diffeq2.pre-vpr.blif
+# Load circuit
+Found constant-one generator 'vcc'
+Found constant-zero generator 'gnd'
+Found constant-zero generator 'unconn'
+# Load circuit took 0.01 seconds (max_rss 28.4 MiB, delta_rss +3.1 MiB)
+# Clean circuit
+Absorbed 96 LUT buffers
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Swept input(s)      : 228
+Swept output(s)     : 1 (1 dangling, 0 constant)
+Swept net(s)        : 228
+Swept block(s)      : 0
+Constant Pins Marked: 0
+# Clean circuit took 0.00 seconds (max_rss 28.4 MiB, delta_rss +0.0 MiB)
+# Compress circuit
+# Compress circuit took 0.00 seconds (max_rss 28.8 MiB, delta_rss +0.3 MiB)
+# Verify circuit
+# Verify circuit took 0.00 seconds (max_rss 28.8 MiB, delta_rss +0.0 MiB)
+Circuit Statistics:
+  Blocks: 1936
+    .input :     570
+    .latch :      96
+    .output:     634
+    0-LUT  :       2
+    6-LUT  :     634
+  Nets  : 1302
+    Avg Fanout:     1.6
+    Max Fanout:   192.0
+    Min Fanout:     1.0
+  Netlist Clocks: 1
+# Load Activity File
+Warning 2: Net diffeq_f_systemC^MUL~0[32] found in activity file, but it does not exist in the .blif file.
+Warning 3: Net diffeq_f_systemC^MUL~0[33] found in activity file, but it does not exist in the .blif file.
+Warning 4: Net diffeq_f_systemC^MUL~0[34] found in activity file, but it does not exist in the .blif file.
+Warning 5: Net diffeq_f_systemC^MUL~0[35] found in activity file, but it does not exist in the .blif file.
+Warning 6: Net diffeq_f_systemC^MUL~0[36] found in activity file, but it does not exist in the .blif file.
+Warning 7: Net diffeq_f_systemC^MUL~0[37] found in activity file, but it does not exist in the .blif file.
+Warning 8: Net diffeq_f_systemC^MUL~0[38] found in activity file, but it does not exist in the .blif file.
+Warning 9: Net diffeq_f_systemC^MUL~0[39] found in activity file, but it does not exist in the .blif file.
+Warning 10: Net diffeq_f_systemC^MUL~0[40] found in activity file, but it does not exist in the .blif file.
+Warning 11: Net diffeq_f_systemC^MUL~0[41] found in activity file, but it does not exist in the .blif file.
+Warning 12: Net diffeq_f_systemC^MUL~0[42] found in activity file, but it does not exist in the .blif file.
+Warning 13: Net diffeq_f_systemC^MUL~0[43] found in activity file, but it does not exist in the .blif file.
+Warning 14: Net diffeq_f_systemC^MUL~0[44] found in activity file, but it does not exist in the .blif file.
+Warning 15: Net diffeq_f_systemC^MUL~0[45] found in activity file, but it does not exist in the .blif file.
+Warning 16: Net diffeq_f_systemC^MUL~0[46] found in activity file, but it does not exist in the .blif file.
+Warning 17: Net diffeq_f_systemC^MUL~0[47] found in activity file, but it does not exist in the .blif file.
+Warning 18: Net diffeq_f_systemC^MUL~0[48] found in activity file, but it does not exist in the .blif file.
+Warning 19: Net diffeq_f_systemC^MUL~0[49] found in activity file, but it does not exist in the .blif file.
+Warning 20: Net diffeq_f_systemC^MUL~0[50] found in activity file, but it does not exist in the .blif file.
+Warning 21: Net diffeq_f_systemC^MUL~0[51] found in activity file, but it does not exist in the .blif file.
+Warning 22: Net diffeq_f_systemC^MUL~0[52] found in activity file, but it does not exist in the .blif file.
+Warning 23: Net diffeq_f_systemC^MUL~0[53] found in activity file, but it does not exist in the .blif file.
+Warning 24: Net diffeq_f_systemC^MUL~0[54] found in activity file, but it does not exist in the .blif file.
+Warning 25: Net diffeq_f_systemC^MUL~0[55] found in activity file, but it does not exist in the .blif file.
+Warning 26: Net diffeq_f_systemC^MUL~0[56] found in activity file, but it does not exist in the .blif file.
+Warning 27: Net diffeq_f_systemC^MUL~0[57] found in activity file, but it does not exist in the .blif file.
+Warning 28: Net diffeq_f_systemC^MUL~0[58] found in activity file, but it does not exist in the .blif file.
+Warning 29: Net diffeq_f_systemC^MUL~0[59] found in activity file, but it does not exist in the .blif file.
+Warning 30: Net diffeq_f_systemC^MUL~0[60] found in activity file, but it does not exist in the .blif file.
+Warning 31: Net diffeq_f_systemC^MUL~0[61] found in activity file, but it does not exist in the .blif file.
+Warning 32: Net diffeq_f_systemC^MUL~0[62] found in activity file, but it does not exist in the .blif file.
+Warning 33: Net diffeq_f_systemC^MUL~0[63] found in activity file, but it does not exist in the .blif file.
+Warning 34: Net diffeq_f_systemC^ADD~40-32[0] found in activity file, but it does not exist in the .blif file.
+Warning 35: Net diffeq_f_systemC^MUL~45-0[32] found in activity file, but it does not exist in the .blif file.
+Warning 36: Net diffeq_f_systemC^MUL~45-0[33] found in activity file, but it does not exist in the .blif file.
+Warning 37: Net diffeq_f_systemC^MUL~45-0[34] found in activity file, but it does not exist in the .blif file.
+Warning 38: Net diffeq_f_systemC^MUL~45-0[35] found in activity file, but it does not exist in the .blif file.
+Warning 39: Net diffeq_f_systemC^MUL~45-0[36] found in activity file, but it does not exist in the .blif file.
+Warning 40: Net diffeq_f_systemC^MUL~45-0[37] found in activity file, but it does not exist in the .blif file.
+Warning 41: Net diffeq_f_systemC^MUL~45-0[38] found in activity file, but it does not exist in the .blif file.
+Warning 42: Net diffeq_f_systemC^MUL~45-0[39] found in activity file, but it does not exist in the .blif file.
+Warning 43: Net diffeq_f_systemC^MUL~45-0[40] found in activity file, but it does not exist in the .blif file.
+Warning 44: Net diffeq_f_systemC^MUL~45-0[41] found in activity file, but it does not exist in the .blif file.
+Warning 45: Net diffeq_f_systemC^MUL~45-0[42] found in activity file, but it does not exist in the .blif file.
+Warning 46: Net diffeq_f_systemC^MUL~45-0[43] found in activity file, but it does not exist in the .blif file.
+Warning 47: Net diffeq_f_systemC^MUL~45-0[44] found in activity file, but it does not exist in the .blif file.
+Warning 48: Net diffeq_f_systemC^MUL~45-0[45] found in activity file, but it does not exist in the .blif file.
+Warning 49: Net diffeq_f_systemC^MUL~45-0[46] found in activity file, but it does not exist in the .blif file.
+Warning 50: Net diffeq_f_systemC^MUL~45-0[47] found in activity file, but it does not exist in the .blif file.
+Warning 51: Net diffeq_f_systemC^MUL~45-0[48] found in activity file, but it does not exist in the .blif file.
+Warning 52: Net diffeq_f_systemC^MUL~45-0[49] found in activity file, but it does not exist in the .blif file.
+Warning 53: Net diffeq_f_systemC^MUL~45-0[50] found in activity file, but it does not exist in the .blif file.
+Warning 54: Net diffeq_f_systemC^MUL~45-0[51] found in activity file, but it does not exist in the .blif file.
+Warning 55: Net diffeq_f_systemC^MUL~45-0[52] found in activity file, but it does not exist in the .blif file.
+Warning 56: Net diffeq_f_systemC^MUL~45-0[53] found in activity file, but it does not exist in the .blif file.
+Warning 57: Net diffeq_f_systemC^MUL~45-0[54] found in activity file, but it does not exist in the .blif file.
+Warning 58: Net diffeq_f_systemC^MUL~45-0[55] found in activity file, but it does not exist in the .blif file.
+Warning 59: Net diffeq_f_systemC^MUL~45-0[56] found in activity file, but it does not exist in the .blif file.
+Warning 60: Net diffeq_f_systemC^MUL~45-0[57] found in activity file, but it does not exist in the .blif file.
+Warning 61: Net diffeq_f_systemC^MUL~45-0[58] found in activity file, but it does not exist in the .blif file.
+Warning 62: Net diffeq_f_systemC^MUL~45-0[59] found in activity file, but it does not exist in the .blif file.
+Warning 63: Net diffeq_f_systemC^MIN~46-32[0] found in activity file, but it does not exist in the .blif file.
+Warning 64: Net diffeq_f_systemC^MIN~43-32[0] found in activity file, but it does not exist in the .blif file.
+Warning 65: Net diffeq_f_systemC^MUL~45-add0-4[0] found in activity file, but it does not exist in the .blif file.
+Warning 66: Net diffeq_f_systemC^MUL~45-1[4] found in activity file, but it does not exist in the .blif file.
+Warning 67: Net diffeq_f_systemC^MUL~45-1[5] found in activity file, but it does not exist in the .blif file.
+Warning 68: Net diffeq_f_systemC^MUL~45-1[6] found in activity file, but it does not exist in the .blif file.
+Warning 69: Net diffeq_f_systemC^MUL~45-1[7] found in activity file, but it does not exist in the .blif file.
+Warning 70: Net diffeq_f_systemC^MUL~45-1[8] found in activity file, but it does not exist in the .blif file.
+Warning 71: Net diffeq_f_systemC^MUL~45-1[9] found in activity file, but it does not exist in the .blif file.
+Warning 72: Net diffeq_f_systemC^MUL~45-1[10] found in activity file, but it does not exist in the .blif file.
+Warning 73: Net diffeq_f_systemC^MUL~45-1[11] found in activity file, but it does not exist in the .blif file.
+Warning 74: Net diffeq_f_systemC^MUL~45-1[12] found in activity file, but it does not exist in the .blif file.
+Warning 75: Net diffeq_f_systemC^MUL~45-1[13] found in activity file, but it does not exist in the .blif file.
+Warning 76: Net diffeq_f_systemC^MUL~45-1[14] found in activity file, but it does not exist in the .blif file.
+Warning 77: Net diffeq_f_systemC^MUL~45-1[15] found in activity file, but it does not exist in the .blif file.
+Warning 78: Net diffeq_f_systemC^MUL~45-1[16] found in activity file, but it does not exist in the .blif file.
+Warning 79: Net diffeq_f_systemC^MUL~45-1[17] found in activity file, but it does not exist in the .blif file.
+Warning 80: Net diffeq_f_systemC^MUL~45-1[18] found in activity file, but it does not exist in the .blif file.
+Warning 81: Net diffeq_f_systemC^MUL~45-1[19] found in activity file, but it does not exist in the .blif file.
+Warning 82: Net diffeq_f_systemC^MUL~45-1[20] found in activity file, but it does not exist in the .blif file.
+Warning 83: Net diffeq_f_systemC^MUL~45-1[21] found in activity file, but it does not exist in the .blif file.
+Warning 84: Net diffeq_f_systemC^MUL~45-1[22] found in activity file, but it does not exist in the .blif file.
+Warning 85: Net diffeq_f_systemC^MUL~45-1[23] found in activity file, but it does not exist in the .blif file.
+Warning 86: Net diffeq_f_systemC^MUL~45-1[24] found in activity file, but it does not exist in the .blif file.
+Warning 87: Net diffeq_f_systemC^MUL~45-1[25] found in activity file, but it does not exist in the .blif file.
+Warning 88: Net diffeq_f_systemC^MUL~45-1[26] found in activity file, but it does not exist in the .blif file.
+Warning 89: Net diffeq_f_systemC^MUL~45-1[27] found in activity file, but it does not exist in the .blif file.
+Warning 90: Net diffeq_f_systemC^MUL~45-1[28] found in activity file, but it does not exist in the .blif file.
+Warning 91: Net diffeq_f_systemC^MUL~45-1[29] found in activity file, but it does not exist in the .blif file.
+Warning 92: Net diffeq_f_systemC^MUL~45-1[30] found in activity file, but it does not exist in the .blif file.
+Warning 93: Net diffeq_f_systemC^MUL~45-1[31] found in activity file, but it does not exist in the .blif file.
+Warning 94: Net diffeq_f_systemC^MUL~45-1[32] found in activity file, but it does not exist in the .blif file.
+Warning 95: Net diffeq_f_systemC^MUL~45-1[33] found in activity file, but it does not exist in the .blif file.
+Warning 96: Net diffeq_f_systemC^MUL~45-1[34] found in activity file, but it does not exist in the .blif file.
+Warning 97: Net diffeq_f_systemC^MUL~45-1[35] found in activity file, but it does not exist in the .blif file.
+Warning 98: Net diffeq_f_systemC^MUL~45-1[36] found in activity file, but it does not exist in the .blif file.
+Warning 99: Net diffeq_f_systemC^MUL~45-1[37] found in activity file, but it does not exist in the .blif file.
+Warning 100: Net diffeq_f_systemC^MUL~45-1[38] found in activity file, but it does not exist in the .blif file.
+Warning 101: Net diffeq_f_systemC^MUL~45-1[39] found in activity file, but it does not exist in the .blif file.
+Warning 102: Net diffeq_f_systemC^MUL~45-1[40] found in activity file, but it does not exist in the .blif file.
+Warning 103: Net diffeq_f_systemC^MUL~45-1[41] found in activity file, but it does not exist in the .blif file.
+Warning 104: Net diffeq_f_systemC^MUL~45-1[42] found in activity file, but it does not exist in the .blif file.
+Warning 105: Net diffeq_f_systemC^MUL~45-1[43] found in activity file, but it does not exist in the .blif file.
+Warning 106: Net diffeq_f_systemC^MUL~45-1[44] found in activity file, but it does not exist in the .blif file.
+Warning 107: Net diffeq_f_systemC^MUL~45-1[45] found in activity file, but it does not exist in the .blif file.
+Warning 108: Net diffeq_f_systemC^MUL~45-1[46] found in activity file, but it does not exist in the .blif file.
+Warning 109: Net diffeq_f_systemC^MUL~45-1[47] found in activity file, but it does not exist in the .blif file.
+Warning 110: Net diffeq_f_systemC^MUL~45-1[48] found in activity file, but it does not exist in the .blif file.
+Warning 111: Net diffeq_f_systemC^MUL~45-1[49] found in activity file, but it does not exist in the .blif file.
+Warning 112: Net diffeq_f_systemC^MUL~45-1[50] found in activity file, but it does not exist in the .blif file.
+Warning 113: Net diffeq_f_systemC^MUL~45-1[51] found in activity file, but it does not exist in the .blif file.
+Warning 114: Net diffeq_f_systemC^MUL~45-1[52] found in activity file, but it does not exist in the .blif file.
+Warning 115: Net diffeq_f_systemC^MUL~45-1[53] found in activity file, but it does not exist in the .blif file.
+Warning 116: Net diffeq_f_systemC^MUL~45-1[54] found in activity file, but it does not exist in the .blif file.
+Warning 117: Net diffeq_f_systemC^MUL~45-1[55] found in activity file, but it does not exist in the .blif file.
+Warning 118: Net diffeq_f_systemC^MUL~45-1[56] found in activity file, but it does not exist in the .blif file.
+Warning 119: Net diffeq_f_systemC^MUL~45-1[57] found in activity file, but it does not exist in the .blif file.
+Warning 120: Net diffeq_f_systemC^MUL~45-1[58] found in activity file, but it does not exist in the .blif file.
+Warning 121: Net diffeq_f_systemC^MUL~45-1[59] found in activity file, but it does not exist in the .blif file.
+Warning 122: Net diffeq_f_systemC^MUL~45-1[60] found in activity file, but it does not exist in the .blif file.
+Warning 123: Net diffeq_f_systemC^MUL~45-1[61] found in activity file, but it does not exist in the .blif file.
+Warning 124: Net diffeq_f_systemC^MUL~45-1[62] found in activity file, but it does not exist in the .blif file.
+Warning 125: Net diffeq_f_systemC^MUL~45-1[63] found in activity file, but it does not exist in the .blif file.
+Warning 126: Net diffeq_f_systemC^MUL~45-1[64] found in activity file, but it does not exist in the .blif file.
+Warning 127: Net diffeq_f_systemC^MUL~45-1[65] found in activity file, but it does not exist in the .blif file.
+Warning 128: Net diffeq_f_systemC^MUL~45-1[66] found in activity file, but it does not exist in the .blif file.
+Warning 129: Net diffeq_f_systemC^MUL~45-1[67] found in activity file, but it does not exist in the .blif file.
+Warning 130: Net diffeq_f_systemC^MUL~42-0[32] found in activity file, but it does not exist in the .blif file.
+Warning 131: Net diffeq_f_systemC^MUL~42-0[33] found in activity file, but it does not exist in the .blif file.
+Warning 132: Net diffeq_f_systemC^MUL~42-0[34] found in activity file, but it does not exist in the .blif file.
+Warning 133: Net diffeq_f_systemC^MUL~42-0[35] found in activity file, but it does not exist in the .blif file.
+Warning 134: Net diffeq_f_systemC^MUL~42-0[36] found in activity file, but it does not exist in the .blif file.
+Warning 135: Net diffeq_f_systemC^MUL~42-0[37] found in activity file, but it does not exist in the .blif file.
+Warning 136: Net diffeq_f_systemC^MUL~42-0[38] found in activity file, but it does not exist in the .blif file.
+Warning 137: Net diffeq_f_systemC^MUL~42-0[39] found in activity file, but it does not exist in the .blif file.
+Warning 138: Net diffeq_f_systemC^MUL~42-0[40] found in activity file, but it does not exist in the .blif file.
+Warning 139: Net diffeq_f_systemC^MUL~42-0[41] found in activity file, but it does not exist in the .blif file.
+Warning 140: Net diffeq_f_systemC^MUL~42-0[42] found in activity file, but it does not exist in the .blif file.
+Warning 141: Net diffeq_f_systemC^MUL~42-0[43] found in activity file, but it does not exist in the .blif file.
+Warning 142: Net diffeq_f_systemC^MUL~42-0[44] found in activity file, but it does not exist in the .blif file.
+Warning 143: Net diffeq_f_systemC^MUL~42-0[45] found in activity file, but it does not exist in the .blif file.
+Warning 144: Net diffeq_f_systemC^MUL~42-0[46] found in activity file, but it does not exist in the .blif file.
+Warning 145: Net diffeq_f_systemC^MUL~42-0[47] found in activity file, but it does not exist in the .blif file.
+Warning 146: Net diffeq_f_systemC^MUL~42-0[48] found in activity file, but it does not exist in the .blif file.
+Warning 147: Net diffeq_f_systemC^MUL~42-0[49] found in activity file, but it does not exist in the .blif file.
+Warning 148: Net diffeq_f_systemC^MUL~42-0[50] found in activity file, but it does not exist in the .blif file.
+Warning 149: Net diffeq_f_systemC^MUL~42-0[51] found in activity file, but it does not exist in the .blif file.
+Warning 150: Net diffeq_f_systemC^MUL~42-0[52] found in activity file, but it does not exist in the .blif file.
+Warning 151: Net diffeq_f_systemC^MUL~42-0[53] found in activity file, but it does not exist in the .blif file.
+Warning 152: Net diffeq_f_systemC^MUL~42-0[54] found in activity file, but it does not exist in the .blif file.
+Warning 153: Net diffeq_f_systemC^MUL~42-0[55] found in activity file, but it does not exist in the .blif file.
+Warning 154: Net diffeq_f_systemC^MUL~42-0[56] found in activity file, but it does not exist in the .blif file.
+Warning 155: Net diffeq_f_systemC^MUL~42-0[57] found in activity file, but it does not exist in the .blif file.
+Warning 156: Net diffeq_f_systemC^MUL~42-0[58] found in activity file, but it does not exist in the .blif file.
+Warning 157: Net diffeq_f_systemC^MUL~42-0[59] found in activity file, but it does not exist in the .blif file.
+Warning 158: Net diffeq_f_systemC^MUL~42-add0-4[0] found in activity file, but it does not exist in the .blif file.
+Warning 159: Net diffeq_f_systemC^MUL~42-1[4] found in activity file, but it does not exist in the .blif file.
+Warning 160: Net diffeq_f_systemC^MUL~42-1[5] found in activity file, but it does not exist in the .blif file.
+Warning 161: Net diffeq_f_systemC^MUL~42-1[6] found in activity file, but it does not exist in the .blif file.
+Warning 162: Net diffeq_f_systemC^MUL~42-1[7] found in activity file, but it does not exist in the .blif file.
+Warning 163: Net diffeq_f_systemC^MUL~42-1[8] found in activity file, but it does not exist in the .blif file.
+Warning 164: Net diffeq_f_systemC^MUL~42-1[9] found in activity file, but it does not exist in the .blif file.
+Warning 165: Net diffeq_f_systemC^MUL~42-1[10] found in activity file, but it does not exist in the .blif file.
+Warning 166: Net diffeq_f_systemC^MUL~42-1[11] found in activity file, but it does not exist in the .blif file.
+Warning 167: Net diffeq_f_systemC^MUL~42-1[12] found in activity file, but it does not exist in the .blif file.
+Warning 168: Net diffeq_f_systemC^MUL~42-1[13] found in activity file, but it does not exist in the .blif file.
+Warning 169: Net diffeq_f_systemC^MUL~42-1[14] found in activity file, but it does not exist in the .blif file.
+Warning 170: Net diffeq_f_systemC^MUL~42-1[15] found in activity file, but it does not exist in the .blif file.
+Warning 171: Net diffeq_f_systemC^MUL~42-1[16] found in activity file, but it does not exist in the .blif file.
+Warning 172: Net diffeq_f_systemC^MUL~42-1[17] found in activity file, but it does not exist in the .blif file.
+Warning 173: Net diffeq_f_systemC^MUL~42-1[18] found in activity file, but it does not exist in the .blif file.
+Warning 174: Net diffeq_f_systemC^MUL~42-1[19] found in activity file, but it does not exist in the .blif file.
+Warning 175: Net diffeq_f_systemC^MUL~42-1[20] found in activity file, but it does not exist in the .blif file.
+Warning 176: Net diffeq_f_systemC^MUL~42-1[21] found in activity file, but it does not exist in the .blif file.
+Warning 177: Net diffeq_f_systemC^MUL~42-1[22] found in activity file, but it does not exist in the .blif file.
+Warning 178: Net diffeq_f_systemC^MUL~42-1[23] found in activity file, but it does not exist in the .blif file.
+Warning 179: Net diffeq_f_systemC^MUL~42-1[24] found in activity file, but it does not exist in the .blif file.
+Warning 180: Net diffeq_f_systemC^MUL~42-1[25] found in activity file, but it does not exist in the .blif file.
+Warning 181: Net diffeq_f_systemC^MUL~42-1[26] found in activity file, but it does not exist in the .blif file.
+Warning 182: Net diffeq_f_systemC^MUL~42-1[27] found in activity file, but it does not exist in the .blif file.
+Warning 183: Net diffeq_f_systemC^MUL~42-1[28] found in activity file, but it does not exist in the .blif file.
+Warning 184: Net diffeq_f_systemC^MUL~42-1[29] found in activity file, but it does not exist in the .blif file.
+Warning 185: Net diffeq_f_systemC^MUL~42-1[30] found in activity file, but it does not exist in the .blif file.
+Warning 186: Net diffeq_f_systemC^MUL~42-1[31] found in activity file, but it does not exist in the .blif file.
+Warning 187: Net diffeq_f_systemC^MUL~42-1[32] found in activity file, but it does not exist in the .blif file.
+Warning 188: Net diffeq_f_systemC^MUL~42-1[33] found in activity file, but it does not exist in the .blif file.
+Warning 189: Net diffeq_f_systemC^MUL~42-1[34] found in activity file, but it does not exist in the .blif file.
+Warning 190: Net diffeq_f_systemC^MUL~42-1[35] found in activity file, but it does not exist in the .blif file.
+Warning 191: Net diffeq_f_systemC^MUL~42-1[36] found in activity file, but it does not exist in the .blif file.
+Warning 192: Net diffeq_f_systemC^MUL~42-1[37] found in activity file, but it does not exist in the .blif file.
+Warning 193: Net diffeq_f_systemC^MUL~42-1[38] found in activity file, but it does not exist in the .blif file.
+Warning 194: Net diffeq_f_systemC^MUL~42-1[39] found in activity file, but it does not exist in the .blif file.
+Warning 195: Net diffeq_f_systemC^MUL~42-1[40] found in activity file, but it does not exist in the .blif file.
+Warning 196: Net diffeq_f_systemC^MUL~42-1[41] found in activity file, but it does not exist in the .blif file.
+Warning 197: Net diffeq_f_systemC^MUL~42-1[42] found in activity file, but it does not exist in the .blif file.
+Warning 198: Net diffeq_f_systemC^MUL~42-1[43] found in activity file, but it does not exist in the .blif file.
+Warning 199: Net diffeq_f_systemC^MUL~42-1[44] found in activity file, but it does not exist in the .blif file.
+Warning 200: Net diffeq_f_systemC^MUL~42-1[45] found in activity file, but it does not exist in the .blif file.
+Warning 201: Net diffeq_f_systemC^MUL~42-1[46] found in activity file, but it does not exist in the .blif file.
+Warning 202: Net diffeq_f_systemC^MUL~42-1[47] found in activity file, but it does not exist in the .blif file.
+Warning 203: Net diffeq_f_systemC^MUL~42-1[48] found in activity file, but it does not exist in the .blif file.
+Warning 204: Net diffeq_f_systemC^MUL~42-1[49] found in activity file, but it does not exist in the .blif file.
+Warning 205: Net diffeq_f_systemC^MUL~42-1[50] found in activity file, but it does not exist in the .blif file.
+Warning 206: Net diffeq_f_systemC^MUL~42-1[51] found in activity file, but it does not exist in the .blif file.
+Warning 207: Net diffeq_f_systemC^MUL~42-1[52] found in activity file, but it does not exist in the .blif file.
+Warning 208: Net diffeq_f_systemC^MUL~42-1[53] found in activity file, but it does not exist in the .blif file.
+Warning 209: Net diffeq_f_systemC^MUL~42-1[54] found in activity file, but it does not exist in the .blif file.
+Warning 210: Net diffeq_f_systemC^MUL~42-1[55] found in activity file, but it does not exist in the .blif file.
+Warning 211: Net diffeq_f_systemC^MUL~42-1[56] found in activity file, but it does not exist in the .blif file.
+Warning 212: Net diffeq_f_systemC^MUL~42-1[57] found in activity file, but it does not exist in the .blif file.
+Warning 213: Net diffeq_f_systemC^MUL~42-1[58] found in activity file, but it does not exist in the .blif file.
+Warning 214: Net diffeq_f_systemC^MUL~42-1[59] found in activity file, but it does not exist in the .blif file.
+Warning 215: Net diffeq_f_systemC^MUL~42-1[60] found in activity file, but it does not exist in the .blif file.
+Warning 216: Net diffeq_f_systemC^MUL~42-1[61] found in activity file, but it does not exist in the .blif file.
+Warning 217: Net diffeq_f_systemC^MUL~42-1[62] found in activity file, but it does not exist in the .blif file.
+Warning 218: Net diffeq_f_systemC^MUL~42-1[63] found in activity file, but it does not exist in the .blif file.
+Warning 219: Net diffeq_f_systemC^MUL~42-1[64] found in activity file, but it does not exist in the .blif file.
+Warning 220: Net diffeq_f_systemC^MUL~42-1[65] found in activity file, but it does not exist in the .blif file.
+Warning 221: Net diffeq_f_systemC^MUL~42-1[66] found in activity file, but it does not exist in the .blif file.
+Warning 222: Net diffeq_f_systemC^MUL~42-1[67] found in activity file, but it does not exist in the .blif file.
+Warning 223: Net diffeq_f_systemC^ADD~39-32[0] found in activity file, but it does not exist in the .blif file.
+Warning 224: Net diffeq_f_systemC^MUL~42-add0-0~dummy_output~0~1 found in activity file, but it does not exist in the .blif file.
+Warning 225: Net diffeq_f_systemC^MUL~45-add0-0~dummy_output~0~1 found in activity file, but it does not exist in the .blif file.
+Warning 226: Net diffeq_f_systemC^ADD~40-0~dummy_output~0~1 found in activity file, but it does not exist in the .blif file.
+Warning 227: Net diffeq_f_systemC^ADD~39-0~dummy_output~0~1 found in activity file, but it does not exist in the .blif file.
+Warning 228: Net diffeq_f_systemC^MIN~46-0~dummy_output~0~1 found in activity file, but it does not exist in the .blif file.
+Warning 229: Net diffeq_f_systemC^MIN~43-0~dummy_output~0~1 found in activity file, but it does not exist in the .blif file.
+Warning 230: Net diffeq_f_systemC^xport~0 found in activity file, but it does not exist in the .blif file.
+Warning 231: Net diffeq_f_systemC^xport~1 found in activity file, but it does not exist in the .blif file.
+Warning 232: Net diffeq_f_systemC^xport~2 found in activity file, but it does not exist in the .blif file.
+Warning 233: Net diffeq_f_systemC^xport~3 found in activity file, but it does not exist in the .blif file.
+Warning 234: Net diffeq_f_systemC^xport~4 found in activity file, but it does not exist in the .blif file.
+Warning 235: Net diffeq_f_systemC^xport~5 found in activity file, but it does not exist in the .blif file.
+Warning 236: Net diffeq_f_systemC^xport~6 found in activity file, but it does not exist in the .blif file.
+Warning 237: Net diffeq_f_systemC^xport~7 found in activity file, but it does not exist in the .blif file.
+Warning 238: Net diffeq_f_systemC^xport~8 found in activity file, but it does not exist in the .blif file.
+Warning 239: Net diffeq_f_systemC^xport~9 found in activity file, but it does not exist in the .blif file.
+Warning 240: Net diffeq_f_systemC^xport~10 found in activity file, but it does not exist in the .blif file.
+Warning 241: Net diffeq_f_systemC^xport~11 found in activity file, but it does not exist in the .blif file.
+Warning 242: Net diffeq_f_systemC^xport~12 found in activity file, but it does not exist in the .blif file.
+Warning 243: Net diffeq_f_systemC^xport~13 found in activity file, but it does not exist in the .blif file.
+Warning 244: Net diffeq_f_systemC^xport~14 found in activity file, but it does not exist in the .blif file.
+Warning 245: Net diffeq_f_systemC^xport~15 found in activity file, but it does not exist in the .blif file.
+Warning 246: Net diffeq_f_systemC^xport~16 found in activity file, but it does not exist in the .blif file.
+Warning 247: Net diffeq_f_systemC^xport~17 found in activity file, but it does not exist in the .blif file.
+Warning 248: Net diffeq_f_systemC^xport~18 found in activity file, but it does not exist in the .blif file.
+Warning 249: Net diffeq_f_systemC^xport~19 found in activity file, but it does not exist in the .blif file.
+Warning 250: Net diffeq_f_systemC^xport~20 found in activity file, but it does not exist in the .blif file.
+Warning 251: Net diffeq_f_systemC^xport~21 found in activity file, but it does not exist in the .blif file.
+Warning 252: Net diffeq_f_systemC^xport~22 found in activity file, but it does not exist in the .blif file.
+Warning 253: Net diffeq_f_systemC^xport~23 found in activity file, but it does not exist in the .blif file.
+Warning 254: Net diffeq_f_systemC^xport~24 found in activity file, but it does not exist in the .blif file.
+Warning 255: Net diffeq_f_systemC^xport~25 found in activity file, but it does not exist in the .blif file.
+Warning 256: Net diffeq_f_systemC^xport~26 found in activity file, but it does not exist in the .blif file.
+Warning 257: Net diffeq_f_systemC^xport~27 found in activity file, but it does not exist in the .blif file.
+Warning 258: Net diffeq_f_systemC^xport~28 found in activity file, but it does not exist in the .blif file.
+Warning 259: Net diffeq_f_systemC^xport~29 found in activity file, but it does not exist in the .blif file.
+Warning 260: Net diffeq_f_systemC^xport~30 found in activity file, but it does not exist in the .blif file.
+Warning 261: Net diffeq_f_systemC^xport~31 found in activity file, but it does not exist in the .blif file.
+Warning 262: Net diffeq_f_systemC^yport~0 found in activity file, but it does not exist in the .blif file.
+Warning 263: Net diffeq_f_systemC^yport~1 found in activity file, but it does not exist in the .blif file.
+Warning 264: Net diffeq_f_systemC^yport~2 found in activity file, but it does not exist in the .blif file.
+Warning 265: Net diffeq_f_systemC^yport~3 found in activity file, but it does not exist in the .blif file.
+Warning 266: Net diffeq_f_systemC^yport~4 found in activity file, but it does not exist in the .blif file.
+Warning 267: Net diffeq_f_systemC^yport~5 found in activity file, but it does not exist in the .blif file.
+Warning 268: Net diffeq_f_systemC^yport~6 found in activity file, but it does not exist in the .blif file.
+Warning 269: Net diffeq_f_systemC^yport~7 found in activity file, but it does not exist in the .blif file.
+Warning 270: Net diffeq_f_systemC^yport~8 found in activity file, but it does not exist in the .blif file.
+Warning 271: Net diffeq_f_systemC^yport~9 found in activity file, but it does not exist in the .blif file.
+Warning 272: Net diffeq_f_systemC^yport~10 found in activity file, but it does not exist in the .blif file.
+Warning 273: Net diffeq_f_systemC^yport~11 found in activity file, but it does not exist in the .blif file.
+Warning 274: Net diffeq_f_systemC^yport~12 found in activity file, but it does not exist in the .blif file.
+Warning 275: Net diffeq_f_systemC^yport~13 found in activity file, but it does not exist in the .blif file.
+Warning 276: Net diffeq_f_systemC^yport~14 found in activity file, but it does not exist in the .blif file.
+Warning 277: Net diffeq_f_systemC^yport~15 found in activity file, but it does not exist in the .blif file.
+Warning 278: Net diffeq_f_systemC^yport~16 found in activity file, but it does not exist in the .blif file.
+Warning 279: Net diffeq_f_systemC^yport~17 found in activity file, but it does not exist in the .blif file.
+Warning 280: Net diffeq_f_systemC^yport~18 found in activity file, but it does not exist in the .blif file.
+Warning 281: Net diffeq_f_systemC^yport~19 found in activity file, but it does not exist in the .blif file.
+Warning 282: Net diffeq_f_systemC^yport~20 found in activity file, but it does not exist in the .blif file.
+Warning 283: Net diffeq_f_systemC^yport~21 found in activity file, but it does not exist in the .blif file.
+Warning 284: Net diffeq_f_systemC^yport~22 found in activity file, but it does not exist in the .blif file.
+Warning 285: Net diffeq_f_systemC^yport~23 found in activity file, but it does not exist in the .blif file.
+Warning 286: Net diffeq_f_systemC^yport~24 found in activity file, but it does not exist in the .blif file.
+Warning 287: Net diffeq_f_systemC^yport~25 found in activity file, but it does not exist in the .blif file.
+Warning 288: Net diffeq_f_systemC^yport~26 found in activity file, but it does not exist in the .blif file.
+Warning 289: Net diffeq_f_systemC^yport~27 found in activity file, but it does not exist in the .blif file.
+Warning 290: Net diffeq_f_systemC^yport~28 found in activity file, but it does not exist in the .blif file.
+Warning 291: Net diffeq_f_systemC^yport~29 found in activity file, but it does not exist in the .blif file.
+Warning 292: Net diffeq_f_systemC^yport~30 found in activity file, but it does not exist in the .blif file.
+Warning 293: Net diffeq_f_systemC^yport~31 found in activity file, but it does not exist in the .blif file.
+Warning 294: Net diffeq_f_systemC^uport~0 found in activity file, but it does not exist in the .blif file.
+Warning 295: Net diffeq_f_systemC^uport~1 found in activity file, but it does not exist in the .blif file.
+Warning 296: Net diffeq_f_systemC^uport~2 found in activity file, but it does not exist in the .blif file.
+Warning 297: Net diffeq_f_systemC^uport~3 found in activity file, but it does not exist in the .blif file.
+Warning 298: Net diffeq_f_systemC^uport~4 found in activity file, but it does not exist in the .blif file.
+Warning 299: Net diffeq_f_systemC^uport~5 found in activity file, but it does not exist in the .blif file.
+Warning 300: Net diffeq_f_systemC^uport~6 found in activity file, but it does not exist in the .blif file.
+Warning 301: Net diffeq_f_systemC^uport~7 found in activity file, but it does not exist in the .blif file.
+Warning 302: Net diffeq_f_systemC^uport~8 found in activity file, but it does not exist in the .blif file.
+Warning 303: Net diffeq_f_systemC^uport~9 found in activity file, but it does not exist in the .blif file.
+Warning 304: Net diffeq_f_systemC^uport~10 found in activity file, but it does not exist in the .blif file.
+Warning 305: Net diffeq_f_systemC^uport~11 found in activity file, but it does not exist in the .blif file.
+Warning 306: Net diffeq_f_systemC^uport~12 found in activity file, but it does not exist in the .blif file.
+Warning 307: Net diffeq_f_systemC^uport~13 found in activity file, but it does not exist in the .blif file.
+Warning 308: Net diffeq_f_systemC^uport~14 found in activity file, but it does not exist in the .blif file.
+Warning 309: Net diffeq_f_systemC^uport~15 found in activity file, but it does not exist in the .blif file.
+Warning 310: Net diffeq_f_systemC^uport~16 found in activity file, but it does not exist in the .blif file.
+Warning 311: Net diffeq_f_systemC^uport~17 found in activity file, but it does not exist in the .blif file.
+Warning 312: Net diffeq_f_systemC^uport~18 found in activity file, but it does not exist in the .blif file.
+Warning 313: Net diffeq_f_systemC^uport~19 found in activity file, but it does not exist in the .blif file.
+Warning 314: Net diffeq_f_systemC^uport~20 found in activity file, but it does not exist in the .blif file.
+Warning 315: Net diffeq_f_systemC^uport~21 found in activity file, but it does not exist in the .blif file.
+Warning 316: Net diffeq_f_systemC^uport~22 found in activity file, but it does not exist in the .blif file.
+Warning 317: Net diffeq_f_systemC^uport~23 found in activity file, but it does not exist in the .blif file.
+Warning 318: Net diffeq_f_systemC^uport~24 found in activity file, but it does not exist in the .blif file.
+Warning 319: Net diffeq_f_systemC^uport~25 found in activity file, but it does not exist in the .blif file.
+Warning 320: Net diffeq_f_systemC^uport~26 found in activity file, but it does not exist in the .blif file.
+Warning 321: Net diffeq_f_systemC^uport~27 found in activity file, but it does not exist in the .blif file.
+Warning 322: Net diffeq_f_systemC^uport~28 found in activity file, but it does not exist in the .blif file.
+Warning 323: Net diffeq_f_systemC^uport~29 found in activity file, but it does not exist in the .blif file.
+Warning 324: Net diffeq_f_systemC^uport~30 found in activity file, but it does not exist in the .blif file.
+Warning 325: Net diffeq_f_systemC^uport~31 found in activity file, but it does not exist in the .blif file.
+# Load Activity File took 0.00 seconds (max_rss 28.8 MiB, delta_rss +0.0 MiB)
+# Build Timing Graph
+  Timing Graph Nodes: 3332
+  Timing Graph Edges: 3426
+  Timing Graph Levels: 78
+# Build Timing Graph took 0.00 seconds (max_rss 28.8 MiB, delta_rss +0.0 MiB)
+Netlist contains 1 clocks
+  Netlist Clock 'diffeq_f_systemC^clk' Fanout: 96 pins (2.9%), 96 blocks (5.0%)
+# Load Timing Constraints
+
+SDC file 'diffeq2.sdc' not found
+Setting default timing constraints:
+   * constrain all primay inputs and primary outputs on netlist clock 'diffeq_f_systemC^clk'
+   * optimize netlist clock to run as fast as possible
+Timing constraints created 1 clocks
+  Constrained Clock 'diffeq_f_systemC^clk' Source: 'diffeq_f_systemC^clk.inpad[0]'
+
+# Load Timing Constraints took 0.00 seconds (max_rss 28.8 MiB, delta_rss +0.0 MiB)
+# Packing
+Begin packing 'diffeq2.pre-vpr.blif'.
+
+After removing unused inputs...
+	total blocks: 1936, total nets: 1302, total inputs: 570, total outputs: 634
+Begin prepacking.
+
+There is one chain in this architecture called "chain" with the following starting points:
+	clb[0]/fle[0]/lut5inter[0]/ble5[0]/arithmetic[0]/adder[0].cin[0]
+
+0 attraction groups were created during prepacking.
+Finish prepacking.
+Using inter-cluster delay: 1.33777e-09
+Packing with pin utilization targets: io:1,1 clb:0.8,1 mult_36:1,1 memory:1,1
+Packing with high fanout thresholds: io:128 clb:32 mult_36:128 memory:128
+Starting Clustering - Clustering Progress: 
+-------------------   --------------------------   ---------
+Molecules processed   Number of clusters created   FPGA size
+-------------------   --------------------------   ---------
+    73/1840      3%                            4     5 x 5     
+   146/1840      7%                            8     6 x 6     
+   219/1840     11%                           11     6 x 6     
+   292/1840     15%                           15     7 x 7     
+   365/1840     19%                           19     7 x 7     
+   438/1840     23%                           22     8 x 8     
+   511/1840     27%                           26     9 x 9     
+   584/1840     31%                           42    10 x 10    
+   657/1840     35%                          115    14 x 14    
+   730/1840     39%                          188    14 x 14    
+   803/1840     43%                          261    14 x 14    
+   876/1840     47%                          334    14 x 14    
+   949/1840     51%                          407    14 x 14    
+  1022/1840     55%                          480    15 x 15    
+  1095/1840     59%                          553    17 x 17    
+  1168/1840     63%                          626    19 x 19    
+  1241/1840     67%                          699    21 x 21    
+  1314/1840     71%                          772    24 x 24    
+  1387/1840     75%                          845    26 x 26    
+  1460/1840     79%                          918    28 x 28    
+  1533/1840     83%                          991    31 x 31    
+  1606/1840     87%                         1064    33 x 33    
+  1679/1840     91%                         1137    35 x 35    
+  1752/1840     95%                         1210    37 x 37    
+  1825/1840     99%                         1283    40 x 40    
+
+Logic Element (fle) detailed count:
+  Total number of Logic Elements used : 351
+  LEs used for logic and registers    : 96
+  LEs used for logic only             : 255
+  LEs used for registers only         : 0
+
+Incr Slack updates 1 in 2.6828e-05 sec
+Full Max Req/Worst Slack updates 1 in 1.0329e-05 sec
+Incr Max Req/Worst Slack updates 0 in 0 sec
+Incr Criticality updates 0 in 0 sec
+Full Criticality updates 1 in 3.7603e-05 sec
+FPGA sized to 40 x 40 (auto)
+Device Utilization: 0.15 (target 1.00)
+	Block Utilization: 0.99 Type: io
+	Block Utilization: 0.09 Type: clb
+
+Start the iterative improvement process
+the iterative improvement process is done
+Final Clustering Statistics: 
+----------   --------   ------------------------------------   --------------------------
+Block Type   # Blocks   Avg. # of input clocks and pins used   Avg. # of output pins used
+----------   --------   ------------------------------------   --------------------------
+     EMPTY          0                                      0                            0   
+        io       1204                               0.526578                     0.473422   
+       clb         95                                4.24211                      2.57895   
+   mult_36          0                                      0                            0   
+    memory          0                                      0                            0   
+Absorbed logical nets 487 out of 1302 nets, 815 nets not absorbed.
+
+Netlist conversion complete.
+
+# Packing took 0.38 seconds (max_rss 36.1 MiB, delta_rss +7.3 MiB)
+# Load packing
+Begin loading packed FPGA netlist file.
+Netlist generated from file 'diffeq2.net'.
+Detected 2 constant generators (to see names run with higher pack verbosity)
+Finished loading packed FPGA netlist file (took 0.069144 seconds).
+Warning 326: Treated 2 constant nets as global which will not be routed (to see net names increase packer verbosity).
+# Load packing took 0.07 seconds (max_rss 74.7 MiB, delta_rss +38.6 MiB)
+Warning 327: Netlist contains 2 global net to non-global architecture pin connections
+Warning 328: Logic block #93 (vcc) has only 1 output pin 'vcc.O[0]'. It may be a constant generator.
+Warning 329: Logic block #94 (gnd) has only 1 output pin 'gnd.O[0]'. It may be a constant generator.
+Cluster level netlist and block usage statistics
+Netlist num_nets: 815
+Netlist num_blocks: 1299
+Netlist EMPTY blocks: 0.
+Netlist io blocks: 1204.
+Netlist clb blocks: 95.
+Netlist mult_36 blocks: 0.
+Netlist memory blocks: 0.
+Netlist inputs pins: 570
+Netlist output pins: 634
+
+Pb types usage...
+  io              : 1204
+   inpad          : 570
+   outpad         : 634
+  clb             : 95
+   fle            : 351
+    lut5inter     : 351
+     ble5         : 636
+      flut5       : 636
+       lut5       : 636
+        lut       : 636
+       ff         : 96
+
+# Create Device
+## Build Device Grid
+FPGA sized to 40 x 40: 1600 grid tiles (auto)
+
+Resource usage...
+	Netlist
+		1204	blocks of type: io
+	Architecture
+		1216	blocks of type: io
+	Netlist
+		95	blocks of type: clb
+	Architecture
+		1064	blocks of type: clb
+	Netlist
+		0	blocks of type: mult_36
+	Architecture
+		45	blocks of type: mult_36
+	Netlist
+		0	blocks of type: memory
+	Architecture
+		30	blocks of type: memory
+
+Device Utilization: 0.15 (target 1.00)
+	Physical Tile io:
+	Block Utilization: 0.99 Logical Block: io
+	Physical Tile clb:
+	Block Utilization: 0.09 Logical Block: clb
+	Physical Tile mult_36:
+	Block Utilization: 0.00 Logical Block: mult_36
+	Physical Tile memory:
+	Block Utilization: 0.00 Logical Block: memory
+
+FPGA size limited by block type(s): io
+
+## Build Device Grid took 0.00 seconds (max_rss 74.7 MiB, delta_rss +0.0 MiB)
+## Build routing resource graph
+SOURCE->OPIN and IPIN->SINK edge count:94758
+OPIN->CHANX/CHANY edge count before creating direct connections: 276560
+OPIN->CHANX/CHANY edge count after creating direct connections: 277596
+CHAN->CHAN type edge count:1526405
+## Build routing resource graph took 0.97 seconds (max_rss 112.6 MiB, delta_rss +37.9 MiB)
+  RR Graph Nodes: 218392
+  RR Graph Edges: 1898759
+# Create Device took 1.00 seconds (max_rss 112.6 MiB, delta_rss +37.9 MiB)
+
+# Computing router lookahead map
+## Computing wire lookahead
+## Computing wire lookahead took 2.74 seconds (max_rss 112.6 MiB, delta_rss +0.0 MiB)
+## Computing src/opin lookahead
+## Computing src/opin lookahead took 0.00 seconds (max_rss 112.6 MiB, delta_rss +0.0 MiB)
+# Computing router lookahead map took 2.74 seconds (max_rss 112.6 MiB, delta_rss +0.0 MiB)
+# Computing placement delta delay look-up
+RR graph channel widths unchanged, skipping RR graph rebuild
+## Computing delta delays
+## Computing delta delays took 0.30 seconds (max_rss 112.6 MiB, delta_rss +0.0 MiB)
+# Computing placement delta delay look-up took 0.30 seconds (max_rss 112.6 MiB, delta_rss +0.0 MiB)
+Using simple RL 'Softmax agent' for choosing move and block types
+# Placement
+## Initial Placement
+Initial placement iteration 0 has finished successfully
+## Initial Placement took 0.00 seconds (max_rss 112.6 MiB, delta_rss +0.0 MiB)
+
+There are 1007 point to point connections in this circuit.
+
+
+BB estimate of min-dist (placement) wire length: 25716
+
+Completed placement consistency check successfully.
+Initial placement cost: 1 bb_cost: 257.162 td_cost: 1.73161e-07
+Initial placement estimated Critical Path Delay (CPD): 24.0039 ns
+Initial placement estimated setup Total Negative Slack (sTNS): -3191.25 ns
+Initial placement estimated setup Worst Negative Slack (sWNS): -24.0039 ns
+
+Initial placement estimated setup slack histogram:
+[ -2.4e-08: -2.2e-08)  96 ( 13.2%) |********
+[ -2.2e-08: -1.9e-08)   0 (  0.0%) |
+[ -1.9e-08: -1.7e-08)   0 (  0.0%) |
+[ -1.7e-08: -1.4e-08)   0 (  0.0%) |
+[ -1.4e-08: -1.2e-08)   0 (  0.0%) |
+[ -1.2e-08: -9.7e-09)   0 (  0.0%) |
+[ -9.7e-09: -7.3e-09)   0 (  0.0%) |
+[ -7.3e-09:   -5e-09)   0 (  0.0%) |
+[   -5e-09: -2.6e-09)  35 (  4.8%) |***
+[ -2.6e-09: -2.1e-10) 597 ( 82.0%) |***********************************************
+Placement contains 0 placement macros involving 0 blocks (average macro size -nan)
+
+Moves per temperature: 7085
+Warning 330: Starting t: 517 of 1299 configurations accepted.
+
+---- ------ ------- ------- ---------- ---------- ------- ---------- -------- ------- ------- ------ -------- --------- ------
+Tnum   Time       T Av Cost Av BB Cost Av TD Cost     CPD       sTNS     sWNS Ac Rate Std Dev  R lim Crit Exp Tot Moves  Alpha
+      (sec)                                          (ns)       (ns)     (ns)                                                 
+---- ------ ------- ------- ---------- ---------- ------- ---------- -------- ------- ------- ------ -------- --------- ------
+   1    0.0 1.3e-03   0.931     180.48 1.1079e-07  21.009  -2.64e+03  -21.009   0.730  0.0331   39.0     1.00      7085  0.200
+   2    0.0 1.3e-03   0.937     176.53 1.1319e-07  17.408  -2.34e+03  -17.408   0.725  0.0158   39.0     1.00     14170  0.950
+   3    0.0 1.2e-03   0.956     170.58 1.0907e-07  17.719  -2.34e+03  -17.719   0.688  0.0163   39.0     1.00     21255  0.950
+   4    0.0 1.1e-03   0.936     167.54 1.0699e-07  17.139  -2.29e+03  -17.139   0.680  0.0176   39.0     1.00     28340  0.950
+   5    0.0 1.1e-03   0.952     166.62 1.0388e-07  17.308  -2.29e+03  -17.308   0.678  0.0181   39.0     1.00     35425  0.950
+   6    0.0 1.0e-03   0.950     159.55 1.0125e-07  17.203  -2.26e+03  -17.203   0.645  0.0235   39.0     1.00     42510  0.950
+   7    0.0 9.8e-04   0.975     158.21 9.8068e-08  16.950  -2.21e+03  -16.950   0.639  0.0181   39.0     1.00     49595  0.950
+   8    0.0 9.3e-04   0.938     153.29 1.0099e-07  16.306  -2.16e+03  -16.306   0.609  0.0188   39.0     1.00     56680  0.950
+   9    0.0 8.8e-04   0.946     153.28 9.8484e-08  16.815  -2.21e+03  -16.815   0.603  0.0174   39.0     1.00     63765  0.950
+  10    0.0 8.4e-04   0.938     147.33 9.7672e-08  16.310  -2.16e+03  -16.310   0.592  0.0204   39.0     1.00     70850  0.950
+  11    0.0 8.0e-04   0.964     143.11 9.4237e-08  16.523  -2.15e+03  -16.523   0.571  0.0153   39.0     1.00     77935  0.950
+  12    0.0 7.6e-04   0.932     140.40 9.1462e-08  16.985  -2.19e+03  -16.985   0.557  0.0156   39.0     1.00     85020  0.950
+  13    0.0 7.2e-04   0.926     134.75 8.796e-08   17.017  -2.17e+03  -17.017   0.539  0.0187   39.0     1.00     92105  0.950
+  14    0.0 6.8e-04   0.945     134.03 8.9852e-08  16.444  -2.11e+03  -16.444   0.520  0.0229   39.0     1.00     99190  0.950
+  15    0.0 6.5e-04   0.957     127.96 8.7377e-08  16.623   -2.1e+03  -16.623   0.505  0.0130   39.0     1.00    106275  0.950
+  16    0.0 6.2e-04   0.944     126.17 8.627e-08   16.484  -2.09e+03  -16.484   0.507  0.0226   39.0     1.00    113360  0.950
+  17    0.0 5.8e-04   0.946     119.55 8.4442e-08  16.536  -2.07e+03  -16.536   0.471  0.0151   39.0     1.00    120445  0.950
+  18    0.0 5.6e-04   0.957     114.70 8.3061e-08  16.365  -2.04e+03  -16.365   0.444  0.0125   39.0     1.00    127530  0.950
+  19    0.0 5.3e-04   0.960     113.29 8.3302e-08  16.166  -2.02e+03  -16.166   0.447  0.0117   39.0     1.00    134615  0.950
+  20    0.0 5.0e-04   0.960     109.74 8.1463e-08  16.197  -2.02e+03  -16.197   0.430  0.0109   39.0     1.00    141700  0.950
+  21    0.0 4.8e-04   0.970     105.73 7.2965e-08  16.241     -2e+03  -16.241   0.421  0.0094   38.6     1.07    148785  0.950
+  22    0.0 4.5e-04   0.960     105.33 6.319e-08   16.279  -2.01e+03  -16.279   0.424  0.0147   37.9     1.21    155870  0.950
+  23    0.0 4.3e-04   0.973     104.05 5.5737e-08  16.243  -1.99e+03  -16.243   0.410  0.0106   37.3     1.32    162955  0.950
+  24    0.0 4.1e-04   0.991     101.70 4.7349e-08  16.243  -1.98e+03  -16.243   0.392  0.0058   36.2     1.52    170040  0.950
+  25    0.0 3.9e-04   0.989      99.82 3.9559e-08  16.370  -1.99e+03  -16.370   0.388  0.0100   34.4     1.84    177125  0.950
+  26    0.0 3.7e-04   0.995      98.36 3.5176e-08  16.097  -1.96e+03  -16.097   0.384  0.0035   32.6     2.17    184210  0.950
+  27    0.0 3.5e-04   0.996      96.47 3.2529e-08  16.097  -1.96e+03  -16.097   0.375  0.0038   30.8     2.51    191295  0.950
+  28    0.0 3.3e-04   0.990      96.07 3.0364e-08  16.097  -1.96e+03  -16.097   0.383  0.0083   28.8     2.88    198380  0.950
+  29    0.0 3.2e-04   0.990      92.91 2.8985e-08  16.097  -1.95e+03  -16.097   0.358  0.0031   27.2     3.18    205465  0.950
+  30    0.0 3.0e-04   0.991      92.96 2.7282e-08  16.100  -1.94e+03  -16.100   0.355  0.0046   24.9     3.59    212550  0.950
+  31    0.0 2.9e-04   0.985      90.76 2.6169e-08  16.100  -1.94e+03  -16.100   0.348  0.0061   22.8     3.98    219635  0.950
+  32    0.0 2.7e-04   0.986      88.59 2.5171e-08  16.073  -1.93e+03  -16.073   0.342  0.0063   20.7     4.36    226720  0.950
+  33    0.0 2.6e-04   0.993      86.44 2.4561e-08  16.073  -1.92e+03  -16.073   0.321  0.0026   18.7     4.74    233805  0.950
+  34    0.0 2.4e-04   0.991      85.49 2.3911e-08  16.074  -1.92e+03  -16.074   0.327  0.0026   16.5     5.15    240890  0.950
+  35    0.0 2.3e-04   0.997      84.71 2.3393e-08  16.042  -1.91e+03  -16.042   0.317  0.0036   14.6     5.49    247975  0.950
+  36    0.0 2.2e-04   1.001      84.09 2.2916e-08  16.042  -1.91e+03  -16.042   0.310  0.0023   12.8     5.82    255060  0.950
+  37    0.0 2.1e-04   0.997      82.96 2.2505e-08  16.042  -1.91e+03  -16.042   0.302  0.0022   11.2     6.13    262145  0.950
+  38    0.0 2.0e-04   0.990      81.53 2.2094e-08  16.042  -1.91e+03  -16.042   0.308  0.0049    9.6     6.41    269230  0.950
+  39    0.0 1.9e-04   0.997      79.33 2.1926e-08  15.942  -1.89e+03  -15.942   0.299  0.0044    8.4     6.64    276315  0.950
+  40    0.0 1.8e-04   0.996      77.71 2.1853e-08  15.861  -1.88e+03  -15.861   0.288  0.0048    7.2     6.86    283400  0.950
+  41    0.0 1.7e-04   0.992      76.40 2.1593e-08  15.861  -1.88e+03  -15.861   0.289  0.0050    6.1     7.06    290485  0.950
+  42    0.0 1.6e-04   0.984      73.65 2.1393e-08  15.861  -1.87e+03  -15.861   0.340  0.0078    5.2     7.23    297570  0.950
+  43    0.0 1.5e-04   0.987      71.06 2.1212e-08  15.861  -1.86e+03  -15.861   0.328  0.0051    4.7     7.33    304655  0.950
+  44    0.0 1.5e-04   0.995      69.39 2.1027e-08  15.861  -1.85e+03  -15.861   0.317  0.0044    4.1     7.42    311740  0.950
+  45    0.0 1.4e-04   0.992      67.76 2.089e-08   15.861  -1.85e+03  -15.861   0.284  0.0044    3.6     7.52    318825  0.950
+  46    0.0 1.3e-04   0.998      66.91 2.1138e-08  15.760  -1.84e+03  -15.760   0.286  0.0017    3.1     7.62    325910  0.950
+  47    0.0 1.3e-04   0.994      65.53 2.1068e-08  15.762  -1.84e+03  -15.762   0.331  0.0023    2.6     7.71    332995  0.950
+  48    0.0 1.2e-04   0.997      64.76 2.1076e-08  15.778  -1.84e+03  -15.778   0.333  0.0031    2.3     7.76    340080  0.950
+  49    0.0 1.1e-04   0.997      63.69 2.1037e-08  15.778  -1.84e+03  -15.778   0.294  0.0029    2.1     7.80    347165  0.950
+  50    0.0 1.1e-04   0.995      62.62 2.0991e-08  15.778  -1.83e+03  -15.778   0.335  0.0026    1.8     7.86    354250  0.950
+  51    0.0 1.0e-04   0.998      61.92 2.0907e-08  15.762  -1.83e+03  -15.762   0.324  0.0009    1.6     7.89    361335  0.950
+  52    0.0 9.7e-05   1.000      61.63 2.0887e-08  15.762  -1.83e+03  -15.762   0.306  0.0013    1.4     7.93    368420  0.950
+  53    0.0 9.2e-05   1.000      61.22 2.086e-08   15.762  -1.83e+03  -15.762   0.297  0.0011    1.2     7.96    375505  0.950
+  54    0.0 8.8e-05   0.996      60.73 2.089e-08   15.778  -1.83e+03  -15.778   0.298  0.0022    1.0     7.99    382590  0.950
+  55    0.0 8.3e-05   0.999      60.48 2.088e-08   15.778  -1.83e+03  -15.778   0.276  0.0006    1.0     8.00    389675  0.950
+  56    0.0 7.9e-05   1.000      60.30 2.0824e-08  15.762  -1.83e+03  -15.762   0.283  0.0009    1.0     8.00    396760  0.950
+  57    0.0 7.5e-05   0.998      60.01 2.0827e-08  15.762  -1.83e+03  -15.762   0.266  0.0009    1.0     8.00    403845  0.950
+  58    0.0 7.1e-05   1.000      59.82 2.083e-08   15.762  -1.83e+03  -15.762   0.253  0.0005    1.0     8.00    410930  0.950
+  59    0.0 6.8e-05   0.999      59.64 2.0829e-08  15.762  -1.83e+03  -15.762   0.238  0.0005    1.0     8.00    418015  0.950
+  60    0.0 6.4e-05   1.000      59.57 2.0827e-08  15.762  -1.83e+03  -15.762   0.239  0.0004    1.0     8.00    425100  0.950
+  61    0.0 6.1e-05   0.997      59.04 2.0882e-08  15.778  -1.83e+03  -15.778   0.219  0.0013    1.0     8.00    432185  0.950
+  62    0.0 5.8e-05   1.000      58.89 2.0827e-08  15.762  -1.83e+03  -15.762   0.210  0.0007    1.0     8.00    439270  0.950
+  63    0.0 5.5e-05   0.998      58.59 2.0828e-08  15.762  -1.83e+03  -15.762   0.198  0.0010    1.0     8.00    446355  0.950
+  64    0.0 5.2e-05   1.000      58.45 2.0826e-08  15.762  -1.83e+03  -15.762   0.194  0.0007    1.0     8.00    453440  0.950
+  65    0.0 5.0e-05   1.000      58.38 2.0819e-08  15.762  -1.83e+03  -15.762   0.189  0.0010    1.0     8.00    460525  0.950
+  66    0.0 4.7e-05   1.000      58.07 2.0821e-08  15.762  -1.83e+03  -15.762   0.168  0.0004    1.0     8.00    467610  0.950
+  67    0.0 4.5e-05   0.999      57.92 2.0818e-08  15.762  -1.83e+03  -15.762   0.157  0.0009    1.0     8.00    474695  0.950
+  68    0.0 4.3e-05   0.999      57.82 2.0818e-08  15.762  -1.83e+03  -15.762   0.149  0.0008    1.0     8.00    481780  0.950
+  69    0.0 3.4e-05   0.999      57.86 2.0824e-08  15.762  -1.83e+03  -15.762   0.147  0.0006    1.0     8.00    488865  0.800
+Agent's 2nd state: 
+Checkpoint saved: bb_costs=57.7547, TD costs=2.08261e-08, CPD= 15.762 (ns) 
+  70    0.0 2.7e-05   0.998      57.57 2.0825e-08  15.762  -1.83e+03  -15.762   0.085  0.0009    1.0     8.00    495950  0.800
+  71    0.0 2.2e-05   0.999      57.28 2.0823e-08  15.762  -1.83e+03  -15.762   0.073  0.0005    1.0     8.00    503035  0.800
+  72    0.0 1.8e-05   0.999      57.09 2.0825e-08  15.762  -1.83e+03  -15.762   0.072  0.0004    1.0     8.00    510120  0.800
+  73    0.0 1.4e-05   1.000      56.96 2.0823e-08  15.762  -1.83e+03  -15.762   0.064  0.0004    1.0     8.00    517205  0.800
+  74    0.0 1.1e-05   1.000      56.85 2.082e-08   15.762  -1.83e+03  -15.762   0.058  0.0003    1.0     8.00    524290  0.800
+  75    0.0 9.0e-06   0.999      56.71 2.0818e-08  15.762  -1.83e+03  -15.762   0.048  0.0003    1.0     8.00    531375  0.800
+  76    0.0 7.2e-06   1.000      56.61 2.0818e-08  15.762  -1.83e+03  -15.762   0.047  0.0001    1.0     8.00    538460  0.800
+  77    0.0 0.0e+00   1.000      56.57 2.0818e-08  15.762  -1.83e+03  -15.762   0.025  0.0002    1.0     8.00    545545  0.800
+## Placement Quench took 0.02 seconds (max_rss 112.6 MiB)
+post-quench CPD = 15.7617 (ns) 
+
+BB estimate of min-dist (placement) wire length: 5653
+
+Completed placement consistency check successfully.
+
+Swaps called: 546844
+
+Aborted Move Reasons:
+  No moves aborted
+
+Placement estimated critical path delay (least slack): 15.7617 ns, Fmax: 63.4448 MHz
+Placement estimated setup Worst Negative Slack (sWNS): -15.7617 ns
+Placement estimated setup Total Negative Slack (sTNS): -1827.56 ns
+
+Placement estimated setup slack histogram:
+[ -1.6e-08: -1.4e-08)  96 ( 13.2%) |*******
+[ -1.4e-08: -1.3e-08)   0 (  0.0%) |
+[ -1.3e-08: -1.1e-08)   0 (  0.0%) |
+[ -1.1e-08: -9.5e-09)   0 (  0.0%) |
+[ -9.5e-09:   -8e-09)   0 (  0.0%) |
+[   -8e-09: -6.4e-09)   0 (  0.0%) |
+[ -6.4e-09: -4.9e-09)   0 (  0.0%) |
+[ -4.9e-09: -3.3e-09)   0 (  0.0%) |
+[ -3.3e-09: -1.8e-09)   1 (  0.1%) |
+[ -1.8e-09: -2.1e-10) 631 ( 86.7%) |***********************************************
+
+Placement estimated geomean non-virtual intra-domain period: 15.7617 ns (63.4448 MHz)
+Placement estimated fanout-weighted geomean non-virtual intra-domain period: 15.7617 ns (63.4448 MHz)
+
+Placement cost: 0.999378, bb_cost: 56.5264, td_cost: 2.08182e-08, 
+
+Placement resource usage:
+  io  implemented as io : 1204
+  clb implemented as clb: 95
+
+Placement number of temperatures: 77
+Placement total # of swap attempts: 546844
+	Swaps accepted: 189386 (34.6 %)
+	Swaps rejected: 337256 (61.7 %)
+	Swaps aborted :  20202 ( 3.7 %)
+
+
+Placement perturbation distribution by block and move type: 
+------------------ ----------------- ---------------- ---------------- --------------- ------------ 
+    Block Type         Move Type       (%) of Total      Accepted(%)     Rejected(%)    Aborted(%)
+------------------ ----------------- ---------------- ---------------- --------------- ------------ 
+io                 Uniform                22.30            24.82           75.18          0.00         
+                   Median                 22.09            40.23           55.08          4.69         
+                   W. Centroid            21.96            40.05           55.56          4.39         
+                   Centroid               22.25            40.34           55.20          4.47         
+                   W. Median              1.39             8.53            78.55          12.92        
+                   Crit. Uniform          0.08             0.00            100.00         0.00         
+                   Feasible Region        0.07             0.00            100.00         0.00         
+
+clb                Uniform                1.72             14.12           85.88          0.00         
+                   Median                 1.73             38.71           50.59          10.70        
+                   W. Centroid            1.72             40.12           51.22          8.66         
+                   Centroid               1.77             40.34           50.67          8.98         
+                   W. Median              0.10             2.98            72.33          24.69        
+                   Crit. Uniform          1.42             0.00            100.00         0.00         
+                   Feasible Region        1.39             0.00            100.00         0.00         
+
+
+Placement Quench timing analysis took 0.00679128 seconds (0.00670478 STA, 8.6503e-05 slack) (1 full updates: 1 setup, 0 hold, 0 combined).
+Placement Total  timing analysis took 0.501899 seconds (0.494494 STA, 0.00740506 slack) (79 full updates: 79 setup, 0 hold, 0 combined).
+update_td_costs: connections 0 nets 0 sum_nets 0 total 0
+# Placement took 1.37 seconds (max_rss 112.6 MiB, delta_rss +0.0 MiB)
+
+# Routing
+RR graph channel widths unchanged, skipping RR graph rebuild
+Confirming router algorithm: TIMING_DRIVEN.
+## Initializing router criticalities
+Initial Net Connection Criticality Histogram:
+[        0:      0.1) 797 ( 76.9%) |***********************************************
+[      0.1:      0.2)  69 (  6.7%) |****
+[      0.2:      0.3)   8 (  0.8%) |
+[      0.3:      0.4)   7 (  0.7%) |
+[      0.4:      0.5)  13 (  1.3%) |*
+[      0.5:      0.6)  15 (  1.4%) |*
+[      0.6:      0.7)  14 (  1.4%) |*
+[      0.7:      0.8)  10 (  1.0%) |*
+[      0.8:      0.9)  12 (  1.2%) |*
+[      0.9:        1)  92 (  8.9%) |*****
+## Initializing router criticalities took 0.02 seconds (max_rss 112.6 MiB, delta_rss +0.0 MiB)
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+Iter   Time    pres  BBs    Heap  Re-Rtd  Re-Rtd Overused RR Nodes      Wirelength      CPD       sTNS       sWNS       hTNS       hWNS Est Succ
+      (sec)     fac Updt    push    Nets   Conns                                       (ns)       (ns)       (ns)       (ns)       (ns)     Iter
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+   1    0.0     0.0    0  138952     812    1007     267 ( 0.122%)    9183 ( 3.1%)   17.488     -2058.    -17.488      0.000      0.000      N/A
+Incr Slack updates 79 in 0.00228271 sec
+Full Max Req/Worst Slack updates 23 in 0.000257511 sec
+Incr Max Req/Worst Slack updates 56 in 0.000740845 sec
+Incr Criticality updates 38 in 0.00168639 sec
+Full Criticality updates 41 in 0.0016685 sec
+   2    0.0     0.5   27   56529     176     273      45 ( 0.021%)    9207 ( 3.1%)   17.488     -2058.    -17.488      0.000      0.000      N/A
+   3    0.0     0.6    8   15333      62      99      28 ( 0.013%)    9227 ( 3.1%)   17.488     -2059.    -17.488      0.000      0.000      N/A
+   4    0.0     0.8    1    9672      43      66      21 ( 0.010%)    9241 ( 3.1%)   17.488     -2060.    -17.488      0.000      0.000      N/A
+   5    0.0     1.1    0    4877      35      50      13 ( 0.006%)    9250 ( 3.1%)   17.488     -2059.    -17.488      0.000      0.000      N/A
+   6    0.0     1.4    0    3567      22      32       9 ( 0.004%)    9262 ( 3.1%)   17.488     -2059.    -17.488      0.000      0.000      N/A
+   7    0.0     1.9    0    2360      16      25       8 ( 0.004%)    9260 ( 3.1%)   17.488     -2060.    -17.488      0.000      0.000      N/A
+   8    0.0     2.4    0    1791      13      19       8 ( 0.004%)    9261 ( 3.1%)   17.488     -2060.    -17.488      0.000      0.000      N/A
+   9    0.0     3.1    0    2946      13      21       5 ( 0.002%)    9268 ( 3.1%)   17.488     -2060.    -17.488      0.000      0.000      N/A
+  10    0.0     4.1    0    2524       9      15       1 ( 0.000%)    9276 ( 3.1%)   17.488     -2060.    -17.488      0.000      0.000       17
+  11    0.0     5.3    0      71       1       1       0 ( 0.000%)    9276 ( 3.1%)   17.488     -2060.    -17.488      0.000      0.000       11
+Restoring best routing
+Critical path: 17.4879 ns
+Successfully routed after 11 routing iterations.
+Final Net Connection Criticality Histogram:
+[        0:      0.1) 783 ( 75.5%) |***********************************************
+[      0.1:      0.2)  83 (  8.0%) |*****
+[      0.2:      0.3)   7 (  0.7%) |
+[      0.3:      0.4)  10 (  1.0%) |*
+[      0.4:      0.5)  11 (  1.1%) |*
+[      0.5:      0.6)  14 (  1.4%) |*
+[      0.6:      0.7)  14 (  1.4%) |*
+[      0.7:      0.8)  10 (  1.0%) |*
+[      0.8:      0.9)  12 (  1.2%) |*
+[      0.9:        1)  93 (  9.0%) |******
+Router Stats: total_nets_routed: 1202 total_connections_routed: 1608 total_heap_pushes: 238622 total_heap_pops: 50328 total_internal_heap_pushes: 0 total_internal_heap_pops: 0 total_external_heap_pushes: 238622 total_external_heap_pops: 50328 total_external_SOURCE_pushes: 1608 total_external_SOURCE_pops: 1308 total_internal_SOURCE_pushes: 0 total_internal_SOURCE_pops: 0 rt_node_SOURCE_pushes: 1608 rt_node_SOURCE_high_fanout_pushes: 0 rt_node_SOURCE_entire_tree_pushes: 1608 total_external_SINK_pushes: 6640 total_external_SINK_pops: 6302 total_internal_SINK_pushes: 0 total_internal_SINK_pops: 0 rt_node_SINK_pushes: 0 rt_node_SINK_high_fanout_pushes: 0 rt_node_SINK_entire_tree_pushes: 0 total_external_IPIN_pushes: 7672 total_external_IPIN_pops: 7434 total_internal_IPIN_pushes: 0 total_internal_IPIN_pops: 0 rt_node_IPIN_pushes: 0 rt_node_IPIN_high_fanout_pushes: 0 rt_node_IPIN_entire_tree_pushes: 0 total_external_OPIN_pushes: 1662 total_external_OPIN_pops: 1314 total_internal_OPIN_pushes: 0 total_internal_OPIN_pops: 0 rt_node_OPIN_pushes: 420 rt_node_OPIN_high_fanout_pushes: 0 rt_node_OPIN_entire_tree_pushes: 420 total_external_CHANX_pushes: 111474 total_external_CHANX_pops: 17043 total_internal_CHANX_pushes: 0 total_internal_CHANX_pops: 0 rt_node_CHANX_pushes: 2355 rt_node_CHANX_high_fanout_pushes: 0 rt_node_CHANX_entire_tree_pushes: 2355 total_external_CHANY_pushes: 109566 total_external_CHANY_pops: 16927 total_internal_CHANY_pushes: 0 total_internal_CHANY_pops: 0 rt_node_CHANY_pushes: 2622 rt_node_CHANY_high_fanout_pushes: 0 rt_node_CHANY_entire_tree_pushes: 2622 total_number_of_adding_all_rt: 16965 total_number_of_adding_high_fanout_rt: 0 total_number_of_adding_all_rt_from_calling_high_fanout_rt: 0 
+# Routing took 0.23 seconds (max_rss 112.6 MiB, delta_rss +0.0 MiB)
+
+Checking to ensure routing is legal...
+# Checking to ensure non-configurable edges are legal
+# Checking to ensure non-configurable edges are legal took 0.01 seconds (max_rss 112.6 MiB, delta_rss +0.0 MiB)
+Completed routing consistency check successfully.
+
+Serial number (magic cookie) for the routing is: 592162475
+Circuit successfully routed with a channel width factor of 100.
+# Synchronize the packed netlist to routing optimization
+## Annotating rr_node with routed nets
+## Annotating rr_node with routed nets took 0.00 seconds (max_rss 112.6 MiB, delta_rss +0.0 MiB)
+Found 636 mismatches between routing and packing results.
+Fixed 357 routing traces due to mismatch between routing and packing results.
+# Synchronize the packed netlist to routing optimization took 0.00 seconds (max_rss 112.6 MiB, delta_rss +0.0 MiB)
+Final Clustering Statistics: 
+----------   --------   ------------------------------------   --------------------------
+Block Type   # Blocks   Avg. # of input clocks and pins used   Avg. # of output pins used
+----------   --------   ------------------------------------   --------------------------
+     EMPTY          0                                      0                            0   
+        io       1204                               0.526578                     0.473422   
+       clb         95                                4.24211                      2.57895   
+   mult_36          0                                      0                            0   
+    memory          0                                      0                            0   
+Absorbed logical nets 487 out of 1302 nets, 815 nets not absorbed.
+
+
+Average number of bends per net: 1.19704  Maximum # of bends: 10
+
+Number of global nets: 3
+Number of routed nets (nonglobal): 812
+Wire length results (in units of 1 clb segments)...
+	Total wirelength: 9276, average net length: 11.4236
+	Maximum net length: 131
+
+Wire length results in terms of physical segments...
+	Total wiring segments used: 2568, average wire segments per net: 3.16256
+	Maximum segments used by a net: 33
+	Total local nets with reserved CLB opins: 0
+Total number of nets absorbed: 0
+
+Routing channel utilization histogram:
+[        1:      inf)    0 (  0.0%) |
+[      0.9:        1)    0 (  0.0%) |
+[      0.8:      0.9)    0 (  0.0%) |
+[      0.7:      0.8)    0 (  0.0%) |
+[      0.5:      0.6)    0 (  0.0%) |
+[      0.4:      0.5)    0 (  0.0%) |
+[      0.3:      0.4)   24 (  0.8%) |
+[      0.2:      0.3)   64 (  2.1%) |*
+[      0.1:      0.2)  166 (  5.5%) |***
+[        0:      0.1) 2788 ( 91.7%) |**********************************************
+Maximum routing channel utilization:       0.4 at (20,38)
+
+X - Directed channels:   j max occ ave occ capacity
+                      ---- ------- ------- --------
+                         0      28  18.775      100
+                         1       4   1.550      100
+                         2       5   0.900      100
+                         3       2   0.250      100
+                         4       3   0.750      100
+                         5       0   0.000      100
+                         6       1   0.025      100
+                         7       2   0.125      100
+                         8       2   0.225      100
+                         9       3   0.175      100
+                        10       3   0.200      100
+                        11       1   0.100      100
+                        12       1   0.200      100
+                        13       4   0.150      100
+                        14       4   0.425      100
+                        15       1   0.100      100
+                        16       6   0.850      100
+                        17       6   1.075      100
+                        18       7   2.375      100
+                        19       7   1.900      100
+                        20      11   3.250      100
+                        21      13   7.550      100
+                        22      24   9.050      100
+                        23      22   9.625      100
+                        24      25   7.625      100
+                        25      12   6.100      100
+                        26      11   4.475      100
+                        27      13   3.375      100
+                        28       4   0.650      100
+                        29       1   0.025      100
+                        30       2   0.350      100
+                        31       2   0.100      100
+                        32       1   0.025      100
+                        33       1   0.025      100
+                        34       4   0.900      100
+                        35       5   1.700      100
+                        36       4   1.075      100
+                        37       5   2.725      100
+                        38      40  23.950      100
+Y - Directed channels:   i max occ ave occ capacity
+                      ---- ------- ------- --------
+                         0      37  20.875      100
+                         1       5   2.450      100
+                         2       3   0.925      100
+                         3       5   0.825      100
+                         4       4   1.000      100
+                         5       2   0.050      100
+                         6       5   0.475      100
+                         7       4   0.550      100
+                         8       6   0.625      100
+                         9       5   1.225      100
+                        10      10   3.400      100
+                        11      27   8.725      100
+                        12      29  11.650      100
+                        13      15   5.650      100
+                        14      11   4.575      100
+                        15      23   6.050      100
+                        16      10   3.100      100
+                        17       6   2.125      100
+                        18      10   4.475      100
+                        19      21   5.700      100
+                        20      19   6.100      100
+                        21       8   1.850      100
+                        22       2   0.200      100
+                        23       4   0.150      100
+                        24       3   0.150      100
+                        25       3   0.225      100
+                        26       2   0.075      100
+                        27       3   0.125      100
+                        28       3   0.125      100
+                        29       4   0.125      100
+                        30       0   0.000      100
+                        31       4   0.450      100
+                        32       2   0.125      100
+                        33       3   0.100      100
+                        34       4   0.650      100
+                        35       3   0.850      100
+                        36       4   0.700      100
+                        37       8   3.500      100
+                        38      32  19.225      100
+
+Total tracks in x-direction: 3900, in y-direction: 3900
+
+Logic area (in minimum width transistor areas, excludes I/Os and empty grid tiles)...
+	Total logic block area (Warning, need to add pitch of routing to blocks with height > 3): 9.16046e+07
+	Total used logic block area: 5.11993e+06
+
+Routing area (in minimum width transistor areas)...
+	Total routing area: 1.10258e+07, per logic tile: 6891.10
+
+Total Number of Wiring Segments by Direction: direction length number
+                                              --------- ------ -------
+                                                      X      4  39974
+                                                      Y      4  39974
+
+X - Directed Wiring Segment usage by length: length utilization
+                                             ------ -----------
+                                            4      0.0311
+
+Y - Directed Wiring Segment usage by length: length utilization
+                                             ------ -----------
+                                            4      0.0331
+
+Segment usage by type (index):              name type utilization
+                               ----------------- ---- -----------
+                               unnamed_segment_0    0      0.0321
+
+Final hold Worst Negative Slack (hWNS): 0 ns
+Final hold Total Negative Slack (hTNS): 0 ns
+
+Final hold slack histogram:
+[  1.5e-10:  3.1e-10) 336 ( 46.2%) |***********************************************
+[  3.1e-10:  4.8e-10)   4 (  0.5%) |*
+[  4.8e-10:  6.4e-10)  12 (  1.6%) |**
+[  6.4e-10:  8.1e-10) 145 ( 19.9%) |********************
+[  8.1e-10:  9.7e-10)  50 (  6.9%) |*******
+[  9.7e-10:  1.1e-09)  64 (  8.8%) |*********
+[  1.1e-09:  1.3e-09)  60 (  8.2%) |********
+[  1.3e-09:  1.5e-09)  34 (  4.7%) |*****
+[  1.5e-09:  1.6e-09)  14 (  1.9%) |**
+[  1.6e-09:  1.8e-09)   9 (  1.2%) |*
+
+Final critical path delay (least slack): 17.4879 ns, Fmax: 57.1825 MHz
+Final setup Worst Negative Slack (sWNS): -17.4879 ns
+Final setup Total Negative Slack (sTNS): -2059.52 ns
+
+Final setup slack histogram:
+[ -1.7e-08: -1.6e-08)  96 ( 13.2%) |*******
+[ -1.6e-08: -1.4e-08)   0 (  0.0%) |
+[ -1.4e-08: -1.2e-08)   0 (  0.0%) |
+[ -1.2e-08: -1.1e-08)   0 (  0.0%) |
+[ -1.1e-08: -8.8e-09)   0 (  0.0%) |
+[ -8.8e-09: -7.1e-09)   0 (  0.0%) |
+[ -7.1e-09: -5.4e-09)   0 (  0.0%) |
+[ -5.4e-09: -3.7e-09)   0 (  0.0%) |
+[ -3.7e-09: -1.9e-09)   0 (  0.0%) |
+[ -1.9e-09: -2.1e-10) 632 ( 86.8%) |***********************************************
+
+Final geomean non-virtual intra-domain period: 17.4879 ns (57.1825 MHz)
+Final fanout-weighted geomean non-virtual intra-domain period: 17.4879 ns (57.1825 MHz)
+
+
+
+Power Estimation:
+-----------------
+Initializing power module
+Running power estimation
+Warning 331: Power estimation completed with warnings. See power output for more details.
+Power estimation took 0.520057 seconds
+Uninitializing power module
+
+Incr Slack updates 1 in 2.5294e-05 sec
+Full Max Req/Worst Slack updates 1 in 1.1268e-05 sec
+Incr Max Req/Worst Slack updates 0 in 0 sec
+Incr Criticality updates 0 in 0 sec
+Full Criticality updates 1 in 3.7434e-05 sec
+Flow timing analysis took 0.689775 seconds (0.680645 STA, 0.00912989 slack) (93 full updates: 80 setup, 0 hold, 13 combined).
+VPR succeeded
+The entire flow of VPR took 6.79 seconds (max_rss 112.6 MiB)
+Incr Slack updates 12 in 0.000317618 sec
+Full Max Req/Worst Slack updates 1 in 1.1922e-05 sec
+Incr Max Req/Worst Slack updates 11 in 0.000148865 sec
+Incr Criticality updates 10 in 0.000369242 sec
+Full Criticality updates 2 in 8.868e-05 sec
